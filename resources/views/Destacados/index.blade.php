@@ -63,13 +63,13 @@
                             @foreach($Destacados as $var)
                             <tr>
                             
-                                <td>{{ $var->id}}</th>
-                                <td>{{ $var->Nombre}}</th>
-                                <td>{{ $var->Descripcion}}</th>
-                                <td>{{ $var->Direccion}}</th>
-                                <td>{{ $var->Ubicacion}}</th>
-                                <td>{{ $var->Horario}}</th>
-                                <td>{{ $var->Contador}}</th>
+                                <td>{{ $var->id}}</td>
+                                <td>{{ $var->Nombre}}</td>
+                                <td>{{ $var->Descripcion}}</td>
+                                <td>{{ $var->Direccion}}</td>
+                                <td>{!! $var->Ubicacion !!}</td>
+                                <td>{!! $var->Horario !!}</td>
+                                <td>{{ $var->Contador}}</td>
                                 <td>{{ $var->Whatsapp}}</th>
                                 <td>{{ $var->Facebook}}</th>
                                 <td>{{ $var->Instagram}}</th>
@@ -78,7 +78,7 @@
                                 <td>{{ $var->Correo }}</th>
                                 <td>{{ $var->Telefono }}</th>
                                 <td>{{ $var->Brochure }}</th>
-                                <td>{{ $var->Imagen1 }}</th>
+                                <td><img src="{{$var->Imagen1}}.webp"></th>
                                 <td>{{ $var->Imagen2 }}</th>
                                 <td>{{ $var->Imagen3 }}</th>
                                 <td>{{ $var->Imagen4}}</th>
@@ -88,7 +88,7 @@
                                 <td>{{ $var->Imagen8}}</th>
                                 <td>{{ $var->Imagen9}}</th>
                                 <td>{{ $var->Imagen10}}</th>
-                                <td>{{ $var->HTML}}</th>
+                                <td>{!! $var->HTML!!}</th>
                                 <td>{{ $var->Domicilios}}</th>
                                 <td>{{ $var->Categoria}}</th>
                                 <td>{{ $var->Fecha_creacion}}</th>

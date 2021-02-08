@@ -13,4 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Ruta del Home
+Route::get('/home', function () {
+    return view('home');
+});
+
 Route::get('/', 'DestacadosController@index');
