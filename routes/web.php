@@ -18,4 +18,10 @@ Route::get('/home', function () {
     return view('home');
 });
 
+// Ruta desplegable
+Route::get('/index', function () {
+    return view('index');
+});
+
+
 Route::get('/', 'DestacadosController@index');
