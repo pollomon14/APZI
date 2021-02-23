@@ -1,42 +1,53 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>APZI</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+    <title>apzi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:400,600,800">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/assets/css/styles.min.css?h=405e4c527adac589816d96bdbca524e7">
+    <link rel="stylesheet" href="/assets/css/styles.min.css?h=6c093b100449b020fad73b43504f865a">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 </head>
 
 <body style="border-radius: 24px;border-top-left-radius: 0px;border-style: none;border-top-width: 1px;border-right-width: 0px;border-right-style: none;border-bottom-width: 1px;border-bottom-style: none;border-left-width: 0px;">
     <!-- Start: Navigation Clean -->
     <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="width: 100%;padding-top: 2%;padding-right: 2%;padding-bottom: 2%;padding-left: 2%;background: #000c4f;">
-        <div class="container"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1" style="width: 10%;padding-top: 0;padding-right: 0;padding-left: 0;padding-bottom: 0;color: #fff;border-style: none;"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button><img style="width: 7%;" src="/assets/img/logo2.png?h=39afec5624309cd2440f4fd167e60fa6">
+        <div class="container"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1" style="width: 10%;padding-top: 0;padding-right: 0;padding-left: 0;padding-bottom: 0;color: #fff;border-style: none;"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button><img style="width: 7%;" src="/assets/img/logo2.png?h=e0db7753f8fd551b90c78c404dde7209">
             <div style="width: 60%;text-align: left;margin-left: 0%;"><a class="navbar-brand" href="#" style="width: 100%;margin-right: 0;color: #fff;font-size: 16px;line-height: 10px;font-family: 'ITC Avant Garde Gothic Std Demi';">TODO LO QUE NECESITAS</a><a class="navbar-brand" href="#" style="width: 100%;margin-right: 0;color: #fffF00;font-size: 22px;line-height: 10px;font-family: 'ITC Avant Garde Gothic Std Bold';">EN UN SOLO SITIO</a></div><i class="fa fa-mail-reply" style="width: 10%;font-size: 25px;color: #fff;"></i>
             <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="nav navbar-nav ml-auto">
+                <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link active" href="#">First Item</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Second Item</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Third Item</a></li>
-                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Dropdown </a>
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-toggle="dropdown" href="#">Dropdown </a>
                         <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
                     </li>
                 </ul>
             </div>
         </div>
     </nav><!-- End: Navigation Clean -->
-    <div class="carousel slide" data-ride="carousel" id="carousel-1">
+    <!-- Start: 1 Row 2 Columns -->
+    <div style="width: 100%;border-style: none;margin-top: 0%;">
+        <div class="container" style="padding-left: 0;padding-right: 0;width: 100%;border-style: none;">
+            <div class="row" style="width: 100%;margin-right: 0;margin-left: 0;border-style: none;">
+                <div class="col-md-6" style="width: 45%;padding-right: 0;padding-left: 0;background: linear-gradient(90deg, #ffff00 83%, #f2f2f2 100%), #ffff00;border-style: none;padding-top: 0;"><i class="fa fa-map-marker" style="font-size: 13px;width: 3%;padding-left: 5%;color: #000c4f;"></i><span style="font-size: 13px;padding-left: 7%;width: 40%;color: #000c4f;font-family: 'Montserrat Regular';">Estás en Zipaquirá</span></div>
+                <div class="col-md-6" style="width: 55%;padding-right: 0px;padding-left: 0px;background: #f2f2f2;"><i class="fa fa-search" style="font-size: 13px;padding-left: 3%;color: #000c4f;"></i><input class="form-control-sm" type="search" style="width: 75%;height: 20px;border-radius: 7px;padding-left: 3%;margin-left: 2%;color: #000c4f;border: 1px solid #000c4f;border-bottom-width: 1px;font-family: 'Montserrat Regular';font-size: 14px;text-align: left;margin-top: 0px;margin-bottom: 2%;" placeholder="Qué Buscas?"><i class="fa fa-microphone pulse animated infinite" style="font-size: 16px;padding-left: 3%;color: #000c4f;"></i></div>
+            </div>
+        </div>
+    </div><!-- End: 1 Row 2 Columns -->
+    <div class="carousel slide" data-ride="carousel" data-interval="500" id="carousel-1">
         <div class="carousel-inner">
             <div class="carousel-item active"><img class="w-100 d-block" src="/assets/img/IMAGEN3.png?h=5f06cb82cf49df28880ea16b787febc7" alt="Slide Image">
-                <h1 style="width: 100%;color: #000c4f;background: #ffff00;text-align: center;font-size: 16px;font-family: 'ITC Avant Garde Gothic Std Demi';font-weight: normal;margin-bottom: 0;padding-top: 1%;padding-bottom: 2%;"><i class="fa fa-whatsapp"></i>&nbsp; Ir a whatsapp</h1>
+                <h1 style="width: 100%;color: #000c4f;background: #ffff00;text-align: center;font-size: 16px;font-family: 'ITC Avant Garde Gothic Std Demi';font-weight: normal;margin-bottom: 0;padding-top: 1%;padding-bottom: 1%;border: 1px solid #ffff00 ;"><i class="fa fa-whatsapp"></i>&nbsp; Ir a whatsapp</h1>
             </div>
             <div class="carousel-item"><img class="w-100 d-block" src="/assets/img/IMAGEN3.png?h=5f06cb82cf49df28880ea16b787febc7" alt="Slide Image">
-                <h1 style="width: 100%;color: #000c4f;background: #ffff00;text-align: center;font-size: 16px;font-family: 'ITC Avant Garde Gothic Std Demi';font-weight: normal;margin-bottom: 0;padding-top: 1%;padding-bottom: 2%;"><i class="fa fa-whatsapp"></i>&nbsp; Ir a whatsapp</h1>
+                <h1 style="width: 100%;color: #fff;background: #000c4f;text-align: center;font-size: 16px;font-family: 'ITC Avant Garde Gothic Std Demi';font-weight: normal;margin-bottom: 0;padding-top: 1%;padding-bottom: 1%;border: 1px solid #000c4f ;"><i class="fa fa-whatsapp"></i>&nbsp; Ir a whatsapp</h1>
             </div>
             <div class="carousel-item"><img class="w-100 d-block" src="/assets/img/IMAGEN3.png?h=5f06cb82cf49df28880ea16b787febc7" alt="Slide Image">
-                <h1 style="width: 100%;color: #000c4f;background: #ffff00;text-align: center;font-size: 16px;font-family: 'ITC Avant Garde Gothic Std Demi';font-weight: normal;margin-bottom: 0;padding-top: 1%;padding-bottom: 2%;"><i class="fa fa-whatsapp"></i>&nbsp; Ir a whatsapp</h1>
+                <h1 style="width: 100%;color: #000c4f;background: #f2f2f2;text-align: center;font-size: 16px;font-family: 'ITC Avant Garde Gothic Std Demi';font-weight: normal;margin-bottom: 0;padding-top: 1%;padding-bottom: 1%;border-width: 1px;border-style: solid;"><i class="fa fa-whatsapp"></i>&nbsp; Ir a whatsapp</h1>
             </div>
         </div>
         <div style="width: 100%;color: var(--dark);">
@@ -57,7 +68,7 @@
                     <h1 style="font-size: 20px;color: #000c4f;width: 90%;margin-bottom: 1%;line-height: 0px;margin-top: 10%;font-family: 'ITC Avant Garde Gothic Std Demi';margin-left: 4%;"><strong>Soy turista</strong></h1>
                     <p style="width: 90%;margin-bottom: 4%;font-size: 12px;line-height: 12px;margin-top: 5%;font-weight: normal;font-family: 'Montserrat Regular';margin-left: 4%;">Sitios turísticos y de interés</p>
                 </div>
-                <div class="col-1 col-md-4" style="width: 12%;text-align: left;padding-left: 2%;padding-right: 0;padding-top: 7%;max-width: 12%;"><i class="fa fa-chevron-circle-right" style="color: #000C4F;margin-right: 0px;line-height: 0px;margin-left: 0;width: 100%;font-size: 20px;text-align: left;padding-top: 0;"></i></div>
+                <div class="col-1 col-md-4" style="width: 12%;text-align: left;padding-left: 2%;padding-right: 0;padding-top: 7%;max-width: 12%;"><i class="fa fa-arrow-circle-right" style="color: #000C4F;margin-right: 0px;line-height: 0px;margin-left: 0;width: 100%;font-size: 20px;text-align: left;padding-top: 0;"></i></div>
             </div>
         </div>
         <div class="container" style="width: 100%;text-align: center;padding-right: 0;padding-left: 0;border-radius: 0;border-width: 1px;border-style: none;border-top-style: none;border-right-style: none;border-bottom-width: 2px;border-bottom-style: none;border-left-style: none;">
@@ -67,7 +78,7 @@
                     <h1 style="font-size: 20px;color: #000c4f;width: 90%;margin-bottom: 1%;line-height: 0px;margin-top: 10%;font-family: 'ITC Avant Garde Gothic Std Demi';margin-left: 4%;"><strong>Directorio</strong></h1>
                     <p style="width: 90%;margin-bottom: 4%;font-size: 12px;line-height: 12px;margin-top: 5%;font-weight: normal;font-family: 'Montserrat Regular';margin-left: 4%;">Productos y servicios a domicilio</p>
                 </div>
-                <div class="col-1 col-md-4" style="width: 12%;text-align: left;padding-left: 2%;padding-right: 0;padding-top: 7%;max-width: 12%;"><i class="fa fa-chevron-circle-right" style="color: #000C4F;margin-right: 0px;line-height: 0px;margin-left: 0;width: 100%;font-size: 20px;text-align: left;padding-top: 0;"></i></div>
+                <div class="col-1 col-md-4" style="width: 12%;text-align: left;padding-left: 2%;padding-right: 0;padding-top: 7%;max-width: 12%;"><i class="fa fa-arrow-circle-right" style="color: #000C4F;margin-right: 0px;line-height: 0px;margin-left: 0;width: 100%;font-size: 20px;text-align: left;padding-top: 0;"></i></div>
             </div>
         </div>
         <div class="container" style="width: 100%;text-align: center;padding-right: 0;padding-left: 0;border-radius: 0;border-width: 1px;border-style: none;border-top-style: none;border-right-style: none;border-bottom-width: 2px;border-bottom-style: none;border-left-style: none;">
@@ -77,17 +88,17 @@
                     <h1 style="font-size: 20px;color: #000c4f;width: 90%;margin-bottom: 1%;line-height: 0px;margin-top: 10%;font-family: 'ITC Avant Garde Gothic Std Demi';margin-left: 4%;"><strong>Transporte</strong></h1>
                     <p style="width: 90%;margin-bottom: 4%;font-size: 12px;line-height: 12px;margin-top: 5%;font-weight: normal;font-family: 'Montserrat Regular';margin-left: 4%;">Servicio de Taxis, Mensajería y más</p>
                 </div>
-                <div class="col-1 col-md-4" style="width: 12%;text-align: left;padding-left: 2%;padding-right: 0;padding-top: 7%;max-width: 12%;"><i class="fa fa-chevron-circle-right" style="color: #000C4F;margin-right: 0px;line-height: 0px;margin-left: 0;width: 100%;font-size: 20px;text-align: left;padding-top: 0;"></i></div>
+                <div class="col-1 col-md-4" style="width: 12%;text-align: left;padding-left: 2%;padding-right: 0;padding-top: 7%;max-width: 12%;"><i class="fa fa-arrow-circle-right" style="color: #000C4F;margin-right: 0px;line-height: 0px;margin-left: 0;width: 100%;font-size: 20px;text-align: left;padding-top: 0;"></i></div>
             </div>
         </div>
         <div class="container" style="width: 100%;text-align: center;padding-right: 0;padding-left: 0;border-radius: 0;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;border-width: 1px;border-style: none;border-top-style: none;border-right-style: none;border-bottom-width: 1px;border-bottom-style: none;border-left-style: none;">
-            <div class="row" style="width: 100%;padding-left: 0%;text-align: left;margin-left: 0;margin-top: 0;margin-right: 0;padding-right: 0%;margin-bottom: 0;border-bottom-width: 1px;border-bottom-style: solid;">
+            <div class="row" style="width: 100%;padding-left: 0%;text-align: left;margin-left: 0;margin-top: 0;margin-right: 0;padding-right: 0%;margin-bottom: 0;border-bottom-width: 1px;border-bottom-style: none;">
                 <div class="col-md-4" style="width: 18%;padding: 0px;text-align: center;"><img style="width: 90%;font-size: 16px;text-align: center;line-height: 22px;filter: contrast(100%);margin-top: 15%;margin-right: 0px;margin-bottom: 0px;margin-left: 5%;" src="/assets/img/btn_emergencias.svg?h=8423bb7b591f09819c2c06a72d4cdd4c"></div>
                 <div class="col-9 col-md-4" style="width: 70%;padding: 0px;max-width: 70%;">
                     <h1 style="font-size: 20px;color: #000c4f;width: 90%;margin-bottom: 1%;line-height: 0px;margin-top: 10%;font-family: 'ITC Avant Garde Gothic Std Demi';margin-left: 4%;"><strong>Emergencias</strong></h1>
                     <p style="width: 90%;margin-bottom: 4%;font-size: 12px;line-height: 12px;margin-top: 5%;font-weight: normal;font-family: 'Montserrat Regular';margin-left: 4%;">Atención de emergencias y servicios públicos</p>
                 </div>
-                <div class="col-1 col-md-4" style="width: 12%;text-align: left;padding-left: 2%;padding-right: 0;padding-top: 7%;max-width: 12%;"><i class="fa fa-chevron-circle-right" style="color: #000C4F;margin-right: 0px;line-height: 0px;margin-left: 0;width: 100%;font-size: 20px;text-align: left;padding-top: 0;"></i></div>
+                <div class="col-1 col-md-4" style="width: 12%;text-align: left;padding-left: 2%;padding-right: 0;padding-top: 7%;max-width: 12%;"><i class="fa fa-arrow-circle-right" style="color: #000C4F;margin-right: 0px;line-height: 0px;margin-left: 0;width: 100%;font-size: 20px;text-align: left;padding-top: 0;"></i></div>
             </div>
         </div>
     </div><!-- End: 1 Row 3 Columns -->
@@ -101,7 +112,8 @@
         </footer>
     </div><!-- End: Footer Basic -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/script.min.js?h=bd0dca8f5a631769b5bd29b3b49e25e1"></script>
 </body>
 
 </html>

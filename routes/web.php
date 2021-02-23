@@ -22,6 +22,18 @@ Route::get('/index', function () {
 Route::get('/home', function () {
     return view('home');
 });
+// Ruta del Home
+Route::get('/directorio', function () {
+    return view('directorio');
+});
+// Ruta del Home
+Route::get('/emergencias', function () {
+    return view('emergencias');
+});
+// Ruta del Home
+Route::get('/transporte', function () {
+    return view('transporte');
+});
 
 
 
