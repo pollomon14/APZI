@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,29 +15,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Ruta index
-Route::get('/index', function () {
+Route::get('/', function () {
     return view('index');
 });
 
-// Ruta del Home
-Route::get('/home', function () {
-    return view('home');
-});
-// Ruta del Home
-Route::get('/directorio', function () {
-    return view('directorio');
-});
-// Ruta del Home
-Route::get('/emergencias', function () {
-    return view('emergencias');
-});
-// Ruta del Home
-Route::get('/transporte', function () {
-    return view('transporte');
-});
+Auth::routes();
+
+Route::get('/home', [
+    HomeController::class, 'index'
+])->name('home');
 
 
+Route::resource('categorias', App\Http\Controllers\categoriasController::class);
 
+Route::resource('emergencias', App\Http\Controllers\emergenciasController::class);
 
-Route::get('/', 'DestacadosController@index');
+Route::resource('subcategorias', App\Http\Controllers\subcategoriasController::class);

@@ -38,19 +38,14 @@
             </div>
         </div>
     </div><!-- End: 1 Row 2 Columns -->
-    <h1 style="width: 94%;margin-left: 3%;color: #000c4f;font-size: 30px;font-family: 'ITC Avant Garde Gothic Std Medium';border-bottom: 2px solid #000c4f;line-height: 27px;margin-top: 5%;">Emergencias</h1><!-- Start: 1 Row 2 Columns -->
+    <h1 style="width: 94%;margin-left: 3%;color: #000c4f;font-size: 30px;font-family: 'ITC Avant Garde Gothic Std Medium';border-bottom: 2px solid #000c4f;line-height: 27px;margin-top: 5%;">Taxis</h1><!-- Start: 1 Row 2 Columns -->
     <div style="text-align: center;margin-top: 5%;margin-bottom: 5%;">
         <div class="container">
             <div class="row" style="width: 98%;margin-left: 1%;margin-right: 0;border: 1px solid #000c4f;border-radius: 10px;">
-                <div class="col-md-6" style="width: 30%;padding-right: 0;padding-left: 0;">
-                    <div class="row d-flex align-items-center" style="height: 100%;">
-                        <div class="col"><img style="width: 80%;border-radius: 10px;margin-top: 2%;" src="/assets/img/btn_ambulancia.svg?h=129b9cb390f6e5edb88330299df7a7ce"></div>
-                    </div>
-                </div>
-                <div class="col-md-6" style="width: 70%;">
+                <div class="col-md-6" style="width: 100%;">
                     <div class="row" style="border-bottom: 1px solid #000c4f;border-left: 1px solid #000c4f;background: #ffff00;border-top-right-radius: 10px;">
                         <div class="col" style="width: 100%;padding-right: 0;padding-left: 0;">
-                            <h1 style="width: 90%;font-size: 14px;color: #000c4f;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 16px;margin-bottom: 0;text-align: center;margin-left: 5%;"><br>AMBULANCIA<br><br></h1>
+                            <h1 style="width: 90%;font-size: 14px;color: #000c4f;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 16px;margin-bottom: 0;text-align: center;margin-left: 5%;"><br>TLX806<br><br></h1>
                         </div>
                     </div>
                     <div class="row" style="background: #f2f2f2;border-bottom-right-radius: 10px;">
@@ -67,19 +62,49 @@
         <div class="container">
             <div class="row" style="width: 98%;margin-left: 1%;margin-right: 0;border: 1px solid #000c4f;border-radius: 10px;">
                 <div class="col-md-6" style="width: 30%;padding-right: 0;padding-left: 0;">
-                    <div class="row d-flex align-items-center">
-                        <div class="col" style="width: 100%;padding-right: 0px;padding-left: 0px;"><img style="width: 70%;border-radius: 10px;margin-top: 2%;" src="/assets/img/btn_policia.svg?h=5415a739e1dbc82494a3cb92ceef06c3"></div>
+                    <div class="row d-flex align-items-center" style="height: 70%;">
+                        <div class="col"><img style="width: 80%;border-radius: 10px;" src="/assets/img/btn_taxi.svg?h=123a90d3619935cae9df1122a072c356"></div>
                     </div>
-                    <div class="row" style="margin-right: 0;margin-left: 0;">
-                        <div class="col" style="padding-right: 0;padding-left: 0;"><i class="fa fa-map-marker rubberBand animated infinite" style="width: 100%;color: #000c4f;"></i>
-                            <h1 style="width: 100%;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';color: #000c4f;margin-bottom: 0px;line-height: 6px;">Ubicación</h1>
+                    <div class="row" style="height: 25%;margin-right: 0;margin-left: 0;">
+                        <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+                            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6" style="width: 70%;">
+                    <div class="row" style="border-bottom: 1px solid #000c4f;border-left: 1px solid #000c4f;background: #ffff00;">
+                        <div class="col" style="width: 100%;padding-right: 0;padding-left: 0;">
+                            <h1 style="width: 90%;font-size: 14px;color: #000c4f;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 16px;margin-bottom: 0;text-align: center;margin-left: 5%;"><br>JLC390<br><br></h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="border-bottom: 1px solid #000c4f;border-left: 1px solid #000c4f;padding-right: 0;padding-left: 0;">
+                            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;font-weight: normal;margin-bottom: 5%;"><br>Camilo Torres</h1>
+                        </div>
+                    </div>
+                    <div class="row" style="background: #f2f2f2;">
+                        <div class="col" style="width: 50%;padding-left: 0;padding-right: 0;border-top: 1px none #000c4f ;border-right: 1px solid #000c4f ;border-left: 1px solid #000c4f ;"><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone" style="color: #000c4f;"></i><i class="fa fa-angle-double-left" style="margin-left: 5%;color: #000c4f;"></i>
+                            <h1 style="font-size: 14px;width: 100%;color: #000c4f;line-height: 6px;font-family: 'ITC Avant Garde Gothic Std Medium';"><br>314 448 3232<br><br></h1>
+                        </div>
+                        <div class="col" style="width: 50%;padding-left: 0;padding-right: 0;"><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-whatsapp" style="color: #000c4f;"></i><i class="fa fa-angle-double-left" style="margin-left: 5%;color: #000c4f;"></i>
+                            <h1 style="font-size: 14px;width: 100%;color: #000c4f;line-height: 6px;font-family: 'ITC Avant Garde Gothic Std Medium';"><br>314 448 3232<br><br></h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="border-left: 1px solid #000c4f;background: #000c4f;font-size: 14px;color: #fff;padding-top: 3%;padding-bottom: 3%;padding-right: 0;padding-left: 0;border-bottom-right-radius: 10px;"><span style="font-size: 14px;font-family: 'Montserrat Regular';">Calificación</span><i class="fa fa-star" style="margin-left: 5%;color: #ffff00;"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End: 1 Row 2 Columns -->
+    <!-- Start: 1 Row 2 Columns -->
+    <div style="text-align: center;margin-top: 5%;margin-bottom: 5%;">
+        <div class="container">
+            <div class="row" style="width: 98%;margin-left: 1%;margin-right: 0;border: 1px solid #000c4f;border-radius: 10px;">
+                <div class="col-md-6" style="width: 100%;">
                     <div class="row" style="border-bottom: 1px solid #000c4f;border-left: 1px solid #000c4f;background: #ffff00;border-top-right-radius: 10px;">
                         <div class="col" style="width: 100%;padding-right: 0;padding-left: 0;">
-                            <h1 style="width: 90%;font-size: 14px;color: #000c4f;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 16px;margin-bottom: 0;text-align: center;margin-left: 5%;border-top-right-radius: 10px;"><br>POLICÍA NACIONAL<br><br></h1>
+                            <h1 style="width: 90%;font-size: 14px;color: #000c4f;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 16px;margin-bottom: 0;text-align: center;margin-left: 5%;border-top-right-radius: 10px;"><br>CENTRAL ASORADIO<br><br></h1>
                         </div>
                     </div>
                     <div class="row" style="background: #f2f2f2;">
@@ -88,7 +113,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col" style="border-left: 1px solid #000c4f;background: #000c4f;font-size: 14px;color: #fff;padding-right: 0;padding-left: 0;border-bottom-right-radius: 10px;">
+                        <div class="col" style="border-left: 1px solid #000c4f;background: #000c4f;font-size: 14px;color: #fff;padding-right: 0;padding-left: 0;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;">
                             <!-- Start: Mega Menu Dropdown 100% Editable - Ambrodu -->
                             <div class="dropdown megamenu" style="width: 100%;"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-toggle="dropdown" type="button" style="width: 100%;margin-right: 0;margin-bottom: 0;margin-left: 0;padding-right: 0;background: #000c4f;font-family: 'Montserrat Regular';border-bottom-style: none;border-bottom-color: #ffff00;border-bottom-right-radius: 10px;">Ver Más Números&nbsp;</button>
                                 <div class="dropdown-menu animate slideIn" style="background: #000c4f;">
