@@ -31,3 +31,15 @@ Route::resource('categorias', App\Http\Controllers\categoriasController::class);
 Route::resource('emergencias', App\Http\Controllers\emergenciasController::class);
 
 Route::resource('subcategorias', App\Http\Controllers\subcategoriasController::class);
+
+Route::resource('iconos', App\Http\Controllers\iconosController::class);
+
+Route::resource('eventos', App\Http\Controllers\eventosController::class);
+
+Route::resource('festivos', App\Http\Controllers\festivosController::class);
+
+Route::resource('horarios', App\Http\Controllers\horariosController::class);
+
+Route::resource('municipios', App\Http\Controllers\municipiosController::class);
+
+Route::resource('transporteCargas', App\Http\Controllers\transporte_cargaController::class);
