@@ -7,30 +7,31 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
- * Class eventos
+ * Class transporte_expresos
  * @package App\Models
- * @version April 9, 2021, 1:49 am UTC
+ * @version April 14, 2021, 2:40 am UTC
  *
- * @property string $imagen
- * @property string $titulo
- * @property string $descripcion
- * @property string $link
+ * @property string $placa
  * @property integer $id_icono
- * @property string $texto_boton
+ * @property string $nombre
+ * @property string $carroceria
+ * @property string $capacidad
+ * @property string $telefono
+ * @property string $whatsapp
+ * @property string $id_evento
+ * @property integer $id_horario
  * @property string $id_municipio
  * @property integer $habilitado
  * @property string $fecha_inicio
  * @property string $fecha_fin
- * @property integer $tipo
- * @property integer $id_destacado
  */
-class eventos extends Model
+class transporte_expresos extends Model
 {
     use SoftDeletes;
 
     use HasFactory;
 
-    public $table = 'eventos';
+    public $table = 'transporte_expresos';
     
 
     protected $dates = ['deleted_at'];
@@ -38,18 +39,19 @@ class eventos extends Model
 
 
     public $fillable = [
-        'imagen',
-        'titulo',
-        'descripcion',
-        'link',
+        'placa',
         'id_icono',
-        'texto_boton',
+        'nombre',
+        'carroceria',
+        'capacidad',
+        'telefono',
+        'whatsapp',
+        'id_evento',
+        'id_horario',
         'id_municipio',
         'habilitado',
         'fecha_inicio',
-        'fecha_fin',
-        'tipo',
-        'id_destacado'
+        'fecha_fin'
     ];
 
     /**
@@ -59,18 +61,19 @@ class eventos extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'imagen' => 'string',
-        'titulo' => 'string',
-        'descripcion' => 'string',
-        'link' => 'string',
+        'placa' => 'string',
         'id_icono' => 'integer',
-        'texto_boton' => 'string',
+        'nombre' => 'string',
+        'carroceria' => 'string',
+        'capacidad' => 'string',
+        'telefono' => 'string',
+        'whatsapp' => 'string',
+        'id_evento' => 'string',
+        'id_horario' => 'integer',
         'id_municipio' => 'string',
         'habilitado' => 'integer',
         'fecha_inicio' => 'date',
-        'fecha_fin' => 'date',
-        'tipo' => 'integer',
-        'id_destacado' => 'integer'
+        'fecha_fin' => 'date'
     ];
 
     /**
@@ -79,12 +82,12 @@ class eventos extends Model
      * @var array
      */
     public static $rules = [
-        'imagen' => 'required',
+        'placa' => 'required',
+        'telefono' => 'required',
+        'id_horario' => 'required',
         'id_municipio' => 'required',
         'habilitado' => 'required',
-        'fecha_inicio' => 'required',
-        'fecha_fin' => 'required',
-        'tipo' => 'required'
+        'fecha_inicio' => 'required'
     ];
 
     

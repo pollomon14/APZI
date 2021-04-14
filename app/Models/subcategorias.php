@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @version April 8, 2021, 3:56 am UTC
  *
  * @property string $nombre
+ * @property integer $habilitado
  */
 class subcategorias extends Model
 {
@@ -27,7 +28,8 @@ class subcategorias extends Model
 
 
     public $fillable = [
-        'nombre'
+        'nombre',
+        'habilitado'
     ];
 
     /**
@@ -37,7 +39,8 @@ class subcategorias extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'nombre' => 'string'
+        'nombre' => 'string',
+        'habilitado' => 'integer'
     ];
 
     /**
@@ -46,7 +49,8 @@ class subcategorias extends Model
      * @var array
      */
     public static $rules = [
-        'nombre' => 'required'
+        'nombre' => 'required',
+        'habilitado' => 'required'
     ];
 
     

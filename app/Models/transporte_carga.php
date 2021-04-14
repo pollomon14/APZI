@@ -16,9 +16,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property string $nombre
  * @property string $carroceria
  * @property string $capacidad
- * @property integer $telefono
+ * @property string $telefono
  * @property string $whatsapp
+ * @property string $id_evento
  * @property integer $id_horario
+ * @property string $id_municipio
+ * @property integer $habilitado
+ * @property string $fecha_inicio
+ * @property string $fecha_fin
  */
 class transporte_carga extends Model
 {
@@ -41,7 +46,13 @@ class transporte_carga extends Model
         'capacidad',
         'telefono',
         'whatsapp',
-        'id_horario'
+        'id_evento',
+        'id_horario',
+        'id_municipio',
+        'habilitado',
+        'fecha_inicio',
+        'fecha_fin'
+
     ];
 
     /**
@@ -56,9 +67,14 @@ class transporte_carga extends Model
         'nombre' => 'string',
         'carroceria' => 'string',
         'capacidad' => 'string',
-        'telefono' => 'integer',
+        'telefono' => 'string',
         'whatsapp' => 'string',
-        'id_horario' => 'integer'
+        'id_evento' => 'string',
+        'id_horario' => 'integer',
+        'id_municipio' => 'string',
+        'habilitado' => 'integer',
+        'fecha_inicio' => 'date',
+        'fecha_fin' => 'date',
     ];
 
     /**
@@ -68,11 +84,11 @@ class transporte_carga extends Model
      */
     public static $rules = [
         'placa' => 'required',
-        'id_icono' => 'required',
-        'carroceria' => 'required',
-        'capacidad' => 'required',
         'telefono' => 'required',
-        'id_horario' => 'required'
+        'id_horario' => 'required',
+        'id_municipio' => 'required',
+        'habilitado' => 'required',
+        'fecha_inicio' => 'required'
     ];
 
     

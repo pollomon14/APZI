@@ -43,3 +43,11 @@ Route::resource('horarios', App\Http\Controllers\horariosController::class);
 Route::resource('municipios', App\Http\Controllers\municipiosController::class);
 
 Route::resource('transporteCargas', App\Http\Controllers\transporte_cargaController::class);
+
+Route::resource('directorios', App\Http\Controllers\directorioController::class);
+
+Route::resource('transporteDomiciliarios', App\Http\Controllers\transporte_domiciliariosController::class);
+
+Route::resource('transporteExpresos', App\Http\Controllers\transporte_expresosController::class);
+
+Route::resource('transporteTaxes', App\Http\Controllers\transporte_taxisController::class);

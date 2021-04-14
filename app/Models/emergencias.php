@@ -18,8 +18,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property integer $id_municipio
  * @property string $maps
  * @property integer $tipo_servicio
- * @property string $html
- * @property integer $id_evento
+ * @property string $desplegable
+ * @property string $id_evento
  * @property integer $habilitado
  */
 class emergencias extends Model
@@ -43,7 +43,7 @@ class emergencias extends Model
         'id_municipio',
         'maps',
         'tipo_servicio',
-        'html',
+        'desplegable',
         'id_evento',
         'habilitado'
     ];
@@ -62,8 +62,8 @@ class emergencias extends Model
         'id_municipio' => 'integer',
         'maps' => 'string',
         'tipo_servicio' => 'integer',
-        'html' => 'string',
-        'id_evento' => 'integer',
+        'desplegable' => 'string',
+        'id_evento' => 'string',
         'habilitado' => 'integer'
     ];
 
@@ -74,7 +74,6 @@ class emergencias extends Model
      */
     public static $rules = [
         'nombre' => 'required',
-        'telefono' => 'required',
         'id_icono' => 'required',
         'id_municipio' => 'required',
         'tipo_servicio' => 'required',

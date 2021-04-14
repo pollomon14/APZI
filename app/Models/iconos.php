@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  *
  * @property string $nombre
  * @property string $link
+ * @property integer $habilitado
  */
 class iconos extends Model
 {
@@ -29,7 +30,8 @@ class iconos extends Model
 
     public $fillable = [
         'nombre',
-        'link'
+        'link',
+        'habilitado'
     ];
 
     /**
@@ -40,7 +42,8 @@ class iconos extends Model
     protected $casts = [
         'id' => 'integer',
         'nombre' => 'string',
-        'link' => 'string'
+        'link' => 'string',
+        'habilitado' => 'integer'
     ];
 
     /**
@@ -50,7 +53,8 @@ class iconos extends Model
      */
     public static $rules = [
         'nombre' => 'required',
-        'link' => 'required'
+        'link' => 'required',
+        'habilitado' => 'required'
     ];
 
     

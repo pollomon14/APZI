@@ -75,3 +75,35 @@
 </li>
 
 
+<li class="nav-item">
+    <a href="{{ route('directorios.index') }}"
+       class="nav-link {{ Request::is('directorios*') ? 'active' : '' }}">
+        <p>Directorios</p>
+    </a>
+</li>
+
+
+<li class="nav-item">
+    <a href="{{ route('transporteDomiciliarios.index') }}"
+       class="nav-link {{ Request::is('transporteDomiciliarios*') ? 'active' : '' }}">
+        <p>Transporte Domiciliarios</p>
+    </a>
+</li>
+
+
+<li class="nav-item">
+    <a href="{{ route('transporteExpresos.index') }}"
+       class="nav-link {{ Request::is('transporteExpresos*') ? 'active' : '' }}">
+        <p>Transporte Expresos</p>
+    </a>
+</li>
+
+
+<li class="nav-item">
+    <a href="{{ route('transporteTaxes.index') }}"
+       class="nav-link {{ Request::is('transporteTaxes*') ? 'active' : '' }}">
+        <p>Transporte Taxes</p>
+    </a>
+</li>
+
+
