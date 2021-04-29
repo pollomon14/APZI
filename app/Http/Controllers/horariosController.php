@@ -18,6 +18,7 @@ class horariosController extends AppBaseController
     public function __construct(horariosRepository $horariosRepo)
     {
         $this->horariosRepository = $horariosRepo;
+        $this->middleware('auth');
     }
 
     /**

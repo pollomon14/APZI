@@ -18,7 +18,19 @@
     @foreach($emergencias as $emergencia)
         <h5 class="card-title">{{ $emergencia->nombre }}</h5>
         <h5 class="card-title">{{ $emergencia->direccion }}</h5>
+        <h5 class="card-title">{{ $emergencia->telefono }}</h5>
+        @foreach($iconos as $icono)
+            @if ($emergencia->id_icono === $icono->id)
+                <img src = "{{ $icono->link }}"></img>
+                @break
+            @endif
+
+        @endforeach
+
+
     @endforeach
+
+
 
 
     <div style="text-align: center;margin-top: 5%;margin-bottom: 5%;">

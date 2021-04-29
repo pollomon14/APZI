@@ -18,6 +18,7 @@ class emergenciasController extends AppBaseController
     public function __construct(emergenciasRepository $emergenciasRepo)
     {
         $this->emergenciasRepository = $emergenciasRepo;
+        $this->middleware('auth');
     }
 
     /**
