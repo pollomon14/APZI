@@ -10,6 +10,12 @@
     <p>{{ $iconos->link }}</p>
 </div>
 
+<!-- Habiliado Field -->
+<div class="col-sm-12">
+    {!! Form::label('link', 'Link:') !!}
+    <p>{{ $iconos->habilitado }}</p>
+</div>
+
 <!-- Created At Field -->
 <div class="col-sm-12">
     {!! Form::label('created_at', 'Created At:') !!}

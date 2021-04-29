@@ -15,19 +15,25 @@ use App\Http\Controllers\HomeController;
 |
 */
 
+
+//Front
 Route::get('/', function () {
-    return view('index');
+    return view('/front/desplegable');
 });
+Route::get('/front/emergencias/{id}', 'App\Http\Controllers\FrontemergenciasController@index')->name('emergencias');
+
+Route::get('/front/index/{id}', 'App\Http\Controllers\FrontindexController@info')->name('index');;
+
+Route::get('/front/directorio/{id}', 'App\Http\Controllers\FrontdirectorioController@info')->name('directorio');;
 
 
-Route::get('/front/emergencias', 'App\Http\Controllers\FrontemergenciasController@index');
-
-Auth::routes();
+//Dashboard
 
 Route::get('/home', [
     HomeController::class, 'index'
 ])->name('home');
 
+Auth::routes();
 
 Route::resource('categorias', App\Http\Controllers\categoriasController::class);
 
