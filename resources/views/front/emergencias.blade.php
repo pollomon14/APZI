@@ -3,6 +3,7 @@
 @section('content')
 
 
+
     <div class="container" style="width: 100%;padding-right: 0px;padding-left: 0px;margin-top: 5%;text-align: center;">
         <figure class="figure" style="width: 20%;border-radius: 4px;border: 1px solid #000c4f;"><img class="img-fluid figure-img" style="width: 60%;margin-bottom: 40%;margin-top: 10%;" src="/assets/img/btn_emergencias.svg?h=76fa7052ed4ac591ce833a0418a2c3b6">
             <figcaption class="figure-caption" style="width: 100%;margin-left: 0px;font-size: 10px;background: #000c4f;font-family: 'ITC Avant Garde Gothic Std Medium';font-weight: normal;border-radius: 0;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;color: #fff;border-style: none;">Emergencias</figcaption>
@@ -12,6 +13,14 @@
         </figure>
     </div>
     <h1 style="width: 94%;margin-left: 3%;color: #000c4f;font-size: 30px;font-family: 'ITC Avant Garde Gothic Std Medium';border-bottom: 2px solid #000c4f;line-height: 27px;margin-top: 5%;">Emergencias</h1><!-- Start: 1 Row 2 Columns -->
+    <!-- aqui -->
+
+    @foreach($emergencias as $emergencia)
+        <h5 class="card-title">{{ $emergencia->nombre }}</h5>
+        <h5 class="card-title">{{ $emergencia->direccion }}</h5>
+    @endforeach
+
+
     <div style="text-align: center;margin-top: 5%;margin-bottom: 5%;">
         <div class="container">
             <div class="row" style="width: 98%;margin-left: 1%;margin-right: 0;border: 1px solid #000c4f;border-radius: 4px;">
@@ -38,9 +47,9 @@
                         <div class="bs4_sngl_cmrce_txt">
                             <h1>name of product, company plus modal number</h1>
                             <p  style="padding-top: 15px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam nibh. Nunc varius facilisis eros. Sed erat. In in velit quis arcu ornare laoreet. Curabitur adipiscing luctus massa.</p>
-                            
+
                         </div>
-                        
+
                     </div>
                 </div>
             </div>

@@ -16,8 +16,11 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', function () {
-    return view('emergencias');
+    return view('index');
 });
+
+
+Route::get('/front/emergencias', 'App\Http\Controllers\FrontemergenciasController@index');
 
 Auth::routes();
 
