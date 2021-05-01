@@ -5,6 +5,7 @@ namespace App\Models;
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Cviebrock\EloquentSluggable\Sluggable;
 
 /**
  * Class directorio
@@ -53,11 +54,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class directorio extends Model
 {
     use SoftDeletes;
-
+    use Sluggable;
     use HasFactory;
 
     public $table = 'directorios';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -169,5 +170,14 @@ class directorio extends Model
         'fecha_inicio' => 'required'
     ];
 
-    
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'nombre'
+            ]
+        ];
+    }
+
+
 }

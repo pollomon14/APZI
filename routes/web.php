@@ -26,6 +26,9 @@ Route::get('/front/index/{id}', 'App\Http\Controllers\FrontindexController@info'
 
 Route::get('/front/directorio/{id}', 'App\Http\Controllers\FrontdirectorioController@info')->name('directorio');;
 
+Route::get('/front/destacado/{id}{var}', 'App\Http\Controllers\FrontdirectorioController@local')->name('local');
+
+
 
 //Dashboard
 
