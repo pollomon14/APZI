@@ -13,7 +13,7 @@ class FrontemergenciasController extends Controller
     {
         $emergencias = emergencias::where('id_municipio',$var)->get();
         $iconos = iconos::orderBy('id', 'ASC')->get();
-        $eventos = eventos::where('id_municipio',$var)->get();
+        $eventos = eventos::orderBy('id', 'ASC')->get();
         $municipio = municipios::find($var);
         return view('front.emergencias',compact('emergencias','iconos','eventos','municipio'));
 

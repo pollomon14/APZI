@@ -28,6 +28,16 @@ Route::get('/front/directorio/{id}', 'App\Http\Controllers\FrontdirectorioContro
 
 Route::get('/front/destacado/{id}{var}', 'App\Http\Controllers\FrontdirectorioController@local')->name('local');
 
+Route::get('/front/carga/{id}', 'App\Http\Controllers\FronttransporteController@carga')->name('carga');
+
+Route::get('/front/expresos/{id}', 'App\Http\Controllers\FronttransporteController@expresos')->name('expresos');
+
+Route::get('/front/domiciliarios/{id}', 'App\Http\Controllers\FronttransporteController@domiciliarios')->name('domiciliarios');
+
+Route::get('/front/taxis/{id}', 'App\Http\Controllers\FronttransporteController@taxis')->name('taxis');
+
+Route::get('/front/turismo/{id}', 'App\Http\Controllers\FrontdirectorioController@turismo')->name('turismo');
+
 
 
 //Dashboard

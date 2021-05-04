@@ -81,9 +81,9 @@
         </div>
         <div id="content" style="border-style: none;height: 15%;">
             <div class="container container-topbar"><button class="btn btn-primary open-sidebar" type="button"
-                    style="margin: 0px;padding-left: 5%;padding-right: 5%;"><i class="fa fa-bars hamburger-btn"
+                    style="margin: 0px;padding-left: 1%;padding-right: 1%;"><i class="fa fa-bars hamburger-btn"
                         style="font-size: 24px;text-align: left;"></i></button><img style="width: 6%;"
-                    src="/assets/img/logo2.png?h=e0db7753f8fd551b90c78c404dde7209" />
+                    src="https://drive.google.com/uc?id=1qTTNaHsQRNqZeiv-F6rhwWS_yLvtO4N7" />
                 <div style="width: 60%;text-align: left;margin-left: 0%;"><a class="navbar-brand" href="#"
                         style="width: 100%;margin-right: 0;color: #fff;font-size: 16px;line-height: 10px;font-family: 'ITC Avant Garde Gothic Std Demi';">TODO
                         LO QUE NECESITAS</a><a class="navbar-brand" href="#"
@@ -119,7 +119,7 @@
     </div><!-- End: Collapsible sidebar left or right . Content overla -->
 
 @show
-<div class="container">
+<div class="container" style="padding: 0 !important;">
     @yield('content')
 </div>
 <!-- Start: Footer Basic -->

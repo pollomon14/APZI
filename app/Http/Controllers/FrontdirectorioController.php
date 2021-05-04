@@ -29,5 +29,14 @@ class FrontdirectorioController extends Controller
 
     }
 
+    public function turismo($var)
+    {
+        $directorio = directorio::where([['id_municipio',$var],['tipo_de_plan','5']])->paginate(5);
+        $iconos = iconos::orderBy('id', 'ASC')->get();
+        $eventos = eventos::where('id_municipio',$var)->get();
+        $municipio = municipios::find($var);
+        return view('front.turismo',compact('directorio','iconos','eventos','municipio'));
+
+    }
 
 }

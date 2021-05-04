@@ -88,11 +88,13 @@
                         style="width: 90%;margin-bottom: 4%;font-size: 12px;line-height: 12px;margin-top: 5%;font-weight: normal;font-family: 'Montserrat Regular';margin-left: 4%;">
                         Sitios turísticos y de interés</p>
                 </div>
+                <a href="{{ route('turismo', $municipio->id) }}">
                 <div class="col-1 col-md-4"
                     style="width: 12%;text-align: left;padding-left: 2%;padding-right: 0;padding-top: 7%;max-width: 12%;"><i
                         class="fa fa-arrow-circle-right"
                         style="color: #000C4F;margin-right: 0px;line-height: 0px;margin-left: 0;width: 100%;font-size: 20px;text-align: left;padding-top: 0;"></i>
                 </div>
+</a>
             </div>
         </div>
         <div class="container"
@@ -136,11 +138,13 @@
                         style="width: 90%;margin-bottom: 4%;font-size: 12px;line-height: 12px;margin-top: 5%;font-weight: normal;font-family: 'Montserrat Regular';margin-left: 4%;">
                         Servicio de Taxis, Mensajería y más</p>
                 </div>
+                <a href="{{ route('taxis', $municipio->id) }}">
                 <div class="col-1 col-md-4"
                     style="width: 12%;text-align: left;padding-left: 2%;padding-right: 0;padding-top: 7%;max-width: 12%;"><i
                         class="fa fa-arrow-circle-right"
                         style="color: #000C4F;margin-right: 0px;line-height: 0px;margin-left: 0;width: 100%;font-size: 20px;text-align: left;padding-top: 0;"></i>
                 </div>
+                </a>
             </div>
         </div>
         <div class="container"
