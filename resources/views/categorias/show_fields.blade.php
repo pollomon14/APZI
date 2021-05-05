@@ -4,6 +4,12 @@
     <p>{{ $categorias->nombre }}</p>
 </div>
 
+<!-- Habilitado Field -->
+<div class="col-sm-12">
+    {!! Form::label('habilitado', 'Habilitado:') !!}
+    <p>{{ $categorias->habilitado }}</p>
+</div>
+
 <!-- Created At Field -->
 <div class="col-sm-12">
     {!! Form::label('created_at', 'Created At:') !!}

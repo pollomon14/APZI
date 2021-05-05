@@ -21,7 +21,7 @@ class municipios extends Model
     use HasFactory;
 
     public $table = 'municipios';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -53,5 +53,9 @@ class municipios extends Model
         'habilitado' => 'required'
     ];
 
-    
+    public function emergencias(){
+        return $this->hasMany('App\Models\emergencias');
+    }
+
+
 }

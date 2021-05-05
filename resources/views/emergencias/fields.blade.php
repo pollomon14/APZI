@@ -19,13 +19,13 @@
 <!-- Id Icono Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('id_icono', 'Id Icono:') !!}
-    {!! Form::number('id_icono', null, ['class' => 'form-control']) !!}
+    {!! Form::select('id_icono', $iconosTotales, null, ['class' => 'form-control custom-select']) !!}
 </div>
 
 <!-- Id Municipio Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('id_municipio', 'Id Municipio:') !!}
-    {!! Form::number('id_municipio', null, ['class' => 'form-control']) !!}
+    {!! Form::select('id_municipio', $municipiosTotales, null, ['class' => 'form-control custom-select']) !!}
 </div>
 
 <!-- Maps Field -->
@@ -49,7 +49,7 @@
 <!-- Id Evento Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('id_evento', 'Id Evento:') !!}
-    {!! Form::number('id_evento', null, ['class' => 'form-control']) !!}
+    {!! Form::select('id_evento', $eventosTotales, null, ['class' => 'form-control custom-select']) !!}
 </div>
 
 <!-- Habilitado Field -->

@@ -9,9 +9,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 /**
  * Class categorias
  * @package App\Models
- * @version April 8, 2021, 2:59 am UTC
+ * @version May 3, 2021, 11:30 pm UTC
  *
  * @property string $nombre
+ * @property integer $habilitado
  */
 class categorias extends Model
 {
@@ -27,7 +28,8 @@ class categorias extends Model
 
 
     public $fillable = [
-        'nombre'
+        'nombre',
+        'habilitado'
     ];
 
     /**
@@ -37,7 +39,8 @@ class categorias extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'nombre' => 'string'
+        'nombre' => 'string',
+        'habilitado' => 'integer'
     ];
 
     /**
@@ -46,7 +49,8 @@ class categorias extends Model
      * @var array
      */
     public static $rules = [
-        'nombre' => 'required'
+        'nombre' => 'required',
+        'habilitado' => 'required'
     ];
 
     

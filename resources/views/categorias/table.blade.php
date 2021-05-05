@@ -3,6 +3,7 @@
         <thead>
             <tr>
                 <th>Nombre</th>
+        <th>Habilitado</th>
                 <th colspan="3">Action</th>
             </tr>
         </thead>
@@ -10,6 +11,7 @@
         @foreach($categorias as $categorias)
             <tr>
                 <td>{{ $categorias->nombre }}</td>
+            <td>{{ $categorias->habilitado }}</td>
                 <td width="120">
                     {!! Form::open(['route' => ['categorias.destroy', $categorias->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
