@@ -1,7 +1,9 @@
 <div class="table-responsive">
+    <input id="myInput" type="text" placeholder="Search.." class="form-control">
     <table class="table" id="emergencias-table">
         <thead>
             <tr>
+        <th>Action</th>
                 <th>Nombre</th>
         <th>Direccion</th>
         <th>Telefono</th>
@@ -12,37 +14,42 @@
         <th>Html</th>
         <th>Id Evento</th>
         <th>Habilitado</th>
-                <th colspan="3">Action</th>
+
             </tr>
         </thead>
-        <tbody>
-        @foreach($emergencias as $emergencias)
+        <tbody id="myTable">
+        @foreach($emergencias as $emergencia)
             <tr>
-                <td>{{ $emergencias->nombre }}</td>
-            <td>{{ $emergencias->direccion }}</td>
-            <td>{{ $emergencias->telefono }}</td>
-            <td>{{ $emergencias->iconos->nombre}}</td>
-            <td>{{ $emergencias->municipios->nombre }}</td>
-            <td>{{ $emergencias->maps }}</td>
-            <td>{{ $emergencias->tipo_servicio }}</td>
-            <td>{{ $emergencias->html }}</td>
-            <td>{{ $emergencias->eventos->titulo }}</td>
-            <td>{{ $emergencias->habilitado }}</td>
                 <td width="120">
-                    {!! Form::open(['route' => ['emergencias.destroy', $emergencias->id], 'method' => 'delete']) !!}
+                    {!! Form::open(['route' => ['emergencias.destroy', $emergencia->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
-                        <a href="{{ route('emergencias.show', [$emergencias->id]) }}" class='btn btn-default btn-xs'>
+                        <a href="{{ route('emergencias.show', [$emergencia->id]) }}" class='btn btn-default btn-xs'>
                             <i class="far fa-eye"></i>
                         </a>
-                        <a href="{{ route('emergencias.edit', [$emergencias->id]) }}" class='btn btn-default btn-xs'>
+                        <a href="{{ route('emergencias.edit', [$emergencia->id]) }}" class='btn btn-default btn-xs'>
                             <i class="far fa-edit"></i>
                         </a>
                         {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
                     </div>
                     {!! Form::close() !!}
                 </td>
+
+                <td>{{ $emergencia->nombre }}</td>
+            <td>{{ $emergencia->direccion }}</td>
+            <td>{{ $emergencia->telefono }}</td>
+            <td>{{ $emergencia->iconos->nombre}}</td>
+            <td>{{ $emergencia->municipios->nombre }}</td>
+            <td>{{ $emergencia->maps }}</td>
+            <td>{{ $emergencia->tipo_servicio }}</td>
+            <td>{{ $emergencia->html }}</td>
+            <td>{{ $emergencia->eventos->titulo }}</td>
+            <td>{{ $emergencia->habilitado }}</td>
+
             </tr>
         @endforeach
+
         </tbody>
     </table>
+
 </div>
+
