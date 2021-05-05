@@ -38,6 +38,7 @@ Route::get('/front/taxis/{id}', 'App\Http\Controllers\FronttransporteController@
 
 Route::get('/front/turismo/{id}', 'App\Http\Controllers\FrontdirectorioController@turismo')->name('turismo');
 
+Route::get('/front/ofertas/{id}', 'App\Http\Controllers\FronteventosController@index')->name('eventos');
 
 
 //Dashboard
