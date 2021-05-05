@@ -21,12 +21,12 @@
                 <td>{{ $emergencias->nombre }}</td>
             <td>{{ $emergencias->direccion }}</td>
             <td>{{ $emergencias->telefono }}</td>
-            <td>{{ $emergencias->id_icono }}</td>
-            <td>{{ $emergencias->id_municipio }}</td>
+            <td>{{ $emergencias->iconos->nombre}}</td>
+            <td>{{ $emergencias->municipios->nombre }}</td>
             <td>{{ $emergencias->maps }}</td>
             <td>{{ $emergencias->tipo_servicio }}</td>
             <td>{{ $emergencias->html }}</td>
-            <td>{{ $emergencias->id_evento }}</td>
+            <td>{{ $emergencias->eventos->titulo }}</td>
             <td>{{ $emergencias->habilitado }}</td>
                 <td width="120">
                     {!! Form::open(['route' => ['emergencias.destroy', $emergencias->id], 'method' => 'delete']) !!}

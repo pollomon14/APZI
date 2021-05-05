@@ -31,7 +31,7 @@ class eventos extends Model
     use HasFactory;
 
     public $table = 'eventos';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -87,5 +87,8 @@ class eventos extends Model
         'tipo' => 'required'
     ];
 
-    
+    public function emergencias(){
+        return $this->hasMany('App\Models\emergencias');
+    }
+
 }

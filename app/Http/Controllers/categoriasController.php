@@ -42,7 +42,11 @@ class categoriasController extends AppBaseController
      */
     public function create()
     {
-        return view('categorias.create');
+        $opcion = [
+            [1 => 'Habilitado'],
+            [0=> 'Deshabilitado'],
+        ];
+        return view('categorias.create',compact('opcion'));
     }
 
     /**
@@ -93,16 +97,19 @@ class categoriasController extends AppBaseController
     public function edit($id)
     {
         $categorias = $this->categoriasRepository->find($id);
-
+        $opcion = [
+            [1 => 'Habilitado'],
+            [0=> 'Deshabilitado'],
+        ];
         if (empty($categorias)) {
             Flash::error('Categorias not found');
 
             return redirect(route('categorias.index'));
         }
 
-        return view('categorias.edit')->with('categorias', $categorias);
-    }
+        return view('categorias.edit',compact('categorias','opcion'));
 
+    }
     /**
      * Update the specified categorias in storage.
      *

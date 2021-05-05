@@ -22,7 +22,7 @@ class iconos extends Model
     use HasFactory;
 
     public $table = 'iconos';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -57,5 +57,9 @@ class iconos extends Model
         'habilitado' => 'required'
     ];
 
-    
+    public function emergencias(){
+        return $this->hasMany('App\Models\emergencias');
+    }
+
+
 }

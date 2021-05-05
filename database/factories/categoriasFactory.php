@@ -23,6 +23,7 @@ class categoriasFactory extends Factory
     {
         return [
             'nombre' => $this->faker->word,
+        'habilitado' => $this->faker->randomDigitNotNull,
         'created_at' => $this->faker->date('Y-m-d H:i:s'),
         'updated_at' => $this->faker->date('Y-m-d H:i:s')
         ];

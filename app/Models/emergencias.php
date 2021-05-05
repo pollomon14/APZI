@@ -29,7 +29,7 @@ class emergencias extends Model
     use HasFactory;
 
     public $table = 'emergencias';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -80,5 +80,19 @@ class emergencias extends Model
         'habilitado' => 'required'
     ];
 
-    
+
+
+    public function iconos(){
+        return $this->belongsTo('App\Models\iconos','id_icono');
+    }
+
+    public function municipios(){
+        return $this->belongsTo('App\Models\municipios','id_municipio');
+    }
+
+    public function eventos(){
+        return $this->belongsTo('App\Models\eventos','id_evento');
+    }
+
+
 }

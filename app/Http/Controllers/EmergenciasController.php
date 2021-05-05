@@ -9,6 +9,9 @@ use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
+use App\Models\iconos;
+use App\Models\municipios;
+use App\Models\eventos;
 
 class emergenciasController extends AppBaseController
 {
@@ -43,7 +46,10 @@ class emergenciasController extends AppBaseController
      */
     public function create()
     {
-        return view('emergencias.create');
+        $iconosTotales= iconos::pluck('nombre','id');
+        $eventosTotales= eventos::pluck('titulo','id');
+        $municipiosTotales= municipios::pluck('nombre','id');
+        return view('emergencias.create',compact('iconosTotales','municipiosTotales','eventosTotales'));
     }
 
     /**
@@ -101,7 +107,11 @@ class emergenciasController extends AppBaseController
             return redirect(route('emergencias.index'));
         }
 
-        return view('emergencias.edit')->with('emergencias', $emergencias);
+        $iconosTotales= iconos::pluck('nombre','id');
+        $eventosTotales= eventos::pluck('titulo','id');
+        $municipiosTotales= municipios::pluck('nombre','id');
+        return view('emergencias.edit',compact('iconosTotales','municipiosTotales','eventosTotales','emergencias'));
+
     }
 
     /**

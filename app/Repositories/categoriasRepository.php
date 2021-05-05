@@ -8,7 +8,7 @@ use App\Repositories\BaseRepository;
 /**
  * Class categoriasRepository
  * @package App\Repositories
- * @version April 8, 2021, 2:59 am UTC
+ * @version May 3, 2021, 11:30 pm UTC
 */
 
 class categoriasRepository extends BaseRepository
@@ -17,7 +17,8 @@ class categoriasRepository extends BaseRepository
      * @var array
      */
     protected $fieldSearchable = [
-        'nombre'
+        'nombre',
+        'habilitado'
     ];
 
     /**
