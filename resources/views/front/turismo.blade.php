@@ -1,4 +1,4 @@
-@extends('layouts.apzi')
+@extends('layouts.turismo')
 
 @section('content')
 

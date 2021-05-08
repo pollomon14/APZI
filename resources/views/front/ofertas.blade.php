@@ -10,7 +10,7 @@
 
       <!-- Gallery item -->
       <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-        <div class="bg-white rounded shadow-sm" style="border:1px solid #000c4f !important; border-radius: 4px !important;     box-shadow: 0px 2px 15px -3px #000 !important;"> <img src="https://drive.google.com/uc?id={{$even->imagen}}" alt="" class="img-fluid card-img-top" style="width:100%!important; ">
+        <div class="bg-white rounded shadow-sm" style="border:1px solid #000c4f !important; border-radius: 4px !important;     box-shadow: 0px 2px 15px -3px #000 !important;"> <img src="https://drive.google.com/uc?id={{$even->imagen}}" alt="" class="img-fluid card-img-top" style="width:100%!important; height:200px;">
           <h3 style="font-size: 23px; font-family: 'ITC Avant Garde Gothic Std Demi';margin:3%; text-align:center; color: #000c4f;">{{$even->titulo}}</h3>
 	
 		  <div class="p-4" style="padding: 0rem!important;">

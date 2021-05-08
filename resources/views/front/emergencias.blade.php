@@ -130,6 +130,13 @@
                     </div>
                 </div>
                 @if (!is_null($emergencia->desplegable))
+                @php
+                                                $var= $emergencia->desplegable;
+                                                $i = substr_count($var,"|");
+                                                $var2= explode("|" ,$var);
+                                                $var3= explode("-",$var2[0]);
+
+                                            @endphp
                 <div class="row">
                     <div class="col" style="border-left: 1px solid #000c4f;background: #000c4f;font-size: 14px;color: #fff;padding-right: 0;padding-left: 0;border-bottom-right-radius: 10px;">
                         <!-- Start: Mega Menu Dropdown 100% Editable - Ambrodu -->
@@ -138,7 +145,11 @@
                                 <div class="container" style="padding-bottom: 0;">
                                     <div class="row">
                                         <div class="col-md-4">
-                                            {{ $emergencia->desplegable }}
+                                        
+                                        <hr style="background: #ffff00;">
+                                        <a href="tel:{{$var3[0]}}">
+                                                <h5 class="text-white" style="font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;"><i class="fa fa-phone" style="margin-right: 5%;margin-left: 5%;"></i>{{$var2[0]}}</h5>
+                                              </a>
                                         </div>
                                     </div>
                                 </div>

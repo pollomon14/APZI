@@ -225,22 +225,30 @@
             <div class="row" style="background: #f2f2f2;">
                 <div class="col"
                     style="width: 50%;padding-left: 0;padding-right: 0;border-top: 1px none #000c4f ;border-right: 1px solid #000c4f ;border-left: 1px solid #000c4f ;">
-                    <a href="tel:{{ $dir->telefono }}"><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
+                    @php
+                                                $var= $dir->telefono;
+                                                $var2= explode("|" ,$var);
+                                            @endphp
+                    <a href="tel:{{ $var2[0] }}"><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
                         style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
                         style="margin-left: 5%;color: #000c4f;"></i>
                     <h1
                         style="font-size: 14px;width: 100%;color: #000c4f;line-height: 6px;font-family: 'ITC Avant Garde Gothic Std Medium';">
-                        <br>{{ $dir->telefono }}<br><br>
+                        <br>{{ $var2[0] }}<br><br>
                     </h1></a>
                 </div>
                 <div class="col" style="width: 50%;padding-left: 0;padding-right: 0;">
-                <a href="https://api.whatsapp.com/send?phone=+57%20{{ $dir->whatsapp }}"><i class="fa fa-angle-double-right"
+                @php
+                                                $var= $dir->whatsapp;
+                                                $var2= explode("|" ,$var);
+                                            @endphp
+                <a href="https://api.whatsapp.com/send?phone=+57%20{{ $var2[0]  }}"><i class="fa fa-angle-double-right"
                         style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-whatsapp"
                         style="color: #000c4f;font-weight: bold;"></i><i class="fa fa-angle-double-left"
                         style="margin-left: 5%;color: #000c4f;"></i>
                     <h1
                         style="font-size: 14px;width: 100%;color: #000c4f;line-height: 6px;font-family: 'ITC Avant Garde Gothic Std Medium';">
-                        <br>{{ $dir->whatsapp }}<br><br>
+                        <br>{{ $var2[0] }}<br><br>
                     </h1></a>
                 </div>
             </div>
@@ -248,25 +256,33 @@
             <div class="row" style="background: #f2f2f2;">
                 <div class="col"
                     style="width: 100%;padding-left: 0;padding-right: 0;border-top: 1px none #000c4f ;border-left: 1px solid #000c4f ;">
-                    <a href="tel:{{ $dir->telefono }}"><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
+                    @php
+                                                $var= $dir->telefono;
+                                                $var2= explode("|" ,$var);
+                                            @endphp
+                    <a href="tel:{{ $var2[0] }}"><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
                         style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
                         style="margin-left: 5%;color: #000c4f;"></i>
                     <h1
                         style="font-size: 14px;width: 100%;color: #000c4f;line-height: 6px;font-family: 'ITC Avant Garde Gothic Std Medium';">
-                        <br>{{ $dir->telefono }}<br><br>
+                        <br>{{ $var2[0] }}<br><br>
                     </h1></a>
                 </div>
             </div>
             @elseif (is_null($dir->telefono)&&!is_null($dir->whatsapp))
             <div class="row" style="background: #f2f2f2;">
                 <div class="col" style="width: 100%;padding-left: 0;padding-right: 0; border-left: 1px solid #000c4f ;">
-                <a href="https://api.whatsapp.com/send?phone=+57%20{{ $dir->whatsapp }}"><i class="fa fa-angle-double-right"
+                @php
+                                                $var= $dir->whatsapp;
+                                                $var2= explode("|" ,$var);
+                                            @endphp
+                <a href="https://api.whatsapp.com/send?phone=+57%20{{ $var2[0] }}"><i class="fa fa-angle-double-right"
                         style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-whatsapp"
                         style="color: #000c4f;font-weight: bold;"></i><i class="fa fa-angle-double-left"
                         style="margin-left: 5%;color: #000c4f;"></i>
                     <h1
                         style="font-size: 14px;width: 100%;color: #000c4f;line-height: 6px;font-family: 'ITC Avant Garde Gothic Std Medium';">
-                        <br>{{ $dir->whatsapp }}<br><br>
+                        <br>{{ $var2[0] }}<br><br>
                     </h1></a>
                 </div>
             </div>
@@ -353,22 +369,29 @@
             <div class="row" style="background: #f2f2f2;">
                 <div class="col"
                     style="width: 50%;padding-left: 0;padding-right: 0;border-top: 1px none #000c4f ;border-right: 1px solid #000c4f ;border-left: 1px solid #000c4f ;">
-                    <a href="tel:{{ $dir->telefono }}"><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
+                    @php
+                                                $var= $dir->telefono;
+                                                $var2= explode("|" ,$var);
+                                            @endphp<a href="tel:{{ $var2[0] }}"><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
                         style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
                         style="margin-left: 5%;color: #000c4f;"></i>
                     <h1
                         style="font-size: 14px;width: 100%;color: #000c4f;line-height: 6px;font-family: 'ITC Avant Garde Gothic Std Medium';">
-                        <br>{{ $dir->telefono }}<br><br>
+                        <br>{{ $var2[0] }}<br><br>
                     </h1></a>
                 </div>
                 <div class="col" style="width: 50%;padding-left: 0;padding-right: 0;">
-                <a href="https://api.whatsapp.com/send?phone=+57%20{{ $dir->whatsapp }}"><i class="fa fa-angle-double-right"
+                @php
+                                                $var= $dir->whatsapp;
+                                                $var2= explode("|" ,$var);
+                                            @endphp
+                <a href="https://api.whatsapp.com/send?phone=+57%20{{ $var2[0] }}"><i class="fa fa-angle-double-right"
                         style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-whatsapp"
                         style="color: #000c4f;font-weight: bold;"></i><i class="fa fa-angle-double-left"
                         style="margin-left: 5%;color: #000c4f;"></i>
                     <h1
                         style="font-size: 14px;width: 100%;color: #000c4f;line-height: 6px;font-family: 'ITC Avant Garde Gothic Std Medium';">
-                        <br>{{ $dir->whatsapp }}<br><br>
+                        <br>{{ $var2[0] }}<br><br>
                     </h1></a>
                 </div>
             </div>
@@ -440,13 +463,17 @@
                             <div class="row" style="background: #f2f2f2;">
                                 <div class="col"
                                     style="width: 50%;padding-left: 0;padding-right: 0;border-top: 1px none #000c4f ;border-right: 1px none #000c4f ;border-left: 1px solid #000c4f ;">
-                                    <a href="tel:{{ $dir->telefono }}"><h1
+                                    @php
+                                                $var= $dir->telefono;
+                                                $var2= explode("|" ,$var);
+                                            @endphp
+                                    <a href="tel:{{ $var2[0] }}"><h1
                                         style="font-size: 14px;width: 100%;color: #000c4f;line-height: 6px;font-family: 'ITC Avant Garde Gothic Std Medium';margin-bottom: 0;padding-bottom: 1%;padding-top: 1%;">
                                         <br><i class="fa fa-angle-double-right"
                                             style="color: #000c4f;margin-right: 2%;"></i><i class="fa fa-phone"
                                             style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
                                             style="color: #000c4f;margin-left: 2%;"></i>&nbsp;
-                                        {{ $dir->telefono }}<br><br>
+                                        {{ $var2[0] }}<br><br>
                                     </h1></a>
                                 </div>
                             </div>
