@@ -43,29 +43,36 @@
             </center>
             <div class="sidebar-content">
                <!-- Start: Mega Menu Dropdown 100% Editable - Ambrodu -->
-               <div class="dropdown megamenu" style="width: 100%;margin-left: 5%; padding-bottom: 2%; padding-top: 2%;"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-toggle="dropdown" type="button" style="padding-top: 2%;margin:0;width:90%; padding-bottom: 2%; border-radius: 4px; background: #fff; color: #000c4f; font-size: 13px; border: 1px solid #000c4f; font-family: 'ITC Avant Garde Gothic Std Demi'; text-align: left;"><img
-               src="https://drive.google.com/uc?id=1xDU4W7xLL5DxeT-dynTqEIAULx3EEtQg"
-                        style="width: 15%; margin-right:5%;" />Elige Tu Idioma&nbsp;</button>
-                            <div class="dropdown-menu animate slideIn" style="background: #fff; width:90%">
-                                <div class="container" style="padding-bottom: 0;">
-                                    <div class="row">
-                                        <div class="col-md-4" style="padding: 0; width: 88%; border: 1px solid #000c4f; border-radius: 0px 0 4px 4px;">
-                                        
-                                        <hr style="background: #000c4f;">
-                                                <h5 style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;"><i class="fas fa-flag-usa" style="margin-right: 5%;margin-left: 5%;"></i>Ingles</h5>
-                                                <hr style="background: #000c4f;">
-                                                <h5 style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;"><i class="fa fa-phone" style="margin-right: 5%;margin-left: 5%;"></i>Español</h5>
-                                                <hr style="background: #000c4f;">
-                                                <h5 style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;"><i class="fa fa-phone" style="margin-right: 5%;margin-left: 5%;"></i>Frances</h5>
-                                                <hr style="background: #000c4f;">
-                                                <h5 style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;"><i class="fa fa-phone" style="margin-right: 5%;margin-left: 5%;"></i>Portugues</h5>
-                                                <hr style="background: #000c4f;">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- End: Mega Menu Dropdown 100% Editable - Ambrodu -->  
-                                       <!-- Start: Mega Menu Dropdown 100% Editable - Ambrodu -->
+
+<!-- GTranslate: https://gtranslate.io/ -->
+<a href="#" onclick="doGTranslate('es|en');return false;" title="English" class="gflag nturl" style="background-position:-0px -0px;"><img src="//gtranslate.net/flags/blank.png" height="16" width="16" alt="English" /></a><a href="#" onclick="doGTranslate('es|fr');return false;" title="French" class="gflag nturl" style="background-position:-200px -100px;"><img src="//gtranslate.net/flags/blank.png" height="16" width="16" alt="French" /></a><a href="#" onclick="doGTranslate('es|de');return false;" title="German" class="gflag nturl" style="background-position:-300px -100px;"><img src="//gtranslate.net/flags/blank.png" height="16" width="16" alt="German" /></a><a href="#" onclick="doGTranslate('es|it');return false;" title="Italian" class="gflag nturl" style="background-position:-600px -100px;"><img src="//gtranslate.net/flags/blank.png" height="16" width="16" alt="Italian" /></a><a href="#" onclick="doGTranslate('es|pt');return false;" title="Portuguese" class="gflag nturl" style="background-position:-300px -200px;"><img src="//gtranslate.net/flags/blank.png" height="16" width="16" alt="Portuguese" /></a><a href="#" onclick="doGTranslate('es|ru');return false;" title="Russian" class="gflag nturl" style="background-position:-500px -200px;"><img src="//gtranslate.net/flags/blank.png" height="16" width="16" alt="Russian" /></a><a href="#" onclick="doGTranslate('es|es');return false;" title="Spanish" class="gflag nturl" style="background-position:-600px -200px;"><img src="//gtranslate.net/flags/blank.png" height="16" width="16" alt="Spanish" /></a>
+
+<style type="text/css">
+<!--
+a.gflag {vertical-align:middle;font-size:16px;padding:1px 0;background-repeat:no-repeat;background-image:url(//gtranslate.net/flags/16.png);}
+a.gflag img {border:0;}
+a.gflag:hover {background-image:url(//gtranslate.net/flags/16a.png);}
+#goog-gt-tt {display:none !important;}
+.goog-te-banner-frame {display:none !important;}
+.goog-te-menu-value:hover {text-decoration:none !important;}
+body {top:0 !important;}
+#google_translate_element2 {display:none!important;}
+-->
+</style>
+
+<div id="google_translate_element2"></div>
+<script type="text/javascript">
+function googleTranslateElementInit2() {new google.translate.TranslateElement({pageLanguage: 'es',autoDisplay: false}, 'google_translate_element2');}
+</script><script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2"></script>
+
+
+<script type="text/javascript">
+/* <![CDATA[ */
+eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('6 7(a,b){n{4(2.9){3 c=2.9("o");c.p(b,f,f);a.q(c)}g{3 c=2.r();a.s(\'t\'+b,c)}}u(e){}}6 h(a){4(a.8)a=a.8;4(a==\'\')v;3 b=a.w(\'|\')[1];3 c;3 d=2.x(\'y\');z(3 i=0;i<d.5;i++)4(d[i].A==\'B-C-D\')c=d[i];4(2.j(\'k\')==E||2.j(\'k\').l.5==0||c.5==0||c.l.5==0){F(6(){h(a)},G)}g{c.8=b;7(c,\'m\');7(c,\'m\')}}',43,43,'||document|var|if|length|function|GTranslateFireEvent|value|createEvent||||||true|else|doGTranslate||getElementById|google_translate_element2|innerHTML|change|try|HTMLEvents|initEvent|dispatchEvent|createEventObject|fireEvent|on|catch|return|split|getElementsByTagName|select|for|className|goog|te|combo|null|setTimeout|500'.split('|'),0,{}))
+/* ]]> */
+</script>
+
+
                  <div class="dropdown megamenu" style="width: 100%;margin-left: 5%;  padding-bottom: 2%; padding-top: 2%;"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-toggle="dropdown" type="button" style="padding-top: 2%;margin:0;width:90%; padding-bottom: 2%; border-radius: 4px; background: #fff; color: #000c4f; font-size: 13px; border: 1px solid #000c4f; font-family: 'ITC Avant Garde Gothic Std Demi'; text-align: left;"><img
                         src="/assets/img/mapa.svg?h=d408d38985f98701d1e716a42e786cdf"
                         style="width: 15%; margin-right:5%;" />Elige Tu Ciudad&nbsp;</button>
@@ -73,7 +80,7 @@
                                 <div class="container" style="padding-bottom: 0;">
                                     <div class="row">
                                         <div class="col-md-4" style="padding: 0; width: 88%; border: 1px solid #000c4f; border-radius: 0px 0 4px 4px;">
-                                        
+
                                         <hr style="background: #000c4f;">
                                                 <h5 style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;"><i class="fas fa-flag-usa" style="margin-right: 5%;margin-left: 5%;"></i>Zipaquira</h5>
                                                 <hr style="background: #000c4f;">
@@ -91,12 +98,12 @@
                                     </div>
                                 </div>
                             </div>
-                        </div><!-- End: Mega Menu Dropdown 100% Editable - Ambrodu -->  
+                        </div><!-- End: Mega Menu Dropdown 100% Editable - Ambrodu -->
                         <hr style="background: #000c4f;">
                 <a class="btn btn-primary w-100 sidebar-btn" role="button" href="/"
                     style="padding-top: 2%; padding-bottom: 2%; border-radius: 4px; background: #fff; color: #000c4f; font-size: 13px; border: 1px solid #000c4f; font-family: 'ITC Avant Garde Gothic Std Demi'; text-align: left;"><img
                         src="/assets/img/casa.svg?h=7334c2a44666ed6638f133cd6da94fa7"
-                        style="width: 15%; margin-right:5%;" />Inicio</a>     
+                        style="width: 15%; margin-right:5%;" />Inicio</a>
                 <a class="btn btn-primary w-100 sidebar-btn" role="button" href="#"
                     style="padding-top: 2%; padding-bottom: 2%; border-radius: 4px; background: #fff; color: #000c4f; font-size: 13px; border: 1px solid #000c4f; font-family: 'ITC Avant Garde Gothic Std Demi'; text-align: left;"><img
                         src="/assets/img/btn_soy_turista.svg?h=e09bcde756e83b96e09615f2248cc955"
