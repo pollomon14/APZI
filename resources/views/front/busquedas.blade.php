@@ -2,7 +2,8 @@
 
 @section('content')
 
-    @foreach ($directorio as $dir)
+    @foreach ($directorios as $dir)
+
 
         @if ($dir->tipo_de_plan === 1)
             <!-- Start: 1 Row 2 Columns -->
@@ -34,7 +35,7 @@
                                     </h1>
                                 </div>
                             </div>
-                            
+
                             @if (!is_null($dir->direccion)&& is_null($dir->telefono))
                             <div class="row">
                                 <div class="col"
@@ -91,6 +92,6 @@
 
 
     @endforeach
-    {{ $directorio->links() }}
+
     @include('front.menugeneral')
 @endsection

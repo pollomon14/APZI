@@ -15,7 +15,6 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-
 //Front
 Route::get('/', function () {
     return view('/front/desplegable');
@@ -41,6 +40,14 @@ Route::get('/front/taxis/{id}', 'App\Http\Controllers\FronttransporteController@
 Route::get('/front/turismo/{id}', 'App\Http\Controllers\FrontdirectorioController@turismo')->name('turismo');
 
 Route::get('/front/ofertas/{id}', 'App\Http\Controllers\FronteventosController@index')->name('eventos');
+
+
+Route::get('/front/busquedas/', function () {
+    return view('/front/busquedas');
+});
+
+
+Route::post('/front/busquedas/', 'App\Http\Controllers\FrontbusquedaController@search')->name('busquedas');
 
 
 //Dashboard
