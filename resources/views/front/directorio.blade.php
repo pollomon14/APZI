@@ -4,7 +4,7 @@
 
 
     <!-- Start: 1 Row 2 Columns -->
-    <div style="width: 100%;border-style: none;margin-top: 0%;">
+    <div style="width: 100%;border-style: none;margin-top: 0%;    padding-top: 20%;">
         <div class="container" style="padding-left: 0;padding-right: 0;width: 100%;border-style: none;">
             <div class="row"
                 style="width: 100%;margin-right: 0;margin-left: 0;margin-top: 0px;border-style: none;border-top: 1px solid #000c4f ;">

@@ -3,7 +3,7 @@
 @section('content')
 
 
-    <div class="carousel slide" data-ride="carousel" id="carousel-1" style="border-style: none;">
+    <div class="carousel slide" data-ride="carousel" id="carousel-1" style="border-style: none;padding-top: 20%;">
         <div class="carousel-inner">
             <div class="carousel-item active"><img class="w-100 d-block"
                     src="/assets/img/IMAGEN3.png?h=5f06cb82cf49df28880ea16b787febc7" alt="Slide Image">

@@ -20,6 +20,8 @@ use App\Http\Controllers\HomeController;
 Route::get('/', function () {
     return view('/front/desplegable');
 });
+Route::get('/front/mapa/{id}', 'App\Http\Controllers\FrontindexController@mapa')->name('mapa');
+
 Route::get('/front/emergencias/{id}', 'App\Http\Controllers\FrontemergenciasController@index')->name('emergencias');
 
 Route::get('/front/index/{id}', 'App\Http\Controllers\FrontindexController@info')->name('index');;

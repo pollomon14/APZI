@@ -4,7 +4,7 @@
 
 
 
-<div class="container" style="width: 100%;padding-right: 0px;padding-left: 0px;margin-top: 5%;text-align: center;">
+<div class="container" style="width: 100%;padding-right: 0px;padding-left: 0px;text-align: center;padding-top:30%;">
     <figure class="figure" style="width: 20%;border-radius: 4px;border: 1px solid #000c4f;"><img class="img-fluid figure-img" style="width: 60%;margin-bottom: 40%;margin-top: 10%;" src="/assets/img/btn_emergencias.svg?h=76fa7052ed4ac591ce833a0418a2c3b6">
         <figcaption class="figure-caption" style="width: 100%;margin-left: 0px;font-size: 10px;background: #000c4f;font-family: 'ITC Avant Garde Gothic Std Medium';font-weight: normal;border-radius: 0;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;color: #fff;border-style: none;">Emergencias</figcaption>
     </figure>
@@ -30,18 +30,18 @@
                 @if ($emergencia->id_icono === $icono->id) 
                 <a href="{{$emergencia->maps}}" target="_blank">
                     <div class="row d-flex align-items-center" style="height: 100%;">
-                        <div class="col"><img style="width: 80%;margin-top: 2%;" src="https://drive.google.com/uc?id={{ $icono->link }}"></div>
+                        <div class="col"><img style="width: 60%;margin-top: 2%;" src="https://drive.google.com/uc?id={{ $icono->link }}"></div>
                     </div>
                 </a>
                 @break
                 @endif ()
                 @endforeach
-                @elseif (is_null($emergencia->desplegable))
+                @elseif (is_null($emergencia->desplegable)&& !is_null($emergencia->maps))
                 @foreach($iconos as $icono)
                 @if ($emergencia->id_icono === $icono->id)
                 <a href="{{$emergencia->maps}}" target="_blank">
                     <div class="row d-flex align-items-center" style="height: 60%;">
-                        <div class="col"><img style="width: 60%;margin-top: 2%;" src="https://drive.google.com/uc?id={{ $icono->link }}"></div>
+                        <div class="col"><img style="width: 50%;margin-top: 2%;" src="https://drive.google.com/uc?id={{ $icono->link }}"></div>
                     </div>
                 </a>
                 @break
@@ -59,7 +59,7 @@
                 @if ($emergencia->id_icono === $icono->id)
                 <a href="{{$emergencia->maps}}" target="_blank">
                     <div class="row d-flex align-items-center" style="height: 75%;">
-                        <div class="col"><img style="width: 80%;margin-top: 2%;" src="https://drive.google.com/uc?id={{ $icono->link }}"></div>
+                        <div class="col"><img style="width: 60%;margin-top: 2%;" src="https://drive.google.com/uc?id={{ $icono->link }}"></div>
                     </div>
                 </a>
                 @break
@@ -130,13 +130,7 @@
                     </div>
                 </div>
                 @if (!is_null($emergencia->desplegable))
-                @php
-                                                $var= $emergencia->desplegable;
-                                                $i = substr_count($var,"|");
-                                                $var2= explode("|" ,$var);
-                                                $var3= explode("-",$var2[0]);
-
-                                            @endphp
+            
                 <div class="row">
                     <div class="col" style="border-left: 1px solid #000c4f;background: #000c4f;font-size: 14px;color: #fff;padding-right: 0;padding-left: 0;border-bottom-right-radius: 10px;">
                         <!-- Start: Mega Menu Dropdown 100% Editable - Ambrodu -->
@@ -145,11 +139,20 @@
                                 <div class="container" style="padding-bottom: 0;">
                                     <div class="row">
                                         <div class="col-md-4">
-                                        
+                                        @php
+                                                $var= $emergencia->desplegable;
+                                                $count = substr_count($var,"|");
+                                                $var2= explode("|" ,$var);
+                                            @endphp
+                                        @for ($i=0; $i<=$count; $i++)
+                                        @php
+                                                $var3= explode("-",$var2[$i]);
+
+                                            @endphp
                                         <hr style="background: #ffff00;">
                                         <a href="tel:{{$var3[0]}}">
-                                                <h5 class="text-white" style="font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;"><i class="fa fa-phone" style="margin-right: 5%;margin-left: 5%;"></i>{{$var2[0]}}</h5>
-                                              </a>
+                                        <h5 class="text-white" style="font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 1.5rem;"><i class="fa fa-phone" style="margin-right: 5%;margin-left: 5%;"></i>{{$var2[$i]}}</h5>                                          </a>
+                                         @endfor     
                                         </div>
                                     </div>
                                 </div>

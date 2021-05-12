@@ -273,21 +273,72 @@ $('#play-carousel').click(function (evt) {
     <p style="width: 90%;margin-left: 5%;text-align: center;font-family: 'Montserrat Regular';font-size: 14px;color: #000c4f;">{{$local->descripcion}}</p>
     @if(!is_null($local->direccion)) 
     <div class="dropdown"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-toggle="dropdown" type="button" style="width: 96%;margin-right: 0;margin-left: 2%;background: #000c4f;border-radius: 0px;font-family: 'ITC Avant Garde Gothic Std Medium';font-size: 14px;margin-bottom: 0;"><i class="fas fa-map-marker-alt float-left" style="color: #ffff00;text-align: left;margin-left: 2%;font-size: 20px;margin-right: 10%;"></i>{{$local->direccion}}&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</button>
-        <div class="dropdown-menu" style="width: 96%;margin-top: 0;border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;"><a class="dropdown-item" href="#"><iframe src="{{$local->ubicacion}}" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe></a></div>
+        <div class="dropdown-menu" style="width: 96%;margin-top: 0;border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;">
+        <div class="container" style="padding: 0;background-color: #f2f2f2; margin-left: 2%; margin-right: 2%; width: 96%;">
+        <iframe src="{{$local->ubicacion}}" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+        </div>
     </div>
     @endif
     @if(!is_null($local->id_horario))
     <div class="dropdown" style="margin-top: 2%;"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-toggle="dropdown" type="button" style="width: 96%;margin-right: 0;margin-left: 2%;background: #000c4f;border-radius: 0px;font-family: 'ITC Avant Garde Gothic Std Medium';font-size: 14px;margin-bottom: 0;">Horario de Atencion&nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i class="fa fa-clock-o float-left" style="color: #ffff00;margin-left: 2%;font-size: 20px;margin-right: 10%;"></i></button>
         <div class="dropdown-menu" style="width: 96%;margin-top: 0;background: #f2f2f2;border-radius: 0px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;"><a class="dropdown-item" href="#" style="padding: 0;background: #f2f2f2;"></a><!-- Start: 1 Row 2 Columns -->
-            <div class="container" style="padding: 0;">
+            <div class="container" style="padding: 0;background-color: #f2f2f2; margin-left: 2%; margin-right: 2%; width: 96%;">
                 <div class="row" style="margin-right: 0;margin-left: 0;">
+                                            @php
+                                                $var= $horarios->find($local->id_horario);
+                                                $var2="x";
+                                                if (!is_null($var)){
+                                                    $var2=($var->horario);
+                                                }
+                                                $count = substr_count($var2,";");
+                                                $var3= explode(";" ,$var2);
+                                            @endphp
+                                            @for ($i=0; $i<=$count; $i++)
+                                            @php
+                                                $var4= explode("|",$var3[$i]);
+                                            @endphp
                     <div class="col-md-6" style="width: 50%;padding: 0;text-align: right;margin-right: 0%;background: #f2f2f2;border-right: 1px solid #000c4f ;">
-                        <p style="margin-right: 5%;font-family: 'ITC Avant Garde Gothic Std Demi';color: #000c4f;font-size: 14px;border-right-color: #000c4f;padding-top: 0;padding-bottom: 0;">Lunes a Viernes</p>
+                        <p style="margin-right: 5%;font-family: 'ITC Avant Garde Gothic Std Demi';color: #000c4f;font-size: 14px;border-right-color: #000c4f;padding-top: 0;padding-bottom: 0;">
+                            @if($var4[0]==='L-V')
+                          {{"Lunes a Viernes"}}
+                        @elseif($var4[0]==="L-D")
+                           {{"Lunes a Domingo"}}
+                           @elseif($var4[0]==="L")
+                          {{"Lunes"}}
+                          @elseif($var4[0]==="M")
+                          {{"Martes"}}
+                          @elseif($var4[0]==="Mi")
+                          {{"Miercoles"}}
+                          @elseif($var4[0]==="J")
+                          {{"Jueves"}}
+                          @elseif($var4[0]==="V")
+                          {{"Viernes"}}
+                          @elseif($var4[0]==="S")
+                          {{"Sabado"}}
+                        @elseif($var4[0]==="D")
+                          {{"Domingo"}}
+                          @elseif($var4[0]==="L-J")
+                          {{"Lunes a Jueves"}}
+                          @elseif($var4[0]==="L-S")
+                          {{"Lunes a Sabado"}}
+                          @elseif($var4[0]==="S-D")
+                          {{"Sabado y Domingo"}}
+                          @elseif($var4[0]==="D-D")
+                          {{"Domingo a Domingo"}}
+                         @endif 
+                         
+                      </p>
+                     
                     </div>
+           
                     <div class="col-md-6" style="width: 50%;padding: 0;">
-                        <p style="margin-left: 5%;background: #f2f2f2;color: #000c4f;font-size: 14px;">8:00am a 5:00pm</p>
+                        <p style="margin-left: 5%;background: #f2f2f2;color: #000c4f;font-size: 14px;">{{$var4[1]}}</p>
                     </div>
+                    @endfor
                 </div>
+                <p style="font-family: 'ITC Avant Garde Gothic Std Demi';color: #000c4f;font-size: 14px;border-right-color: #000c4f;padding-top: 0;padding-bottom: 0; text-align:center;">
+                      {{$var->observacion}}
+                      </p>
             </div><!-- End: 1 Row 2 Columns -->
         </div>
     </div>

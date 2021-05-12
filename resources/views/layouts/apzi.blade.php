@@ -24,7 +24,7 @@
     style="border-radius: 0px;border-style: none;border-top-width: 1px;border-right-width: 0px;border-right-style: none;border-bottom-width: 1px;border-bottom-style: none;border-left-width: 0px;">
 
     <!-- Start: Collapsible sidebar left or right . Content overla -->
-    <div style="border-style: none;height: 15%;background: #000c4f;">
+    <div style="border-style: none;background: #000c4f;position:fixed;z-index:100;">
         <div class="overlay"></div>
         <div id="sidebar">
             <div class="sidebar-header">

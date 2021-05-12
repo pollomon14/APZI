@@ -1,8 +1,8 @@
-@extends('layouts.turismo')
+@extends('layouts.apzi')
 
 @section('content')
 
-    <h1 style="width: 94%;margin-left: 3%;color: #000c4f;font-size: 30px;font-family: 'ITC Avant Garde Gothic Std Medium';border-bottom: 2px solid #000c4f;line-height: 27px;margin-top: 5%; ">Sitios Turísticos</h1><!-- Start: Bootstrap 4 - Photo Gallery --><div class="photo-gallery">
+    <h1 style="width: 94%;margin-left: 3%;color: #000c4f;font-size: 30px;font-family: 'ITC Avant Garde Gothic Std Medium';border-bottom: 2px solid #000c4f;line-height: 27px;padding-top: 30%; ">Sitios Turísticos</h1><!-- Start: Bootstrap 4 - Photo Gallery --><div class="photo-gallery">
     @foreach ($directorio as $dir)
     <div class="container-fluid">
   <div class="px-lg-5">
@@ -38,4 +38,6 @@
 </div><!-- End: Bootstrap 4 - Photo Gallery -->
 @endforeach
 {{ $directorio->links() }}
+
+
 @endsection

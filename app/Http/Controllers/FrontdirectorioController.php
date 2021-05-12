@@ -6,6 +6,7 @@ use App\Models\iconos;
 use App\Models\eventos;
 use App\Models\municipios;
 use App\Models\subcategorias;
+use App\Models\horarios;
 use Illuminate\Http\Request;
 
 class FrontdirectorioController extends Controller
@@ -25,7 +26,8 @@ class FrontdirectorioController extends Controller
     {
         $local = directorio::find($id);
         $municipio = municipios::find($var);
-        return view('front.destacado',compact('local','municipio'));
+        $horarios = horarios::orderBy('id', 'ASC')->get();
+        return view('front.destacado',compact('local','municipio','horarios'));
 
     }
 
