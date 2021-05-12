@@ -38,6 +38,6 @@
 </div><!-- End: Bootstrap 4 - Photo Gallery -->
 @endforeach
 {{ $directorio->links() }}
-
-
+@include('front.menuturismo')
 @endsection
+

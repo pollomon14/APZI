@@ -4,10 +4,10 @@
 
 
     <!-- Start: 1 Row 2 Columns -->
-    <div style="width: 100%;border-style: none;margin-top: 0%;    padding-top: 20%;">
+    <div style="width: 100%;border-style: none;margin-top: 0%;    padding-top: 20%;position: fixed;z-index: 100;">
         <div class="container" style="padding-left: 0;padding-right: 0;width: 100%;border-style: none;">
             <div class="row"
-                style="width: 100%;margin-right: 0;margin-left: 0;margin-top: 0px;border-style: none;border-top: 1px solid #000c4f ;">
+                style="width: 100%;margin-right: 0;margin-left: 0;margin-top: 0px;border-style: none;">
                 <div class="col-md-6"
                     style="width: 50%;padding-right: 0px;padding-left: 0px;background: #f2f2f2;padding-bottom: 2%;">
                     <!-- Start: Filter -->
@@ -38,7 +38,7 @@
     <!--*-*-*-*-*-*-*-*-*-*- BOOTSTRAP CAROUSEL *-*-*-*-*-*-*-*-*-*-->
 
     <div id="range_slides_4_columns_carousel" class="carousel slide range_slides_carousel_wrapper swipe_x ps_easeOutCirc"
-        data-ride="carousel" data-duration="2000" data-interval="5000" data-pause="hover">
+        data-ride="carousel" data-duration="2000" data-interval="5000" data-pause="hover"style="padding-top:35%;">
 
         <!--========= Indicators =========-->
         <ol class="carousel-indicators range_slides_carousel_indicators">
@@ -572,4 +572,5 @@
 
     @endforeach
     {{ $directorio->links() }}
+    @include('front.menugeneral')
 @endsection

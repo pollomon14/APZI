@@ -166,4 +166,5 @@
     </div>
 </div><!-- End: 1 Row 2 Columns -->
 @endforeach
+@include('front.menugeneral')
 @endsection

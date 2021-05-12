@@ -1,7 +1,5 @@
-<p>hola</p>
-@show
  <!-- Start: Footer Basic -->
-<div class="footer-basic" style="padding-bottom: 0;padding-top: 0;">
+ <div class="footer-basic" style="padding-bottom: 0;padding-top: 0;">
         <footer style="width: 100%;">
             <!-- Start: Social Icons -->
             <div class="social" style="width: 100%;padding-bottom: 0;">
@@ -14,4 +12,3 @@
             </div><!-- End: Social Icons -->
         </footer>
     </div><!-- End: Footer Basic -->
-

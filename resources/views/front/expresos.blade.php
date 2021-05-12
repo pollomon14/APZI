@@ -123,4 +123,5 @@
     </div><!-- End: 1 Row 2 Columns -->
     @endif
     @endforeach
+    @include('front.menugeneral')
     @endsection

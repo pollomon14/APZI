@@ -185,5 +185,5 @@
             style="width: 100%;margin-bottom: 4%;font-size: 16px;color: #000C4F;font-family: 'ITC Avant Garde Gothic Std Demi';">
             UN DIRECTORIO HECHO APP</h1>
     </center>
-
+    @include('front.menugeneral')
 @endsection
