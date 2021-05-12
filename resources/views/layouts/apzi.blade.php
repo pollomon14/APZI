@@ -163,16 +163,24 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
                      @csrf
                     <div class="col-md-6"
                         style="width: 55%;padding-right: 0px;padding-left: 0px;background: #f2f2f2;border-style: none;">
-                        <i class="fa fa-search"
-                            style="font-size: 13px;padding-left: 3%;color: #000c4f;border-style: none;"></i>
-                            <input type="search" name="busqueda" class="form-control-sm"
+                            <input type="search" name="busqueda" id="texto" class="form-control-sm"
                             style="width: 75%;height: 20px;border-radius: 7px;padding-left: 3%;margin-left: 2%;color: #000c4f;font-family: 'Montserrat Regular';font-size: 14px;text-align: left;margin-top: 0px;margin-bottom: 2%;border: 1px solid #000c4f ;border-bottom-width: 1px;"
-                            placeholder="Qué Buscas?" />
+                            placeholder="Qué Buscas?"/>
                             <input type="hidden" name="municipio" value={{ $municipio->id }} >
-                            <i class="fa fa-microphone"
-                            style="font-size: 16px;padding-left: 3%;color: #000c4f;"></i>
+                            <button><i class="fa fa-search"
+                                style="font-size: 13px;padding-left: 3%;color: #000c4f;border-style: none;"></i>
+                            </button>
+
+
                     </div>
                     {!! Form::close() !!}
+
+
+                        <button onclick="procesar()" id="procesar">Escuchar</button>
+                                <!-- <i class="fa fa-microphone"
+                                    style="font-size: 16px;padding-left: 3%;color: #000c4f;"></i>
+                                -->
+
 
                 </div>
             </div>
@@ -196,7 +204,59 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
     function goBack() {
       window.history.back();
     }
-    </script>
+</script>
+
+<script>
+
+var recognition;
+var recognizing = false;
+if (!('webkitSpeechRecognition' in window)) {
+    alert("¡API no soportada!");
+} else {
+
+    recognition = new webkitSpeechRecognition();
+    recognition.lang = "es-VE";
+    recognition.continuous = true;
+    recognition.interimResults = true;
+
+    recognition.onstart = function() {
+        recognizing = true;
+        console.log("empezando a eschucar");
+    }
+    recognition.onresult = function(event) {
+
+     for (var i = event.resultIndex; i < event.results.length; i++) {
+        if(event.results[i].isFinal)
+            document.getElementById("texto").value += event.results[i][0].transcript;
+        }
+
+        //texto
+    }
+    recognition.onerror = function(event) {
+    }
+    recognition.onend = function() {
+        recognizing = false;
+        document.getElementById("procesar").innerHTML = "Escuchar";
+        console.log("terminó de eschucar, llegó a su fin");
+
+    }
+
+}
+
+function procesar() {
+
+    if (recognizing == false) {
+        recognition.start();
+        recognizing = true;
+        document.getElementById("procesar").innerHTML = "Detener";
+    } else {
+        recognition.stop();
+        recognizing = false;
+        document.getElementById("procesar").innerHTML = "Escuchar";
+    }
+}
+</script>
+
 </body>
 
 </html>

@@ -95,3 +95,4 @@
 
     @include('front.menugeneral')
 @endsection
+
