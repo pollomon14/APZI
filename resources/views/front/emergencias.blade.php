@@ -5,12 +5,16 @@
 
 
 <div class="container" style="width: 100%;padding-right: 0px;padding-left: 0px;text-align: center;padding-top:30%;">
-    <figure class="figure" style="width: 20%;border-radius: 4px;border: 1px solid #000c4f;"><img class="img-fluid figure-img" style="width: 60%;margin-bottom: 40%;margin-top: 10%;" src="/assets/img/btn_emergencias.svg?h=76fa7052ed4ac591ce833a0418a2c3b6">
+<a href="{{ route('emergencias', $municipio->id) }}">    
+<figure class="figure" style="width: 20%;border-radius: 4px;border: 1px solid #000c4f;"><img class="img-fluid figure-img" style="width: 60%;margin-bottom: 40%;margin-top: 10%;" src="/assets/img/btn_emergencias.svg?h=76fa7052ed4ac591ce833a0418a2c3b6">
         <figcaption class="figure-caption" style="width: 100%;margin-left: 0px;font-size: 10px;background: #000c4f;font-family: 'ITC Avant Garde Gothic Std Medium';font-weight: normal;border-radius: 0;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;color: #fff;border-style: none;">Emergencias</figcaption>
     </figure>
+</a>
+<a href="{{ route('servicios', $municipio->id) }}">    
     <figure class="figure" style="width: 20%;border-radius: 4px;border: 1px solid #000c4f;margin-left: 10%;"><img class="img-fluid figure-img" style="width: 60%;margin-bottom: 40%;margin-top: 10%;" src="/assets/img/servicios.svg?h=34a218e6ad61fda8d5a46ab79f024bef">
         <figcaption class="figure-caption" style="width: 100%;margin-left: 0px;font-size: 11px;background: #000c4f;font-family: 'ITC Avant Garde Gothic Std Medium';font-weight: normal;border-radius: 0;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;color: #fff;border-style: none;">Servicios</figcaption>
     </figure>
+</a> 
 </div>
 <h1 style="width: 94%;margin-left: 3%;color: #000c4f;font-size: 30px;font-family: 'ITC Avant Garde Gothic Std Medium';border-bottom: 2px solid #000c4f;line-height: 27px;margin-top: 5%;">Emergencias</h1><!-- Start: 1 Row 2 Columns -->
 <!-- aqui -->

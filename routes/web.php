@@ -21,6 +21,8 @@ Route::get('/', function () {
 });
 Route::get('/front/mapa/{id}', 'App\Http\Controllers\FrontindexController@mapa')->name('mapa');
 
+Route::get('/front/servicios/{id}', 'App\Http\Controllers\FrontemergenciasController@index2')->name('servicios');
+
 Route::get('/front/emergencias/{id}', 'App\Http\Controllers\FrontemergenciasController@index')->name('emergencias');
 
 Route::get('/front/index/{id}', 'App\Http\Controllers\FrontindexController@info')->name('index');;

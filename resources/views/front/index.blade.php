@@ -29,9 +29,9 @@
         </div>
         <div style="width: 100%;color: var(--dark);">
             <!-- Start: Previous --><a class="carousel-control-prev" href="#carousel-1" role="button"
-                data-slide="prev"><span class="carousel-control-prev-icon"></span><span class="sr-only">Previous</span></a>
+                data-slide="prev" style="padding-top:25%;"><span class="carousel-control-prev-icon"></span><span class="sr-only">Previous</span></a>
             <!-- End: Previous -->
-            <!-- Start: Next --><a class="carousel-control-next" href="#carousel-1" role="button" data-slide="next"><span
+            <!-- Start: Next --><a class="carousel-control-next" style="padding-top:25%;" href="#carousel-1" role="button" data-slide="next"><span
                     class="carousel-control-next-icon"></span><span class="sr-only">Next</span></a><!-- End: Next -->
         </div>
         <ol class="carousel-indicators"

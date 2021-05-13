@@ -1,7 +1,7 @@
 @extends('layouts.apzi')
 
 @section('content')
-
+@if($local->tipo_de_plan!==5)
 <!DOCTYPE html>
 <html lang="en" >
 
@@ -243,7 +243,7 @@ $('#play-carousel').click(function (evt) {
   } else {
     $('.owl-carousel').trigger('stop.owl.autoplay');
     $(this).html("Play");
-    $('.status').html('Autoplay: OFF');
+    $('.status').html('Autoplay: ON');
   }
 
 });
@@ -251,6 +251,101 @@ $('#play-carousel').click(function (evt) {
     </script>
 </body>
 </html>
+@else
+<div class="carousel slide" data-ride="carousel" id="carousel-1" style="border-style: none;padding-top: 25%;">
+        <div class="carousel-inner">
+            @if(!is_null($local->imagen2))   
+            <div class="carousel-item active"><img class="w-100 d-block"
+                    src="https://drive.google.com/uc?id={{$local->imagen2}}" alt="Slide Image">
+            </div>
+              @endif
+            @if(!is_null($local->imagen3))
+            <div class="carousel-item"><img class="w-100 d-block"
+                    src="https://drive.google.com/uc?id={{$local->imagen3}}" alt="Slide Image">
+            </div>
+              @endif
+            @if(!is_null($local->imagen4))
+            <div class="carousel-item"><img class="w-100 d-block"
+                    src="https://drive.google.com/uc?id={{$local->imagen4}}" alt="Slide Image">
+            </div>
+              @endif
+            @if(!is_null($local->imagen5))
+            <div class="carousel-item"><img class="w-100 d-block"
+                    src="https://drive.google.com/uc?id={{$local->imagen5}}" alt="Slide Image">
+            </div>
+              @endif
+            @if(!is_null($local->imagen6)) 
+            <div class="carousel-item"><img class="w-100 d-block"
+                    src="https://drive.google.com/uc?id={{$local->imagen6}}" alt="Slide Image">
+            </div>
+              @endif
+            @if(!is_null($local->imagen7))
+            <div class="carousel-item"><img class="w-100 d-block"
+                    src="https://drive.google.com/uc?id={{$local->imagen7}}" alt="Slide Image">
+            </div>
+              @endif
+            @if(!is_null($local->imagen8))
+            <div class="carousel-item"><img class="w-100 d-block"
+                    src="https://drive.google.com/uc?id={{$local->imagen8}}" alt="Slide Image">
+            </div>
+              @endif
+            @if(!is_null($local->imagen9)) 
+            <div class="carousel-item"><img class="w-100 d-block"
+                    src="https://drive.google.com/uc?id={{$local->imagen9}}" alt="Slide Image">
+            </div>
+              @endif
+            @if(!is_null($local->imagen10))
+            <div class="carousel-item"><img class="w-100 d-block"
+                    src="https://drive.google.com/uc?id={{$local->imagen10}}" alt="Slide Image">
+            </div>
+              @endif
+  
+  
+        </div>
+        <div style="width: 100%;color: var(--dark);">
+            <!-- Start: Previous --><a class="carousel-control-prev" href="#carousel-1" role="button"
+                data-slide="prev" style="padding-top:25%;"><span class="carousel-control-prev-icon"></span><span class="sr-only">Previous</span></a>
+            <!-- End: Previous -->
+            <!-- Start: Next --><a class="carousel-control-next" style="padding-top:25%;" href="#carousel-1" role="button" data-slide="next"><span
+                    class="carousel-control-next-icon"></span><span class="sr-only">Next</span></a><!-- End: Next -->
+        </div>
+        <ol class="carousel-indicators"
+            style="width: 90%;min-height: 0px;margin-right: 0;margin-left: 5%;margin-bottom: 0;">
+            @if(!is_null($local->imagen1)) 
+            <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+            @endif
+            @if(!is_null($local->imagen2))   
+            <li data-target="#carousel-1" data-slide-to="1"></li>
+              @endif
+            @if(!is_null($local->imagen3))
+            <li data-target="#carousel-1" data-slide-to="2"></li>
+              @endif
+            @if(!is_null($local->imagen4))
+            <li data-target="#carousel-1" data-slide-to="3"></li>
+              @endif
+            @if(!is_null($local->imagen5))
+            <li data-target="#carousel-1" data-slide-to="4"></li>
+              @endif
+            @if(!is_null($local->imagen6)) 
+            <li data-target="#carousel-1" data-slide-to="5"></li>
+              @endif
+            @if(!is_null($local->imagen7))
+            <li data-target="#carousel-1" data-slide-to="6"></li>
+              @endif
+            @if(!is_null($local->imagen8))
+            <li data-target="#carousel-1" data-slide-to="7"></li>
+              @endif
+            @if(!is_null($local->imagen9)) 
+            <li data-target="#carousel-1" data-slide-to="8"></li>
+              @endif
+            @if(!is_null($local->imagen10))
+            <li data-target="#carousel-1" data-slide-to="9"></li>
+              @endif
+            
+            
+        </ol>
+</div>
+       @endif 
 
 
     <h1 class="text-uppercase" style="font-family: 'ITC Avant Garde Gothic Std Medium';color: #000c4f;font-size: 16px;text-align: center;background: #ffff00;padding-top: 2%;padding-bottom: 2%;padding-right: 2%;padding-left: 2%;box-shadow: 0px 1px 5px #000c4f;">{{$local->nombre}}</h1>
