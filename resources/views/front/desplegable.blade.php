@@ -37,7 +37,7 @@
             <div class="dropdown-divider"
                 style="border-color: transparent;background: transparent;height: 4px;opacity: 1;margin-bottom: 0;margin-top: 0;">
             </div><a class="dropdown-item" href="{{ route('index',2) }}"
-                style="background: #fff;color: #000c4f;font-family: 'Montserrat Regular';">&nbsp;Tocancipá<i
+                style="background: #fff;color: #000c4f;font-family: 'Montserrat Regular';">&nbsp;Cajica<i
                     class="fa fa-arrow-circle-right float-right" style="padding-top: 2%;color: #000c4f;"></i><i
                     class="fa fa-map-marker float-left" style="padding-top: 2%;color: #000c4f; padding-right: 5%;"></i></a>
             <div class="dropdown-divider"
@@ -69,17 +69,19 @@
             </div>
         </div>
     </div>
-    <script>
-window.onload = () => {
-    'use strict';
-  
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker
-               .register('/sw.js');
-    }
-  }
+      <div id="map"></div>
 
-</script>
+    <script>
+        window.onload = () => {
+            'use strict';
+            getLocation();
+            if ('serviceWorker' in navigator) {
+            navigator.serviceWorker
+                    .register('/sw.js');
+            }
+        }
+
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
@@ -89,6 +91,83 @@ window.onload = () => {
         src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js">
     </script>
     <script src="/assets/js/script.min.js?h=618b97a50c192fc65f74b6a8b801de57"></script>
+
+	<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOOLCTVuwX6giO4HiY9XD33RPeebSr19A&callback=initMap&libraries=&v=weekly" async>
+
+	</script>
+    <script type="text/javascript">
+
+    function initMap() {
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 8,
+          center: { lat: 40.731, lng: -73.997 },
+        });
+
+
+      }
+
+        function showLocation(position) {
+           var latitude = position.coords.latitude;
+           var longitude = position.coords.longitude;
+           var input = position.coords.latitude + ","
+           + position.coords.longitude;
+            const latlngStr = input.split(",", 2);
+            const latlng = {
+              lat: parseFloat(latlngStr[0]),
+              lng: parseFloat(latlngStr[1]),
+            };
+            const geocoder = new google.maps.Geocoder();
+                geocoder.geocode({ location: latlng }, (results, status) => {
+                  if (status === "OK") {
+                    if (results[0]) {
+                      //cadena completa
+                      console.log(results[0].formatted_address);
+                      var direccion = results[0].formatted_address.split(",", 3);
+                      var ciudad = direccion[1];
+
+                      console.log(ciudad);
+                      if (ciudad==" Zipaquirá"){
+                          window.location.href = "https://app.apziweb.com/front/index/1";
+                      }
+                      else if (ciudad==" Cajicá"){
+                          window.location.href = "https://app.apziweb.com/front/index/2";
+                      }
+
+                      else{
+                         console.log("No encontro ciudad Apzi");
+                      }
+
+
+                    } else {
+                      console.log("No results found");
+                    }
+                  } else {
+                    console.log("Geocoder failed due to: " + status);
+                  }
+                });
+
+        }
+        function errorHandler(err) {
+           if(err.code == 1) {
+              console.log("Gps apagado");
+           } else if( err.code == 2) {
+              console.log("Posicion no determinada");
+           }
+        }
+        function getLocation(){
+           if(navigator.geolocation){
+              // timeout at 60000 milliseconds (60 seconds)
+              var options = {timeout:60000};
+              navigator.geolocation.getCurrentPosition
+              (showLocation, errorHandler, options);
+           } else{
+              alert("Sorry, browser does not support geolocation!");
+           }
+        }
+     </script>
+
+
 </body>
 
 </html>
