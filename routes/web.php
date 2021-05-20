@@ -85,3 +85,6 @@ Route::resource('transporteDomiciliarios', App\Http\Controllers\transporte_domic
 Route::resource('transporteExpresos', App\Http\Controllers\transporte_expresosController::class);
 
 Route::resource('transporteTaxes', App\Http\Controllers\transporte_taxisController::class);
+
+
+Route::resource('palabraMasBuscadas', App\Http\Controllers\palabra_mas_buscadaController::class);

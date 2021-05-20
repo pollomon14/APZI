@@ -17,6 +17,23 @@ class FrontbusquedaController extends Controller
         $var = $request->input('busqueda');
         $ciudad = $request->input('municipio');
 
+        //insertar palabra
+        $Busqueda=DB::table('palabra_mas_buscada')->where('palabra','LIKE','%'.$var.'%')->get();
+        if($Busqueda->isEmpty()){
+            DB::table('palabra_mas_buscada')->insert([
+                'palabra' => $var,
+                'contador' => 1
+            ]);
+        }
+        else{
+            $cont=$Busqueda[0]->contador;
+            $cont=$cont+1;
+            DB::table('palabra_mas_buscada')->where('palabra','LIKE','%'.$var.'%')->update(array(
+                'contador'=>$cont));
+        }
+
+
+
         //Buscador directorio
         $directorios=DB::table('directorios')->where('id_municipio',$ciudad)
         ->where('nombre','LIKE','%'.$var.'%')

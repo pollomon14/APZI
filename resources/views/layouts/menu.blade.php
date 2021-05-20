@@ -115,3 +115,11 @@
 </li>
 
 
+<li class="nav-item">
+    <a href="{{ route('palabraMasBuscadas.index') }}"
+       class="nav-link {{ Request::is('palabraMasBuscadas*') ? 'active' : '' }}">
+        <p>Palabra Mas Buscadas</p>
+    </a>
+</li>
+
+
