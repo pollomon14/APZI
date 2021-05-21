@@ -88,3 +88,7 @@ Route::resource('transporteTaxes', App\Http\Controllers\transporte_taxisControll
 
 
 Route::resource('palabraMasBuscadas', App\Http\Controllers\palabra_mas_buscadaController::class);
+
+Route::resource('registroDirectorios', App\Http\Controllers\registro_directorioController::class);
+
+Route::resource('registroDirectorios', App\Http\Controllers\registro_directorioController::class);

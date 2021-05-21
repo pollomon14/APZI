@@ -123,3 +123,10 @@
 </li>
 
 
+<li class="nav-item">
+    <a href="{{ route('registroDirectorios.index') }}"
+       class="nav-link {{ Request::is('registroDirectorios*') ? 'active' : '' }}">
+        <p>Registro Directorios</p>
+    </a>
+</li>
+
