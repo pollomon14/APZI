@@ -18,7 +18,8 @@ class FrontdirectorioController extends Controller
         $subcategorias = subcategorias::orderBy('id', 'ASC')->get();
         $eventos = eventos::where('id_municipio',$var)->get();
         $municipio = municipios::find($var);
-        return view('front.directorio',compact('directorio','iconos','eventos','municipio','subcategorias'));
+        $destacados = directorio::where([['id_municipio',$var],['tipo_de_plan','4']])->orWhere([['id_municipio',$var],['tipo_de_plan','3']])->orWhere([['id_municipio',$var],['tipo_de_plan','2']])->inRandomOrder()->paginate(20);
+        return view('front.directorio',compact('directorio','iconos','eventos','municipio','subcategorias','destacados'));
 
     }
 
