@@ -48,54 +48,54 @@
 
         <!--========= Wrapper for slides =========-->
         <div class="carousel-inner range_slides_carousel_inner" role="listbox">
-
-            <!--========= First slide =========-->
+         @php
+        $count=count($destacados);
+        @endphp
+        
+            @for($j=0;$j<$count;$j+=4)  
+            @if($j===0)
             <div class="carousel-item active">
                 <div class="row">
-                    <div class="col-3 col-sm-3 col-md-3 range_slides_item_image">
-                        <a href="#"><img src="/assets/img/logo_ayf.jpg?h=4dc35bac5932914a057180585f180b9f"
-                                alt="slider 01"></a>
-                    </div>
-                    <div class="col-3 col-sm-3 col-md-3 range_slides_item_image">
-                        <a href="#"><img src="/assets/img/logo_natalia.jpg?h=789a48c45904bc1c3d09d4dc3af71e18"
-                                alt="slider 02"></a>
-                    </div>
-                    <div class="col-3 col-sm-3 col-md-3 range_slides_item_image">
-                        <a href="#"><img src="/assets/img/logo_hm.jpg?h=030130878473d49f6db7d3b355daf8c7"
-                                alt="slider 03"></a>
-                    </div>
-                    <div class="col-3 col-sm-3 col-md-3 range_slides_item_image">
-                        <a href="#"><img src="/assets/img/logo_ingenio.jpg?h=b57838d0cc01d94e66a2ba20f00673ce"
-                                alt="slider 04"></a>
-                    </div>
-                </div>
-            </div>
-
-            <!--========= Second Slide =========-->
-            <div class="carousel-item">
+            @else
+        <div class="carousel-item">
                 <div class="row">
+            @endif    
+            @php
+            if(($count-$j)>=4){
+            $m=$j+4;
+            }else{
+            $m=$j+($count-$j);    
+            }
+            @endphp    
+        @for($i=$j;$i<$m;$i++)  
+        @php
+                                                $var= $iconos->find($destacados[$i]->logo);
+                                                $var2="x";
+                                                if (!is_null($var)){
+                                                    $var2=($var->link);
+                                                }
+        
+                                            @endphp
+                      
                     <div class="col-3 col-sm-3 col-md-3 range_slides_item_image">
-                        <a href="#"><img src="/assets/img/logo_baca.jpg?h=629ee1038807489bbfbe96a536ce78f9"
-                                alt="slider 05"></a>
-                    </div>
-                    <div class="col-3 col-sm-3 col-md-3 range_slides_item_image">
-                        <a href="#"><img src="/assets/img/logo_optica.jpg?h=36c61508d23bc1a2be7968c72483e464"
-                                alt="slider 06"></a>
-                    </div>
-                    <div class="col-3 col-sm-3 col-md-3 range_slides_item_image">
-                        <a href="#"><img src="/assets/img/logo_pistacho.jpg?h=3489c1774b8ee5d9fee7d2aabc49811a"
-                                alt="slider 07"></a>
-                    </div>
-                    <div class="col-3 col-sm-3 col-md-3 range_slides_item_image">
-                        <a href="#"><img src="/assets/img/logo_granja.jpg?h=a5f07921c30e0fe4a8cf138d501f6fdc"
-                                alt="slider 08"></a>
-                    </div>
-                </div>
-            </div>
+             
+                                            <a href="{{route('local',[$destacados[$i]->id,$municipio->id])}}"><img style="width: 100px;border-radius: 10px;"
+                                                    src="https://drive.google.com/uc?id={{ $var2 }}"></a>
+                                                    </div>
+                                                    
+        @endfor 
+        
+        </div></div>
+        @endfor
+   
+        
+        
+           
+ 
 
 
 
-        </div>
+        
 
     </div>
     <!--*-*-*-*-*-*-*-*-*-*- END BOOTSTRAP CAROUSEL *-*-*-*-*-*-*-*-*-*-->
@@ -181,13 +181,29 @@
                 @endif
                 @if(!is_null($dir->catalogo))
                 <div class="row" style="height: 25%;margin-right: 0;margin-left: 0;">
-                    <div class="col"><i class="fa fa-eject rubberBand animated infinite"
+                    <div class="col" style="padding:0;">
+                        <!-- Start: Modal commerce popup button -->
+                    
+                        <div class="text-center" style="border-style: none;"><a class="stretched-link bs4_modal_trigger" href="#" data-modal-id="bs4_sngl_cmrce{{ $dir->id }}" data-toggle="modal" style="border-style: none;margin-top: 0;margin-right: 0;margin-bottom: 0;margin-left: 0;padding: 0;border-radius: 0px;">
+                        <i class="fa fa-eject rubberBand animated infinite"
                             style="width: 100%;color: #000c4f;"></i>
                         <h1
                             style="width: 100%;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';color: #000c4f;margin-bottom: 0;">
                             Ver</h1>
                         <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">
                             Portafolio</h1>
+                    </a>
+                            <div id="bs4_sngl_cmrce{{ $dir->id }}" class="modal fade bs4_modal bs4_blue bs4_bg_white bs4_bd_black bs4_bd_semi_trnsp bs4_none_radius bs4_shadow_none bs4_center bs4_animate bs4FadeInDown bs4_duration_md bs4_easeOutQuint bs4_size_sngl_cmrce" role="dialog" data-modal-backdrop="true" data-show-on="click" data-modal-delay="false" data-modal-duration="false">
+                                <div class="modal-dialog" style="background-color:#fff">
+                                    <div class="modal-content"><a class="bs4_btn_x_out_shtr bs4_sngl_cmrce_close" href="#" data-dismiss="modal">X</a>
+                                        <div class="row" style="height: 100%;">
+                                    
+                                        <iframe src="https://drive.google.com/file/d/{{ $dir->catalogo }}/preview" height="100%" ></iframe>                                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- End: Modal commerce popup button -->
                     </div>
                 </div>
                 @endif
@@ -328,14 +344,32 @@
 
                 </div>
                 <div class="row" style="height: 25%;margin-right: 0;margin-left: 0;">
-                    <div class="col">
-                        <a href="https://drive.google.com/uc?id={{$dir->catalogo}}"><i class="fa fa-eject rubberBand animated infinite"
+                     <div class="col" style="width: 10%;padding-right: 0;padding-left: 0;max-width: 10%;margin-top: -10px;">
+                        <!-- Start: Modal commerce popup button -->
+                    
+                        <div class="text-center" style="border-style: none;"><a class="stretched-link bs4_modal_trigger" href="#" data-modal-id="bs4_sngl_cmrce{{ $dir->id }}" data-toggle="modal" style="border-style: none;margin-top: 0;margin-right: 0;margin-bottom: 0;margin-left: 0;padding: 0;border-radius: 0px;">
+                        <i class="fa fa-eject rubberBand animated infinite"
                             style="width: 100%;color: #000c4f;"></i>
                         <h1
                             style="width: 100%;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';color: #000c4f;margin-bottom: 0;">
                             Ver</h1>
                         <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">
-                            Portafolio</h1></a>
+                            Portafolio</h1>
+                    </a>
+                            <div id="bs4_sngl_cmrce{{ $dir->id }}" class="modal fade bs4_modal bs4_blue bs4_bg_white bs4_bd_black bs4_bd_semi_trnsp bs4_none_radius bs4_shadow_none bs4_center bs4_animate bs4FadeInDown bs4_duration_md bs4_easeOutQuint bs4_size_sngl_cmrce" role="dialog" data-modal-backdrop="true" data-show-on="click" data-modal-delay="false" data-modal-duration="false">
+                                <div class="modal-dialog" style="background-color:#fff">
+                                    <div class="modal-content"><a class="bs4_btn_x_out_shtr bs4_sngl_cmrce_close" href="#" data-dismiss="modal">X</a>
+                                        <div class="row" style="height: 100%;">
+                                       
+                                        <iframe src="https://drive.google.com/file/d/{{ $dir->catalogo }}/preview" height="100%" ></iframe>                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- End: Modal commerce popup button -->
+
+                    
+                   
+                        
                     </div>
                 </div>
                 </div>
