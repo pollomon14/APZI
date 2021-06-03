@@ -65,9 +65,360 @@
                         <div class="col"><img style="width: 80%;" src="https://drive.google.com/uc?id={{ $var2 }}"></div>
                     </div>
                     <div class="row" style="height: 25%;margin-right: 0;margin-left: 0;">
-                        <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
-                            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
-                        </div>
+                    @if(!is_null($transp->id_horario))
+                                                @php
+                                                date_default_timezone_set("America/Bogota");
+                                                $hora= (new DateTime())->format('H:i');
+                                                $dia=date("l");
+                                                $hour=explode(":",$hora);
+                                                $var= $horarios->find($transp->id_horario);
+                                                $var2="x";
+                                                if (!is_null($var)){
+                                                    $var2=($var->horario);
+                                                }
+                                                $count = substr_count($var2,";");
+                                                $var3= explode(";" ,$var2);
+                                            @endphp
+                                            @for ($i=0; $i<=$count; $i++)
+                                            @php
+                                                $var4= explode("|",$var3[$i]);
+                                                $var5=explode("-",$var4[1]);
+                                                $var6=explode(":",$var5[0]);
+                                                $var7=explode(":",$var5[1]);
+
+                                  
+                                            @endphp
+    
+
+                                            @if($var4[0]==='L-V' && ($dia==="Monday" || $dia==="Tuesday" || $dia==="Wednesday" || $dia==="Thursday" || $dia==="Friday"))
+    @if($hour[0] > $var6[0] && $hour[0] < $var7[0])
+        <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+        <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+        </div>
+    @break
+    @elseif($hour[0] == $var6[0] || $hour[0] == $var7[0]) 
+        @if($hour[0] == $var6[0] && $hour[1] >= $var6[1])
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+            </div>
+        @break
+        @elseif($hour[0] == $var7[0] && $hour[1] <= $var7[1])
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+            </div>
+        @break
+        @else         
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--red);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">inactivo</h1>
+            </div> 
+        @break
+        @endif
+    @endif                        
+@elseif($var4[0]==="L-D" && ($dia==="Monday" || $dia==="Tuesday" || $dia==="Wednesday" || $dia==="Thursday" || $dia==="Friday" || $dia==="Saturday" || $dia==="Sunday"))
+    @if($hour[0] > $var6[0] && $hour[0] < $var7[0])
+        <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+        <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+        </div>
+    @break
+    @elseif($hour[0] == $var6[0] || $hour[0] == $var7[0]) 
+        @if($hour[0] == $var6[0] && $hour[1] >= $var6[1])
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+            </div>
+        @break
+        @elseif($hour[0] == $var7[0] && $hour[1] <= $var7[1])
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+            </div>
+        @break
+        @else         
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--red);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">inactivo</h1>
+            </div> 
+        @break
+        @endif
+    @endif                        
+@elseif($var4[0]==="L" && $dia==="Monday")
+    @if($hour[0] > $var6[0] && $hour[0] < $var7[0])
+        <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+        <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+        </div>
+    @break
+    @elseif($hour[0] == $var6[0] || $hour[0] == $var7[0]) 
+        @if($hour[0] == $var6[0] && $hour[1] >= $var6[1])
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+            </div>
+        @break
+        @elseif($hour[0] == $var7[0] && $hour[1] <= $var7[1])
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+            </div>
+        @break
+        @else         
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--red);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">inactivo</h1>
+            </div> 
+        @break
+        @endif
+    @endif                        
+@elseif($var4[0]==="M" && $dia==="Tuesday")
+    @if($hour[0] > $var6[0] && $hour[0] < $var7[0])
+        <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+        <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+        </div>
+    @break
+    @elseif($hour[0] == $var6[0] || $hour[0] == $var7[0]) 
+        @if($hour[0] == $var6[0] && $hour[1] >= $var6[1])
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+            </div>
+        @break
+        @elseif($hour[0] == $var7[0] && $hour[1] <= $var7[1])
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+            </div>
+        @break
+        @else         
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--red);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">inactivo</h1>
+            </div> 
+        @break
+        @endif
+    @endif                        
+@elseif($var4[0]==="Mi" && $dia==="Wednesday")
+    @if($hour[0] > $var6[0] && $hour[0] < $var7[0])
+        <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+        <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+        </div>
+    @break
+    @elseif($hour[0] == $var6[0] || $hour[0] == $var7[0]) 
+        @if($hour[0] == $var6[0] && $hour[1] >= $var6[1])
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+            </div>
+        @break
+        @elseif($hour[0] == $var7[0] && $hour[1] <= $var7[1])
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+            </div>
+        @break
+        @else         
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--red);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">inactivo</h1>
+            </div> 
+        @break
+        @endif
+    @endif                        
+@elseif($var4[0]==="J" && $dia==="Thursday")
+    @if($hour[0] > $var6[0] && $hour[0] < $var7[0])
+        <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+        <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+        </div>
+    @break
+    @elseif($hour[0] == $var6[0] || $hour[0] == $var7[0]) 
+        @if($hour[0] == $var6[0] && $hour[1] >= $var6[1])
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+            </div>
+        @break
+        @elseif($hour[0] == $var7[0] && $hour[1] <= $var7[1])
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+            </div>
+        @break
+        @else         
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--red);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">inactivo</h1>
+            </div> 
+        @break
+        @endif
+    @endif                        
+@elseif($var4[0]==="V" && $dia==="Friday")
+    @if($hour[0] > $var6[0] && $hour[0] < $var7[0])
+        <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+        <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+        </div>
+    @break
+    @elseif($hour[0] == $var6[0] || $hour[0] == $var7[0]) 
+        @if($hour[0] == $var6[0] && $hour[1] >= $var6[1])
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+            </div>
+        @break
+        @elseif($hour[0] == $var7[0] && $hour[1] <= $var7[1])
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+            </div>
+        @break
+        @else         
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--red);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">inactivo</h1>
+            </div> 
+        @break    
+        @endif
+    @endif                        
+@elseif($var4[0]==="S" && $dia==="Saturday")
+    @if($hour[0] > $var6[0] && $hour[0] < $var7[0])
+        <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+        <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+        </div>
+    @break
+    @elseif($hour[0] == $var6[0] || $hour[0] == $var7[0]) 
+        @if($hour[0] == $var6[0] && $hour[1] >= $var6[1])
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+            </div>
+        @break
+        @elseif($hour[0] == $var7[0] && $hour[1] <= $var7[1])
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+            </div>
+        @break
+        @else         
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--red);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">inactivo</h1>
+            </div> 
+        @break
+        @endif
+    @endif                        
+@elseif($var4[0]==="D" && $dia==="Sunday")
+    @if($hour[0] > $var6[0] && $hour[0] < $var7[0])
+        <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+        <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+        </div>
+    @break
+    @elseif($hour[0] == $var6[0] || $hour[0] == $var7[0]) 
+        @if($hour[0] == $var6[0] && $hour[1] >= $var6[1])
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+            </div>
+        @break
+        @elseif($hour[0] == $var7[0] && $hour[1] <= $var7[1])
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+            </div>
+        @break
+        @else         
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--red);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">inactivo</h1>
+            </div> 
+        @break
+        @endif
+    @endif                        
+@elseif($var4[0]==="L-J" && ($dia==="Monday" || $dia==="Tuesday" || $dia==="Wednesday" || $dia==="Thursday" ))
+    @if($hour[0] > $var6[0] && $hour[0] < $var7[0])
+        <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+        <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+        </div>
+    @break
+    @elseif($hour[0] == $var6[0] || $hour[0] == $var7[0]) 
+        @if($hour[0] == $var6[0] && $hour[1] >= $var6[1])
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+            </div>
+        @break
+        @elseif($hour[0] == $var7[0] && $hour[1] <= $var7[1])
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+            </div>
+        @break
+        @else         
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--red);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">inactivo</h1>
+            </div> 
+        @break
+        @endif
+    @endif                        
+@elseif($var4[0]==="L-S" && ($dia==="Monday" || $dia==="Tuesday" || $dia==="Wednesday" || $dia==="Thursday" || $dia==="Friday" || $dia==="Saturday" ))
+    @if($hour[0] > $var6[0] && $hour[0] < $var7[0])
+        <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+        <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+        </div>
+    @break
+    @elseif($hour[0] == $var6[0] || $hour[0] == $var7[0]) 
+        @if($hour[0] == $var6[0] && $hour[1] >= $var6[1])
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+            </div>
+        @break
+        @elseif($hour[0] == $var7[0] && $hour[1] <= $var7[1])
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+            </div>
+        @break
+        @else         
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--red);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">inactivo</h1>
+            </div> 
+        @break
+        @endif
+    @endif     
+@elseif($var4[0]==="S-D" && ($dia==="Saturday" || $dia==="Sunday"))
+    @if($hour[0] > $var6[0] && $hour[0] < $var7[0])
+        <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+        <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+        </div>
+    @break
+    @elseif($hour[0] == $var6[0] || $hour[0] == $var7[0]) 
+        @if($hour[0] == $var6[0] && $hour[1] >= $var6[1])
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+            </div>
+        @break
+        @elseif($hour[0] == $var7[0] && $hour[1] <= $var7[1])
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+            </div>
+        @break
+        @else         
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--red);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">inactivo</h1>
+            </div>
+        @break     
+        @endif
+    @endif                        
+@elseif($var4[0]==="D-D")
+    @if($hour[0] > $var6[0] && $hour[0] < $var7[0])
+        <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+        <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+        </div>
+    @break
+    @elseif($hour[0] == $var6[0] || $hour[0] == $var7[0]) 
+        @if($hour[0] == $var6[0] && $hour[1] >= $var6[1])
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+            </div>
+        @break
+        @elseif($hour[0] == $var7[0] && $hour[1] <= $var7[1])
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--green);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">activo</h1>
+            </div>
+        @break
+        @else         
+            <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--red);"></i>
+            <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">inactivo</h1>
+            </div>
+        @break      
+        @endif
+    @else
+        <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--red);"></i>
+        <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">inactivo</h1>
+        </div>
+    @break   
+    @endif
+@else
+    <div class="col"><i class="fa fa-circle swing animated infinite" style="width: 100%;color: var(--red);"></i>
+    <h1 style="width: 100%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;">inactivo</h1>
+    </div>     
+@break                          
+@endif 
+
+                         
+
+                    @endfor
+       
+    @endif
                     </div>
                 </div>
                 <div class="col-md-6" style="width: 70%;">

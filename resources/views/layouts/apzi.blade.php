@@ -158,8 +158,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
                             style="font-size: 13px;padding-left: 7%;width: 40%;color: #000c4f;font-family: 'Montserrat Regular';">Estás
                             en {{ $municipio->nombre }}</span>
                     </div>
-                    {!! Form::open(['route' => 'busquedas']) !!}
-                     @csrf
+              
                     <div class="col-md-6"
                         style="width: 55%;padding-right: 0px;padding-left: 0px;background: #f2f2f2;border-style: none;">
                             <input type="search" name="busqueda" id="texto" class="form-control-sm"
@@ -172,7 +171,6 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 
 
                     </div>
-                    {!! Form::close() !!}
 
 
                         <button onclick="procesar()" id="procesar">Escuchar</button>
@@ -190,6 +188,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 <div class="container" style="padding: 0 !important;">
     @yield('content')
 </div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
@@ -199,6 +198,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
     src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js">
 </script>
 <script src="/assets/js/script.min.js?h=618b97a50c192fc65f74b6a8b801de57"></script>
+<script src="/assets/js/script2.min.js"></script>
 <script>
     function goBack() {
       window.history.back();

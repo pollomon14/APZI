@@ -14,13 +14,15 @@
                     <div class="filter">
 
                         <i class="fa fa-filter" style="color: #000c4f;"></i>
-                        <select>
-                            <option value="">Todos</option>
-                            <option value="">Servicios</option>
-                            <option value="">Establecimientos</option>
+                        {!! Form::open(['route' => 'busquedas']) !!}
+                        <select name='categorias' id='categorias'>
+                            <option value="Todos">Todos</option>
+                            @foreach($categorias as $cat)
+                            <option value="{{$cat->id}}">{{$cat->nombre}}</option>
+                            @endforeach
 
                         </select>
-
+                        {!! Form::close() !!}
 
 
                     </div><!-- End: Filter -->
@@ -38,13 +40,9 @@
     <!--*-*-*-*-*-*-*-*-*-*- BOOTSTRAP CAROUSEL *-*-*-*-*-*-*-*-*-*-->
 
     <div id="range_slides_4_columns_carousel" class="carousel slide range_slides_carousel_wrapper swipe_x ps_easeOutCirc"
-        data-ride="carousel" data-duration="2000" data-interval="5000" data-pause="hover"style="padding-top:35%;">
+        data-ride="carousel" data-duration="2000" data-interval="5000" style="padding-top:35%" >
 
-        <!--========= Indicators =========-->
-        <ol class="carousel-indicators range_slides_carousel_indicators">
-            <li data-target="#range_slides_4_columns_carousel" data-slide-to="0" class="active"></li>
-            <li data-target="#range_slides_4_columns_carousel" data-slide-to="1"></li>
-        </ol>
+
 
         <!--========= Wrapper for slides =========-->
         <div class="carousel-inner range_slides_carousel_inner" role="listbox">
@@ -78,8 +76,9 @@
                                             @endphp
                       
                     <div class="col-3 col-sm-3 col-md-3 range_slides_item_image">
-             
-                                            <a href="{{route('local',[$destacados[$i]->id,$municipio->id])}}"><img style="width: 100px;border-radius: 10px;"
+
+                                            <a href="{{route('local',[$destacados[$i]->id,$municipio->id])}}">
+                                            <img style="width: 100px;border-radius: 10px; position:auto; z-index:900"
                                                     src="https://drive.google.com/uc?id={{ $var2 }}"></a>
                                                     </div>
                                                     
@@ -87,17 +86,8 @@
         
         </div></div>
         @endfor
-   
-        
-        
-           
  
-
-
-
-        
-
-    </div>
+    </div></div>
     <!--*-*-*-*-*-*-*-*-*-*- END BOOTSTRAP CAROUSEL *-*-*-*-*-*-*-*-*-*-->
 
 
@@ -607,4 +597,21 @@
     @endforeach
     {{ $directorio->links() }}
     @include('front.menugeneral')
+<script>
+$(document).ready(function(){
+  $('#categorias').on('change',function(){                                      
+    let valor = $('#categorias').val();
+    console.log(valor);
+    $.ajax({                        
+       type: 'POST',                 
+       url : 'scripts/update_orden_servicio_estado.php',                   
+       data: {value: valor},
+       success: function(data)            
+       {
+
+       }
+     });
+  });
+});
+</script>
 @endsection
