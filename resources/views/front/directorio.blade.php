@@ -14,14 +14,16 @@
                     <div class="filter">
 
                         <i class="fa fa-filter" style="color: #000c4f;"></i>
-                        {!! Form::open(['route' => 'busquedas']) !!}
-                        <select name='categorias' id='categorias'>
-                            <option value="Todos">Todos</option>
-                            @foreach($categorias as $cat)
-                            <option value="{{$cat->id}}">{{$cat->nombre}}</option>
-                            @endforeach
+                        <?php $cate=1; ?>
+                        {!! Form::open(['route' => ['busquedasCategorias', $cate], 'method' => 'categorias']) !!}
+                            <select name='categorias' id='categorias' onchange="this.form.submit()">
+                                <option value="Todos">Todos</option>
+                                @foreach($categorias as $cat)
+                                <option value="{{$cat->id}}">{{$cat->nombre}}</option>
+                                @endforeach
+                            </select>
+                            <input type="hidden" name="municipio" id="municipio" value={{ $municipio->id }} >
 
-                        </select>
                         {!! Form::close() !!}
 
 
@@ -49,44 +51,44 @@
          @php
         $count=count($destacados);
         @endphp
-        
-            @for($j=0;$j<$count;$j+=4)  
+
+            @for($j=0;$j<$count;$j+=4)
             @if($j===0)
             <div class="carousel-item active">
                 <div class="row">
             @else
         <div class="carousel-item">
                 <div class="row">
-            @endif    
+            @endif
             @php
             if(($count-$j)>=4){
             $m=$j+4;
             }else{
-            $m=$j+($count-$j);    
+            $m=$j+($count-$j);
             }
-            @endphp    
-        @for($i=$j;$i<$m;$i++)  
+            @endphp
+        @for($i=$j;$i<$m;$i++)
         @php
                                                 $var= $iconos->find($destacados[$i]->logo);
                                                 $var2="x";
                                                 if (!is_null($var)){
                                                     $var2=($var->link);
                                                 }
-        
+
                                             @endphp
-                      
+
                     <div class="col-3 col-sm-3 col-md-3 range_slides_item_image">
 
                                             <a href="{{route('local',[$destacados[$i]->id,$municipio->id])}}">
                                             <img style="width: 100px;border-radius: 10px; position:auto; z-index:900"
                                                     src="https://drive.google.com/uc?id={{ $var2 }}"></a>
                                                     </div>
-                                                    
-        @endfor 
-        
+
+        @endfor
+
         </div></div>
         @endfor
- 
+
     </div></div>
     <!--*-*-*-*-*-*-*-*-*-*- END BOOTSTRAP CAROUSEL *-*-*-*-*-*-*-*-*-*-->
 
@@ -128,7 +130,7 @@
 
 
                 </div>
-                 @elseif(!is_null($dir->catalogo))                        
+                 @elseif(!is_null($dir->catalogo))
                 <div class="row d-flex align-items-center" style="height: 70%;">
                                             @php
                                                 $var= $iconos->find($dir->logo);
@@ -173,7 +175,7 @@
                 <div class="row" style="height: 25%;margin-right: 0;margin-left: 0;">
                     <div class="col" style="padding:0;">
                         <!-- Start: Modal commerce popup button -->
-                    
+
                         <div class="text-center" style="border-style: none;"><a class="stretched-link bs4_modal_trigger" href="#" data-modal-id="bs4_sngl_cmrce{{ $dir->id }}" data-toggle="modal" style="border-style: none;margin-top: 0;margin-right: 0;margin-bottom: 0;margin-left: 0;padding: 0;border-radius: 0px;">
                         <i class="fa fa-eject rubberBand animated infinite"
                             style="width: 100%;color: #000c4f;"></i>
@@ -187,8 +189,8 @@
                                 <div class="modal-dialog" style="background-color:#fff">
                                     <div class="modal-content"><a class="bs4_btn_x_out_shtr bs4_sngl_cmrce_close" href="#" data-dismiss="modal">X</a>
                                         <div class="row" style="height: 100%;">
-                                    
-                                        <iframe src="https://drive.google.com/file/d/{{ $dir->catalogo }}/preview" height="100%" ></iframe>                                        
+
+                                        <iframe src="https://drive.google.com/file/d/{{ $dir->catalogo }}/preview" height="100%" ></iframe>
                                         </div>
                                     </div>
                                 </div>
@@ -336,7 +338,7 @@
                 <div class="row" style="height: 25%;margin-right: 0;margin-left: 0;">
                      <div class="col" style="width: 10%;padding-right: 0;padding-left: 0;max-width: 10%;margin-top: -10px;">
                         <!-- Start: Modal commerce popup button -->
-                    
+
                         <div class="text-center" style="border-style: none;"><a class="stretched-link bs4_modal_trigger" href="#" data-modal-id="bs4_sngl_cmrce{{ $dir->id }}" data-toggle="modal" style="border-style: none;margin-top: 0;margin-right: 0;margin-bottom: 0;margin-left: 0;padding: 0;border-radius: 0px;">
                         <i class="fa fa-eject rubberBand animated infinite"
                             style="width: 100%;color: #000c4f;"></i>
@@ -350,16 +352,16 @@
                                 <div class="modal-dialog" style="background-color:#fff">
                                     <div class="modal-content"><a class="bs4_btn_x_out_shtr bs4_sngl_cmrce_close" href="#" data-dismiss="modal">X</a>
                                         <div class="row" style="height: 100%;">
-                                       
+
                                         <iframe src="https://drive.google.com/file/d/{{ $dir->catalogo }}/preview" height="100%" ></iframe>                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div><!-- End: Modal commerce popup button -->
 
-                    
-                   
-                        
+
+
+
                     </div>
                 </div>
                 </div>
@@ -428,13 +430,13 @@
                             <span style="font-size: 14px;font-family: 'Montserrat Regular';">Ver Más Información</span><i
                                 class="fa fa-arrow-circle-right" style="margin-left: 5%;"></i>
                         </div>
-                  
+
                 </div>
             </a>
             </div>
             </div>
             </div>
-            </div><!-- End: 1 Row 2 Columns -->    
+            </div><!-- End: 1 Row 2 Columns -->
         @elseif ($dir->tipo_de_plan === 2)
             <!-- Start: 1 Row 2 Columns -->
             <div style="text-align: center;margin-top: 5%;margin-bottom: 5%;">
@@ -548,7 +550,7 @@
                                     </h1>
                                 </div>
                             </div>
-                            
+
                             @if (!is_null($dir->direccion)&& is_null($dir->telefono))
                             <div class="row">
                                 <div class="col"
@@ -599,14 +601,14 @@
     @include('front.menugeneral')
 <script>
 $(document).ready(function(){
-  $('#categorias').on('change',function(){                                      
+  $('#categorias').on('change',function(){
     let valor = $('#categorias').val();
     console.log(valor);
-    $.ajax({                        
-       type: 'POST',                 
-       url : 'scripts/update_orden_servicio_estado.php',                   
+    $.ajax({
+       type: 'POST',
+       url : 'scripts/update_orden_servicio_estado.php',
        data: {value: valor},
-       success: function(data)            
+       success: function(data)
        {
 
        }

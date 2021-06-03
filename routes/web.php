@@ -52,6 +52,10 @@ Route::get('/front/busquedas/', function () {
 Route::post('/front/busquedas/', 'App\Http\Controllers\FrontbusquedaController@search')->name('busquedas');
 
 
+Route::post('/front/busquedas/', 'App\Http\Controllers\FrontbusquedaController@categorias')->name('busquedasCategorias');
+
+
+
 //Dashboard
 
 Route::get('/home', [

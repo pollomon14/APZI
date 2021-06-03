@@ -2,15 +2,37 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\directorio;
 use App\Models\iconos;
 use App\Models\eventos;
 use App\Models\municipios;
 use App\Models\subcategorias;
+use App\Models\categorias;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class FrontbusquedaController extends Controller
 {
+
+    public function categorias(Request $request){
+        $var = $request->input('categorias');
+        $ciudad = $request->input('municipio');
+        $directorio = directorio::where([['id_municipio',$ciudad],['id_categoria',$var]])->paginate(20);
+        $iconos = iconos::orderBy('id', 'ASC')->get();
+        $categorias = categorias::orderBy('id', 'ASC')->get();
+        $subcategorias = subcategorias::orderBy('id', 'ASC')->get();
+        $eventos = eventos::where('id_municipio',$ciudad)->get();
+        $municipio = municipios::find($ciudad);
+        $destacados = directorio::where([['id_municipio',$ciudad],['tipo_de_plan','4']])->orWhere([['id_municipio',$ciudad],['tipo_de_plan','3']])->orWhere([['id_municipio',$ciudad],['tipo_de_plan','2']])->inRandomOrder()->paginate(20);
+        return view('front.directorio',compact('directorio','iconos','eventos','municipio','subcategorias','destacados','categorias'));
+
+
+
+    }
+
+
+
     public function search(Request $request)
     {
 

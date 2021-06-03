@@ -44,17 +44,6 @@ class FrontdirectorioController extends Controller
         return view('front.turismo',compact('directorio','iconos','eventos','municipio','horarios'));
 
     }
-    public function categorias($var,$id)
-    {
-        $directorio = directorio::where(['id_municipio',$var],['id_categoria',$id])->paginate(20);
-        $iconos = iconos::orderBy('id', 'ASC')->get();
-        $categorias = categorias::orderBy('id', 'ASC')->get();
-        $subcategorias = subcategorias::orderBy('id', 'ASC')->get();
-        $eventos = eventos::where('id_municipio',$var)->get();
-        $municipio = municipios::find($var);
-        $destacados = directorio::where([['id_municipio',$var],['tipo_de_plan','4']])->orWhere([['id_municipio',$var],['tipo_de_plan','3']])->orWhere([['id_municipio',$var],['tipo_de_plan','2']])->inRandomOrder()->paginate(20);
-        return view('front.directorio',compact('directorio','iconos','eventos','municipio','subcategorias','destacados','categorias'));
 
-    }
 
 }
