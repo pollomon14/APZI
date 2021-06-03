@@ -54,6 +54,8 @@ Route::post('/front/busquedas/', 'App\Http\Controllers\FrontbusquedaController@s
 
 Route::post('/front/busquedas/', 'App\Http\Controllers\FrontbusquedaController@categorias')->name('busquedasCategorias');
 
+Route::post('/front/directorio/', 'App\Http\Controllers\FrontdirectorioController@contador')->name('contador');
+
 
 
 //Dashboard

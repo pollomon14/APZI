@@ -158,7 +158,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
                             style="font-size: 13px;padding-left: 7%;width: 40%;color: #000c4f;font-family: 'Montserrat Regular';">Estás
                             en {{ $municipio->nombre }}</span>
                     </div>
-              
+
                     <div class="col-md-6"
                         style="width: 55%;padding-right: 0px;padding-left: 0px;background: #f2f2f2;border-style: none;">
                             <input type="search" name="busqueda" id="texto" class="form-control-sm"
@@ -199,6 +199,8 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 </script>
 <script src="/assets/js/script.min.js?h=618b97a50c192fc65f74b6a8b801de57"></script>
 <script src="/assets/js/script2.min.js"></script>
+
+
 <script>
     function goBack() {
       window.history.back();
@@ -253,7 +255,37 @@ function procesar() {
         document.getElementById("procesar").innerHTML = "Escuchar";
     }
 }
+
+
 </script>
+
+
+
+<script>
+ $(".btn-submit").click(function(e){
+  e.preventDefault();
+  var id = $("input[name=id]").val();
+  var nombre = $("input[name=nombre]").val();
+  var telefono = $("input[name=telefono]").val();
+  var tipo = $("input[name=tipo]").val();
+     $.ajax({
+     type:'POST',
+     url:"{{ route('contador') }}",
+     data:{
+        nombre:nombre,
+        telefono:telefono,
+         id:id,
+         tipo:tipo,
+         '_token': $('input[name=_token]').val(),
+     },
+     success: function(data) {
+        location.href = "tel:"+data['data'] ;
+    }
+});
+});
+
+</script>
+
 
 </body>
 

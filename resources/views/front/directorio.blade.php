@@ -19,7 +19,7 @@
                             <select name='categorias' id='categorias' onchange="this.form.submit()">
                                 <option value="Todos">Todos</option>
                                 @foreach($categorias as $cat)
-                                <option value="{{$cat->id}}">{{$cat->nombre}}</option>
+                                    <option value="{{$cat->id}}">{{$cat->nombre}}</option>
                                 @endforeach
                             </select>
                             <input type="hidden" name="municipio" id="municipio" value={{ $municipio->id }} >
@@ -268,13 +268,21 @@
                                                 $var= $dir->telefono;
                                                 $var2= explode("|" ,$var);
                                             @endphp
-                    <a href="tel:{{ $var2[0] }}"><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
-                        style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
-                        style="margin-left: 5%;color: #000c4f;"></i>
-                    <h1
-                        style="font-size: 14px;width: 100%;color: #000c4f;line-height: 6px;font-family: 'ITC Avant Garde Gothic Std Medium';">
-                        <br>{{ $var2[0] }}<br><br>
-                    </h1></a>
+
+
+                     <input type="hidden" name="id"  value="{{ $dir->id}}">
+                     <input type="hidden" name="nombre" value="{{ $dir->nombre}}">
+                     <input type="hidden" name="telefono" value="{{ $dir->telefono}}">
+                     <input type="hidden" name="tipo" id="tipo" value="tel">
+                     <button href="tel:{{ $var2[0] }}" class="btn-submit"><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
+                            style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
+                            style="margin-left: 5%;color: #000c4f;"></i>
+                        <h1
+                            style="font-size: 14px;width: 100%;color: #000c4f;line-height: 6px;font-family: 'ITC Avant Garde Gothic Std Medium';">
+                            <br>{{ $var2[0] }}<br><br>
+                        </h1></button>
+
+
                 </div>
             </div>
             @elseif (is_null($dir->telefono)&&!is_null($dir->whatsapp))
@@ -599,21 +607,6 @@
     @endforeach
     {{ $directorio->links() }}
     @include('front.menugeneral')
-<script>
-$(document).ready(function(){
-  $('#categorias').on('change',function(){
-    let valor = $('#categorias').val();
-    console.log(valor);
-    $.ajax({
-       type: 'POST',
-       url : 'scripts/update_orden_servicio_estado.php',
-       data: {value: valor},
-       success: function(data)
-       {
 
-       }
-     });
-  });
-});
-</script>
+
 @endsection

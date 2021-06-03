@@ -18,7 +18,12 @@ class FrontbusquedaController extends Controller
     public function categorias(Request $request){
         $var = $request->input('categorias');
         $ciudad = $request->input('municipio');
-        $directorio = directorio::where([['id_municipio',$ciudad],['id_categoria',$var]])->paginate(20);
+        if ($var=="Todos"){
+            $directorio = directorio::where([['id_municipio',$ciudad]])->paginate(20);
+        }else{
+            $directorio = directorio::where([['id_municipio',$ciudad],['id_categoria',$var]])->paginate(20);
+
+        }
         $iconos = iconos::orderBy('id', 'ASC')->get();
         $categorias = categorias::orderBy('id', 'ASC')->get();
         $subcategorias = subcategorias::orderBy('id', 'ASC')->get();
