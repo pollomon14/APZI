@@ -380,27 +380,36 @@
 
 
         <script>
-            $(".btn-submit").click(function(e) {
-                e.preventDefault();
-                var id = $("input[name=id]").val();
-                var nombre = $("input[name=nombre]").val();
-                var telefono = $("input[name=telefono]").val();
-                var tipo = $("input[name=tipo]").val();
+
+            function realizaProceso(valorCaja1, valorCaja2,valorCaja3, valorCaja4){
+
                 $.ajax({
                     type: 'POST',
                     url: "{{ route('contador') }}",
                     data: {
-                        nombre: nombre,
-                        telefono: telefono,
-                        id: id,
-                        tipo: tipo,
+                        nombre: valorCaja2,
+                        telefono: valorCaja3,
+                        id: valorCaja1,
+                        tipo: valorCaja4,
                         '_token': $('input[name=_token]').val(),
                     },
                     success: function(data) {
-                        location.href = "tel:" + data['data'];
+                        console.log (data['data']);
+                        if (data['opcion']=='tel')
+                            location.href = "tel:" + data['data'];
+                        else if (data['opcion']=='wp')
+                        location.href = "https://api.whatsapp.com/send?phone=+57%20" + data['data'];
                     }
                 });
+
+            }
+
+
+            $(".btn-submit").click(function(e) {
+
+
             });
+
 
         </script>
 </main>

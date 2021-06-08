@@ -56,58 +56,63 @@ class FrontdirectorioController extends Controller
 
         if ($tipo == 'tel') {
             $reg->telefono_contador = 1;
-            $Busqueda = DB::table('registro_directorios')->where('id_local', 'LIKE', '%' . $request->input('id') . '%')->get();
+            $Busqueda = DB::table('registro_directorios')->where('id_local', '=', $request->input('id') )->get();
             if ($Busqueda->isEmpty()) {
                 $reg->save();
             } else {
                 $cont = $Busqueda[0]->telefono_contador;
                 $cont = $cont + 1;
-                DB::table('registro_directorios')->where('id_local', 'LIKE', '%' . $request->input('id') . '%')->update(array(
+                DB::table('registro_directorios')->where('id_local', '=', $request->input('id'))->update(array(
                     'telefono_contador' => $cont
                 ));
             }
             return response()->json([
                 "status" => true,
-                "data" => $request->input('telefono')
+                "data" => $request->input('telefono'),
+                "opcion" => 'tel'
             ]);
         } else {
             if ($tipo == 'wp') {
                 $reg->whatsapp_contador = 1;
-                $Busqueda = DB::table('registro_directorios')->where('id_local', 'LIKE', '%' . $request->input('id') . '%')->get();
+                $Busqueda = DB::table('registro_directorios')->where('id_local', '=', $request->input('id') )->get();
                 if ($Busqueda->isEmpty()) {
                     $reg->save();
                 } else {
                     $cont = $Busqueda[0]->whatsapp_contador;
                     $cont = $cont + 1;
-                    DB::table('registro_directorios')->where('id_local', 'LIKE', '%' . $request->input('id') . '%')->update(array(
+                    DB::table('registro_directorios')->where('id_local', '=', $request->input('id'))->update(array(
                         'whatsapp_contador' => $cont
                     ));
                 }
                 return response()->json([
                     "status" => true,
-                    "data" => $request->input('telefono')
+                    "data" => $request->input('telefono'),
+                    "opcion" => 'wp'
                 ]);
             } else if ($tipo == 'catalogo') {
                 $reg->catalogo_contador = 1;
-                $Busqueda = DB::table('registro_directorios')->where('id_local', 'LIKE', '%' . $request->input('id') . '%')->get();
+                $Busqueda = DB::table('registro_directorios')->where('id_local', '=', $request->input('id') )->get();
                 if ($Busqueda->isEmpty()) {
                     $reg->save();
                 } else {
                     $cont = $Busqueda[0]->catalogo_contador;
                     $cont = $cont + 1;
-                    DB::table('registro_directorios')->where('id_local', 'LIKE', '%' . $request->input('id') . '%')->update(array(
-                        'catalogo_contador' => $cont
+                    DB::table('registro_directorios')->where('id_local', '=', $request->input('id'))->update(array(
+                        'telefono_contador' => $cont
                     ));
                 }
                 return response()->json([
                     "status" => true,
-                    "data" => $request->input('telefono')
+                    "data" => $request->input('telefono'),
+                    "opcion" => 'catalogo'
                 ]);
             }
             return response()->json([
                 "status" => false,
-                "data" => "error"
+                "data" => "error",
+                "opcion" => 'error'
             ]);
         }
     }
 }
+

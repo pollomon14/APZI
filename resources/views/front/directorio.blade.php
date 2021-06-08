@@ -176,7 +176,8 @@
                     <div class="col" style="padding:0;">
                         <!-- Start: Modal commerce popup button -->
 
-                        <div class="text-center" style="border-style: none;"><a class="stretched-link bs4_modal_trigger" href="#" data-modal-id="bs4_sngl_cmrce{{ $dir->id }}" data-toggle="modal" style="border-style: none;margin-top: 0;margin-right: 0;margin-bottom: 0;margin-left: 0;padding: 0;border-radius: 0px;">
+                        <div class="text-center" style="border-style: none;">
+                            <a class="stretched-link bs4_modal_trigger" href="#" data-modal-id="bs4_sngl_cmrce{{ $dir->id }}" data-toggle="modal" style="border-style: none;margin-top: 0;margin-right: 0;margin-bottom: 0;margin-left: 0;padding: 0;border-radius: 0px;">
                         <i class="fa fa-eject rubberBand animated infinite"
                             style="width: 100%;color: #000c4f;"></i>
                         <h1
@@ -237,27 +238,26 @@
                                                 $var= $dir->telefono;
                                                 $var2= explode("|" ,$var);
                                             @endphp
-                    <a href="tel:{{ $var2[0] }}"><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
-                        style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
-                        style="margin-left: 5%;color: #000c4f;"></i>
-                    <h1
-                        style="font-size: 14px;width: 100%;color: #000c4f;line-height: 6px;font-family: 'ITC Avant Garde Gothic Std Medium';">
-                        <br>{{ $var2[0] }}<br><br>
-                    </h1></a>
+                    <button class="btn-submit"  onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','tel');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
+                    style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
+                    style="margin-left: 5%;color: #000c4f;"></i>
+                <h1
+                    style="font-size: 14px;width: 100%;color: #000c4f;line-height: 6px;font-family: 'ITC Avant Garde Gothic Std Medium';">
+                    <br>{{ $var2[0] }}<br><br>
+                </h1></button>
                 </div>
                 <div class="col" style="width: 50%;padding-left: 0;padding-right: 0;">
                 @php
                                                 $var= $dir->whatsapp;
                                                 $var2= explode("|" ,$var);
                                             @endphp
-                <a href="https://api.whatsapp.com/send?phone=+57%20{{ $var2[0]  }}"><i class="fa fa-angle-double-right"
-                        style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-whatsapp"
-                        style="color: #000c4f;font-weight: bold;"></i><i class="fa fa-angle-double-left"
+                       <button class="btn-submit"  onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','wp');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-whatsapp"
+                        style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
                         style="margin-left: 5%;color: #000c4f;"></i>
                     <h1
                         style="font-size: 14px;width: 100%;color: #000c4f;line-height: 6px;font-family: 'ITC Avant Garde Gothic Std Medium';">
                         <br>{{ $var2[0] }}<br><br>
-                    </h1></a>
+                    </h1></button>
                 </div>
             </div>
             @elseif (!is_null($dir->telefono)&& is_null($dir->whatsapp))
@@ -270,11 +270,8 @@
                                             @endphp
 
 
-                     <input type="hidden" name="id"  value="{{ $dir->id}}">
-                     <input type="hidden" name="nombre" value="{{ $dir->nombre}}">
-                     <input type="hidden" name="telefono" value="{{ $dir->telefono}}">
-                     <input type="hidden" name="tipo" id="tipo" value="tel">
-                     <button href="tel:{{ $var2[0] }}" class="btn-submit"><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
+
+                     <button class="btn-submit"  onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','tel');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
                             style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
                             style="margin-left: 5%;color: #000c4f;"></i>
                         <h1
@@ -292,14 +289,13 @@
                                                 $var= $dir->whatsapp;
                                                 $var2= explode("|" ,$var);
                                             @endphp
-                <a href="https://api.whatsapp.com/send?phone=+57%20{{ $var2[0] }}"><i class="fa fa-angle-double-right"
-                        style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-whatsapp"
-                        style="color: #000c4f;font-weight: bold;"></i><i class="fa fa-angle-double-left"
-                        style="margin-left: 5%;color: #000c4f;"></i>
-                    <h1
-                        style="font-size: 14px;width: 100%;color: #000c4f;line-height: 6px;font-family: 'ITC Avant Garde Gothic Std Medium';">
-                        <br>{{ $var2[0] }}<br><br>
-                    </h1></a>
+               <button class="btn-submit"  onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','wp');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-whatsapp"
+                style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
+                style="margin-left: 5%;color: #000c4f;"></i>
+            <h1
+                style="font-size: 14px;width: 100%;color: #000c4f;line-height: 6px;font-family: 'ITC Avant Garde Gothic Std Medium';">
+                <br>{{ $var2[0] }}<br><br>
+            </h1></button>
                 </div>
             </div>
             @endif
@@ -406,27 +402,27 @@
                     @php
                                                 $var= $dir->telefono;
                                                 $var2= explode("|" ,$var);
-                                            @endphp<a href="tel:{{ $var2[0] }}"><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
-                        style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
-                        style="margin-left: 5%;color: #000c4f;"></i>
-                    <h1
-                        style="font-size: 14px;width: 100%;color: #000c4f;line-height: 6px;font-family: 'ITC Avant Garde Gothic Std Medium';">
-                        <br>{{ $var2[0] }}<br><br>
-                    </h1></a>
+                                            @endphp
+                               <button class="btn-submit"  onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','tel');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
+                                style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
+                                style="margin-left: 5%;color: #000c4f;"></i>
+                            <h1
+                                style="font-size: 14px;width: 100%;color: #000c4f;line-height: 6px;font-family: 'ITC Avant Garde Gothic Std Medium';">
+                                <br>{{ $var2[0] }}<br><br>
+                            </h1></button>
                 </div>
                 <div class="col" style="width: 50%;padding-left: 0;padding-right: 0;">
                 @php
                                                 $var= $dir->whatsapp;
                                                 $var2= explode("|" ,$var);
                                             @endphp
-                <a href="https://api.whatsapp.com/send?phone=+57%20{{ $var2[0] }}"><i class="fa fa-angle-double-right"
-                        style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-whatsapp"
-                        style="color: #000c4f;font-weight: bold;"></i><i class="fa fa-angle-double-left"
-                        style="margin-left: 5%;color: #000c4f;"></i>
-                    <h1
-                        style="font-size: 14px;width: 100%;color: #000c4f;line-height: 6px;font-family: 'ITC Avant Garde Gothic Std Medium';">
-                        <br>{{ $var2[0] }}<br><br>
-                    </h1></a>
+               <button class="btn-submit"  onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','wp');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-whatsapp"
+                style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
+                style="margin-left: 5%;color: #000c4f;"></i>
+            <h1
+                style="font-size: 14px;width: 100%;color: #000c4f;line-height: 6px;font-family: 'ITC Avant Garde Gothic Std Medium';">
+                <br>{{ $var2[0] }}<br><br>
+            </h1></button>
                 </div>
             </div>
 
@@ -501,14 +497,13 @@
                                                 $var= $dir->telefono;
                                                 $var2= explode("|" ,$var);
                                             @endphp
-                                    <a href="tel:{{ $var2[0] }}"><h1
-                                        style="font-size: 14px;width: 100%;color: #000c4f;line-height: 6px;font-family: 'ITC Avant Garde Gothic Std Medium';margin-bottom: 0;padding-bottom: 1%;padding-top: 1%;">
-                                        <br><i class="fa fa-angle-double-right"
-                                            style="color: #000c4f;margin-right: 2%;"></i><i class="fa fa-phone"
+                                          <button class="btn-submit"  onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','tel');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
                                             style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
-                                            style="color: #000c4f;margin-left: 2%;"></i>&nbsp;
-                                        {{ $var2[0] }}<br><br>
-                                    </h1></a>
+                                            style="margin-left: 5%;color: #000c4f;"></i>
+                                        <h1
+                                            style="font-size: 14px;width: 100%;color: #000c4f;line-height: 6px;font-family: 'ITC Avant Garde Gothic Std Medium';">
+                                            <br>{{ $var2[0] }}<br><br>
+                                        </h1></button>
                                 </div>
                             </div>
                             @endif
@@ -585,14 +580,13 @@
                                 style="background: #f2f2f2;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;">
                                 <div class="col"
                                     style="width: 50%;padding-left: 0;padding-right: 0;border-top: 1px none #000c4f ;border-right: 1px none #000c4f ;border-left: 1px none #000c4f ;">
-                                    <a href="tel:{{ $dir->telefono }}"><h1
-                                        style="font-size: 14px;width: 100%;color: #000c4f;line-height: 6px;font-family: 'ITC Avant Garde Gothic Std Medium';margin-bottom: 0;padding-top: 1%;padding-left: 1%;">
-                                        <br><i class="fa fa-angle-double-right"
-                                            style="color: #000c4f;margin-right: 2%;"></i><i class="fa fa-phone"
-                                            style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
-                                            style="color: #000c4f;margin-left: 2%;"></i>&nbsp;
-                                        {{ $dir->telefono }}<br><br>
-                                    </h1></a>
+                                    <button class="btn-submit"  onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','tel');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
+                                        style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
+                                        style="margin-left: 5%;color: #000c4f;"></i>
+                                    <h1
+                                        style="font-size: 14px;width: 100%;color: #000c4f;line-height: 6px;font-family: 'ITC Avant Garde Gothic Std Medium';">
+                                        <br>{{ $dir->telefono}}<br><br>
+                                    </h1></button>
                                 </div>
                             </div>
                             @endif
