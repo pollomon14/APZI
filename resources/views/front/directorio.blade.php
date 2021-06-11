@@ -14,12 +14,28 @@
                     <div class="filter">
 
                         <i class="fa fa-filter" style="color: #000c4f;"></i>
-                        <?php $cate=1; ?>
+                        <?php $cate=1;
+                            $sino=1;
+
+                        ?>
                         {!! Form::open(['route' => ['busquedasCategorias', $cate], 'method' => 'categorias']) !!}
                             <select name='categorias' id='categorias' onchange="this.form.submit()">
                                 <option value="Todos">Todos</option>
+
+
                                 @foreach($categorias as $cat)
-                                    <option value="{{$cat->id}}">{{$cat->nombre}}</option>
+                                <?php
+                                        $varcate= $categorias->find($var);
+                                    ?>
+                                    @if($sino==1){
+                                        <option value="{{ $var }}" selected><?php echo  $varcate->nombre ?></option>
+                                        $sino=1;
+                                    }@else{
+                                        <option value="{{$cat->id}}">{{$cat->nombre}}</option>
+
+                                    }
+                                    @endif
+
                                 @endforeach
                             </select>
                             <input type="hidden" name="municipio" id="municipio" value={{ $municipio->id }} >
@@ -30,8 +46,9 @@
                     </div><!-- End: Filter -->
                 </div>
                 <div class="col-md-6" style="width: 50%;padding-left: 0px;background: #f2f2f2;padding-bottom: 2%;">
-                    <div class="form-check" style="margin-left: 7%;margin-top: 3%;"><input class="form-check-input"
-                            type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1"
+                    <div class="form-check" style="margin-left: 7%;margin-top: 3%;">
+                        <input class="form-check-input"
+                            type="checkbox" id="formCheck-1" ><label class="form-check-label" for="formCheck-1"
                             style="font-family: 'Montserrat Regular';color: #000c4f;font-size: 13px;">Con domicilios</label>
                     </div>
                 </div>
@@ -98,17 +115,19 @@
 
     <h1
         style="width: 94%;margin-left: 3%;color: #000c4f;font-size: 30px;font-family: 'ITC Avant Garde Gothic Std Medium';border-bottom: 2px solid #000c4f;line-height: 27px;">
-        A</h1><!-- Start: divider-text-middle -->
+        A</h1>
+        <!-- Start: divider-text-middle -->
     <div style="text-align:center;"></div><!-- End: divider-text-middle -->
     @foreach ($directorio as $dir)
 
                 <!-- Start: 1 Row 2 Columns -->
                 @if ($dir->tipo_de_plan === 4)
-                    <div style="text-align: center;margin-top: 5%;margin-bottom: 5%;">
+                    <div style="text-align: center;margin-top: 5%;margin-bottom: 5%; column-span: 90%">
                         <div class="container">
-                            <div class="row"
+                            <div class="row caja"
                                 style="width: 98%;margin-left: 1%;margin-right: 0;border: 1px solid #000c4f;border-radius: 4px;">
                                 <div class="col-md-6" style="width: 30%;padding-right: 0;padding-left: 0;">
+                                    <input type="hidden" name="domicilio" class="domicilio" value="{{ $dir->domicilio }}">
 
                 @if (is_null($dir->direccion) && !is_null($dir->catalogo))
                                     <div class="row d-flex align-items-center" style="height: 62%;">
@@ -126,6 +145,8 @@
                                             @endphp
                                             <div class="col"><img style="width: 100px;border-radius: 10px;"
                                                     src="https://drive.google.com/uc?id={{ $var2 }}"></div>
+
+
 
 
 
@@ -321,6 +342,7 @@
                                 style="width: 98%;margin-left: 1%;margin-right: 0;border: 1px solid #000c4f;border-radius: 4px;">
                                 <div class="col-md-6" style="width: 30%;padding-right: 0;padding-left: 0;">
                                     <div class="row d-flex align-items-center" style="height: 70%;">
+                                        <input type="hidden" name="domicilio" class="domicilio" value="{{ $dir->domicilio }}">
                                             @php
                                                 $var= $iconos->find($dir->logo);
                                                 $var2="x";
@@ -447,6 +469,7 @@
                 <div class="container">
                     <div class="row"
                         style="width: 98%;margin-left: 1%;margin-right: 0;border: 1px solid #000c4f;border-radius: 4px;">
+                        <input type="hidden" name="domicilio" class="domicilio" value="{{ $dir->domicilio }}">
                         @php
                                                 $var= $iconos->find($dir->logo);
                                                 $var2="x";
@@ -530,6 +553,7 @@
                     <div class="row"
                         style="width: 98%;margin-left: 1%;margin-right: 0;border: 1px solid #000c4f;border-radius: 4px;">
                         <div class="col-md-6" style="width: 100%;">
+                            <input type="hidden" name="domicilio" class="domicilio" value="{{ $dir->domicilio }}">
                             <div class="row">
                             @php
                                                 $var3= $subcategorias->find($dir->id_subcategoria);
@@ -599,7 +623,6 @@
 
 
     @endforeach
-    {{ $directorio->links() }}
     @include('front.menugeneral')
 
 

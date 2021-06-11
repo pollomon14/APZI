@@ -405,10 +405,44 @@
             }
 
 
-            $(".btn-submit").click(function(e) {
 
 
+
+
+                $('#formCheck-1').on("click", function() {
+                var elements = document.getElementsByClassName("domicilio");
+                if ($(this).is(':checked')) {
+                    for (var i = 0; i < elements.length; i++) {
+                    //Get the HTML element from the HTMLCollection object.
+                    var listItem = elements.item(i);
+                    //Log the text inside the list item to the console.
+                    if (listItem.value==0){
+                        document.getElementsByClassName('row caja')[i].style.display ='none';
+                    }
+
+                }
+
+                }
+                else{
+
+                    for (var i = 0; i < elements.length; i++) {
+                    //Get the HTML element from the HTMLCollection object.
+                    var listItem = elements.item(i);
+                    //Log the text inside the list item to the console.
+                        document.getElementsByClassName('row caja')[i].style.display ='flex';
+
+
+                }
+
+
+                }
             });
+
+
+
+
+
+
 
 
         </script>

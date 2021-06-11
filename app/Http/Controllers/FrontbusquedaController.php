@@ -19,9 +19,9 @@ class FrontbusquedaController extends Controller
         $var = $request->input('categorias');
         $ciudad = $request->input('municipio');
         if ($var=="Todos"){
-            $directorio = directorio::where([['id_municipio',$ciudad]])->paginate(20);
+            $directorio = directorio::where([['id_municipio',$ciudad]])->get();
         }else{
-            $directorio = directorio::where([['id_municipio',$ciudad],['id_categoria',$var]])->paginate(20);
+            $directorio = directorio::where([['id_municipio',$ciudad],['id_categoria',$var]])->get();
 
         }
         $iconos = iconos::orderBy('id', 'ASC')->get();
@@ -30,7 +30,7 @@ class FrontbusquedaController extends Controller
         $eventos = eventos::where('id_municipio',$ciudad)->get();
         $municipio = municipios::find($ciudad);
         $destacados = directorio::where([['id_municipio',$ciudad],['tipo_de_plan','4']])->orWhere([['id_municipio',$ciudad],['tipo_de_plan','3']])->orWhere([['id_municipio',$ciudad],['tipo_de_plan','2']])->inRandomOrder()->paginate(20);
-        return view('front.directorio',compact('directorio','iconos','eventos','municipio','subcategorias','destacados','categorias'));
+        return view('front.directorio',compact('directorio','iconos','eventos','municipio','subcategorias','destacados','categorias', 'var'));
 
 
 

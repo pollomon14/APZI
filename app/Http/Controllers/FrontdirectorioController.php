@@ -18,7 +18,7 @@ class FrontdirectorioController extends Controller
 {
     public function info($var)
     {
-        $directorio = directorio::where('id_municipio', $var)->paginate(20);
+        $directorio = directorio::where('id_municipio', $var)->get();
         $iconos = iconos::orderBy('id', 'ASC')->get();
         $categorias = categorias::orderBy('id', 'ASC')->get();
         $subcategorias = subcategorias::orderBy('id', 'ASC')->get();
