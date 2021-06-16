@@ -335,7 +335,7 @@
             @elseif ($dir->tipo_de_plan === 3)
                     <div style="text-align: center;margin-top: 5%;margin-bottom: 5%;">
                         <div class="container">
-                            <div class="row"
+                            <div class="row caja"
                                 style="width: 98%;margin-left: 1%;margin-right: 0;border: 1px solid #000c4f;border-radius: 4px;">
                                 <div class="col-md-6" style="width: 30%;padding-right: 0;padding-left: 0;">
                                     <div class="row d-flex align-items-center" style="height: 70%;">
@@ -464,7 +464,7 @@
             <!-- Start: 1 Row 2 Columns -->
             <div style="text-align: center;margin-top: 5%;margin-bottom: 5%;">
                 <div class="container">
-                    <div class="row"
+                    <div class="row caja"
                         style="width: 98%;margin-left: 1%;margin-right: 0;border: 1px solid #000c4f;border-radius: 4px;">
                         <input type="hidden" name="domicilio" class="domicilio" value="{{ $dir->domicilio }}">
                         @php
@@ -547,7 +547,7 @@
             <!-- Start: 1 Row 2 Columns -->
             <div style="text-align: center;margin-top: 5%;margin-bottom: 5%;">
                 <div class="container">
-                    <div class="row"
+                    <div class="row caja"
                         style="width: 98%;margin-left: 1%;margin-right: 0;border: 1px solid #000c4f;border-radius: 4px;">
                         <div class="col-md-6" style="width: 100%;">
                             <input type="hidden" name="domicilio" class="domicilio" value="{{ $dir->domicilio }}">
