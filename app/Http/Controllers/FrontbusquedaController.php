@@ -20,6 +20,7 @@ class FrontbusquedaController extends Controller
         $ciudad = $request->input('municipio');
         if ($var=="Todos"){
             $directorio = directorio::where([['id_municipio',$ciudad]])->get();
+            $var=null;
         }else{
             $directorio = directorio::where([['id_municipio',$ciudad],['id_categoria',$var]])->get();
 

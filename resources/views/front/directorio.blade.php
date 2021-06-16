@@ -17,25 +17,22 @@
                         <?php $cate=1;
                             $sino=1;
 
+
+
                         ?>
                         {!! Form::open(['route' => ['busquedasCategorias', $cate], 'method' => 'categorias']) !!}
                             <select name='categorias' id='categorias' onchange="this.form.submit()">
-                                <option value="Todos">Todos</option>
+                                @if (!isset($var))
+                                    <option value="Todos">Todos</option>
+                                @endif
+                                 @if (isset($var))
+                                    <option value="$var"><?php echo $categorias->find($var)->nombre;?></option>
+                                    <option value="Todos">Todos</option>
+                                @endif
 
 
                                 @foreach($categorias as $cat)
-                                <?php
-                                        $varcate= $categorias->find($var);
-                                    ?>
-                                    @if($sino==1){
-                                        <option value="{{ $var }}" selected><?php echo  $varcate->nombre ?></option>
-                                        $sino=1;
-                                    }@else{
                                         <option value="{{$cat->id}}">{{$cat->nombre}}</option>
-
-                                    }
-                                    @endif
-
                                 @endforeach
                             </select>
                             <input type="hidden" name="municipio" id="municipio" value={{ $municipio->id }} >

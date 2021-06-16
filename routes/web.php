@@ -44,10 +44,6 @@ Route::get('/front/turismo/{id}', 'App\Http\Controllers\FrontdirectorioControlle
 Route::get('/front/ofertas/{id}', 'App\Http\Controllers\FronteventosController@index')->name('eventos');
 
 
-Route::get('/front/busquedas/', function () {
-    return view('/front/busquedas');
-});
-
 
 Route::post('/front/busquedas/', 'App\Http\Controllers\FrontbusquedaController@search')->name('busquedas');
 
