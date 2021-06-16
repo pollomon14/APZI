@@ -33,8 +33,6 @@ class FrontbusquedaController extends Controller
         $destacados = directorio::where([['id_municipio',$ciudad],['tipo_de_plan','4']])->orWhere([['id_municipio',$ciudad],['tipo_de_plan','3']])->orWhere([['id_municipio',$ciudad],['tipo_de_plan','2']])->inRandomOrder()->paginate(20);
         return view('front.directorio',compact('directorio','iconos','eventos','municipio','subcategorias','destacados','categorias', 'var'));
 
-
-
     }
 
 

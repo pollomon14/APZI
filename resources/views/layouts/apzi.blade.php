@@ -277,18 +277,20 @@
                                     en {{ $municipio->nombre }}</span>
                             </div>
 
-                            <div class="col-md-6"
-                                style="width: 55%;padding-right: 0px;padding-left: 0px;background: #f2f2f2;border-style: none;">
-                                <input type="search" name="busqueda" id="texto" class="form-control-sm"
-                                    style="width: 75%;height: 20px;border-radius: 7px;padding-left: 3%;margin-left: 2%;color: #000c4f;font-family: 'Montserrat Regular';font-size: 14px;text-align: left;margin-top: 0px;margin-bottom: 2%;border: 1px solid #000c4f ;border-bottom-width: 1px;"
-                                    placeholder="Qué Buscas?" />
-                                <input type="hidden" name="municipio" value={{ $municipio->id }}>
-                                <button><i class="fa fa-search"
-                                        style="font-size: 13px;padding-left: 3%;color: #000c4f;border-style: none;"></i>
-                                </button>
+                            {!! Form::open(['route' => 'busquedas']) !!}
+                                    @csrf
+                                    <div class="col-md-6"
+                                        style="width: 55%;padding-right: 0px;padding-left: 0px;background: #f2f2f2;border-style: none;">
+                                        <input type="search" name="busqueda" id="texto" class="form-control-sm"
+                                        style="width: 75%;height: 20px;border-radius: 7px;padding-left: 3%;margin-left: 2%;color: #000c4f;font-family: 'Montserrat Regular';font-size: 14px;text-align: left;margin-top: 0px;margin-bottom: 2%;border: 1px solid #000c4f ;border-bottom-width: 1px;"
+                                        placeholder="Qué Buscas?"/>
+                                        <input type="hidden" name="municipio" value={{ $municipio->id }} >
+                                        <button><i class="fa fa-search"
+                                            style="font-size: 13px;padding-left: 3%;color: #000c4f;border-style: none;"></i>
+                                        </button>
 
-
-                            </div>
+                                    </div>
+                            {!! Form::close() !!}
 
 
                             <button onclick="procesar()" id="procesar">Escuchar</button>
