@@ -4,7 +4,7 @@
 
 
     <!-- Start: 1 Row 2 Columns -->
-    <div style="width: 100%;border-style: none;margin-top: 0%;    padding-top: 20%;position: fixed;z-index: 100;">
+    <div style="width: 100%;border-style: none;margin-top: 0%;  top: 80px;position: fixed;z-index: 90;">
         <div class="container" style="padding-left: 0;padding-right: 0;width: 100%;border-style: none;">
             <div class="row"
                 style="width: 100%;margin-right: 0;margin-left: 0;margin-top: 0px;border-style: none;">
@@ -13,7 +13,7 @@
                     <!-- Start: Filter -->
                     <div class="filter">
 
-                        <i class="fa fa-filter" style="color: #000c4f;"></i>
+                        
                         <?php $cate=1;
                             $sino=1;
 
@@ -21,6 +21,7 @@
 
                         ?>
                         {!! Form::open(['route' => ['busquedasCategorias', $cate], 'method' => 'categorias']) !!}
+                        <i class="fa fa-filter" style="color: #000c4f;"></i>
                             <select name='categorias' id='categorias' onchange="this.form.submit()">
                                 @if (!isset($var))
                                     <option value="Todos">Todos</option>
@@ -55,25 +56,16 @@
     <!-- Start: 4 Col Small Slider -->
     <!--*-*-*-*-*-*-*-*-*-*- BOOTSTRAP CAROUSEL *-*-*-*-*-*-*-*-*-*-->
 
-    <div id="range_slides_4_columns_carousel" class="carousel slide range_slides_carousel_wrapper swipe_x ps_easeOutCirc"
-        data-ride="carousel" data-duration="2000" data-interval="5000" style="padding-top:35%" >
 
 
-
+<div style="width:90%; padding-top:35%; padding-bottom:5%; margin-left:5%; margin-right:5%">
         <!--========= Wrapper for slides =========-->
-        <div class="carousel-inner range_slides_carousel_inner" role="listbox">
+        <div class="owl-carousel owl-theme" style="width:100%;">
          @php
         $count=count($destacados);
         @endphp
 
             @for($j=0;$j<$count;$j+=4)
-            @if($j===0)
-            <div class="carousel-item active">
-                <div class="row">
-            @else
-        <div class="carousel-item">
-                <div class="row">
-            @endif
             @php
             if(($count-$j)>=4){
             $m=$j+4;
@@ -91,21 +83,18 @@
 
                                             @endphp
 
-                    <div class="col-3 col-sm-3 col-md-3 range_slides_item_image">
+                                            <div class="item" style="width: 75px;">
 
                                             <a href="{{route('local',[$destacados[$i]->id,$municipio->id])}}">
-                                            <img style="width: 100px;border-radius: 10px; position:auto; z-index:900"
+                                            <img loading="lazy" style="border-radius: 10px; position:auto; z-index:900"
                                                     src="https://drive.google.com/uc?id={{ $var2 }}"></a>
                                                     </div>
 
         @endfor
-
-        </div></div>
         @endfor
 
     </div></div>
     <!--*-*-*-*-*-*-*-*-*-*- END BOOTSTRAP CAROUSEL *-*-*-*-*-*-*-*-*-*-->
-
 
     <!-- End: 4 Col Small Slider -->
 
@@ -140,7 +129,7 @@
                                                     $var4=($var3->nombre);
                                                 }
                                             @endphp
-                                            <div class="col"><img style="width: 100px;border-radius: 10px;"
+                                            <div class="col"><img loading="lazy" style="width: 100px;border-radius: 10px;"
                                                     src="https://drive.google.com/uc?id={{ $var2 }}"></div>
 
 
@@ -162,7 +151,7 @@
                                                     $var4=($var3->nombre);
                                                 }
                                             @endphp
-                                            <div class="col"><img style="width: 100px;border-radius: 10px;"
+                                            <div class="col"><img loading="lazy" style="width: 100px;border-radius: 10px;"
                                                     src="https://drive.google.com/uc?id={{ $var2 }}"></div>
 
 
@@ -182,7 +171,7 @@
                                                     $var4=($var3->nombre);
                                                 }
                                             @endphp
-                                            <div class="col"><img style="width: 100px;border-radius: 10px;"
+                                            <div class="col"><img loading="lazy" style="width: 100px;border-radius: 10px;"
                                                     src="https://drive.google.com/uc?id={{ $var2 }}"></div>
 
 
@@ -207,9 +196,9 @@
                             <div id="bs4_sngl_cmrce{{ $dir->id }}" class="modal fade bs4_modal bs4_blue bs4_bg_white bs4_bd_black bs4_bd_semi_trnsp bs4_none_radius bs4_shadow_none bs4_center bs4_animate bs4FadeInDown bs4_duration_md bs4_easeOutQuint bs4_size_sngl_cmrce" role="dialog" data-modal-backdrop="true" data-show-on="click" data-modal-delay="false" data-modal-duration="false">
                                 <div class="modal-dialog" style="background-color:#fff">
                                     <div class="modal-content"><a class="bs4_btn_x_out_shtr bs4_sngl_cmrce_close" href="#" data-dismiss="modal">X</a>
-                                        <div class="row" style="height: 100%;">
+                                        <div class="row" style="height: 100%; padding-top:7%">
 
-                                        <iframe src="https://drive.google.com/file/d/{{ $dir->catalogo }}/preview" height="100%" ></iframe>
+                                        <iframe src="https://drive.google.com/file/d/{{ $dir->catalogo }}/preview" height="100%" width="100%"  ></iframe>
                                         </div>
                                     </div>
                                 </div>
@@ -352,14 +341,14 @@
                                                     $var4=($var3->nombre);
                                                 }
                                             @endphp
-                                            <div class="col"><img style="width: 100px;border-radius: 10px;"
+                                            <div class="col"><img loading="lazy" style="width: 100px;border-radius: 10px;"
                                                     src="https://drive.google.com/uc?id={{ $var2 }}"></div>
 
 
 
                 </div>
                 <div class="row" style="height: 25%;margin-right: 0;margin-left: 0;">
-                     <div class="col" style="width: 10%;padding-right: 0;padding-left: 0;max-width: 10%;margin-top: -10px;">
+                     <div class="col" style="padding:0">
                         <!-- Start: Modal commerce popup button -->
 
                         <div class="text-center" style="border-style: none;"><a class="stretched-link bs4_modal_trigger" href="#" data-modal-id="bs4_sngl_cmrce{{ $dir->id }}" data-toggle="modal" style="border-style: none;margin-top: 0;margin-right: 0;margin-bottom: 0;margin-left: 0;padding: 0;border-radius: 0px;">
@@ -374,9 +363,9 @@
                             <div id="bs4_sngl_cmrce{{ $dir->id }}" class="modal fade bs4_modal bs4_blue bs4_bg_white bs4_bd_black bs4_bd_semi_trnsp bs4_none_radius bs4_shadow_none bs4_center bs4_animate bs4FadeInDown bs4_duration_md bs4_easeOutQuint bs4_size_sngl_cmrce" role="dialog" data-modal-backdrop="true" data-show-on="click" data-modal-delay="false" data-modal-duration="false">
                                 <div class="modal-dialog" style="background-color:#fff">
                                     <div class="modal-content"><a class="bs4_btn_x_out_shtr bs4_sngl_cmrce_close" href="#" data-dismiss="modal">X</a>
-                                        <div class="row" style="height: 100%;">
+                                        <div class="row" style="height: 100%; padding-top:7%" >
 
-                                        <iframe src="https://drive.google.com/file/d/{{ $dir->catalogo }}/preview" height="100%" ></iframe>                                        </div>
+                                        <iframe src="https://drive.google.com/file/d/{{ $dir->catalogo }}/preview" height="100%" width="100%"  ></iframe>                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -480,7 +469,7 @@
                                                 }
                                             @endphp
                         <div class="col-md-6 d-flex align-items-center"
-                            style="width: 30%;padding-right: 0;padding-left: 0;"><img style="width: 100%;"
+                            style="width: 30%;padding-right: 0;padding-left: 0;"><img loading="lazy" style="width: 100%;"
                                 src="https://drive.google.com/uc?id={{ $var2 }}"></div>
                         <div class="col-md-6" style="width: 70%;">
                             <div class="row">
@@ -620,7 +609,5 @@
 
 
     @endforeach
-    @include('front.menugeneral')
-
 
 @endsection

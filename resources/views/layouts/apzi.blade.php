@@ -59,28 +59,78 @@
                     <div class="sidebar-content">
                         <!-- Start: Mega Menu Dropdown 100% Editable - Ambrodu -->
 
-                        <!-- GTranslate: https://gtranslate.io/ -->
-                        <a href="#" onclick="doGTranslate('es|en');return false;" title="English" class="gflag nturl"
-                            style="background-position:-0px -0px;"><img src="//gtranslate.net/flags/blank.png"
-                                height="16" width="16" alt="English" /></a><a href="#"
+                        <div class="dropdown megamenu"
+                            style="width: 100%;margin-left: 5%;  padding-bottom: 2%; padding-top: 2%;"><button
+                                class="btn btn-primary dropdown-toggle" aria-expanded="false" data-toggle="dropdown"
+                                type="button"
+                                style="padding-top: 2%;margin:0;width:90%; padding-bottom: 2%; border-radius: 4px; background: #fff; color: #000c4f; font-size: 13px; border: 1px solid #000c4f; font-family: 'ITC Avant Garde Gothic Std Demi'; text-align: left;"><img
+                                    src="/assets/img/idioma.svg"
+                                    style="width: 15%; margin-right:5%;" />Elige Tu Idioma&nbsp;</button>
+                            <div class="dropdown-menu animate slideIn" style="background: #fff; width:90%">
+                                <div class="container" style="padding-bottom: 0;">
+                                    <div class="row">
+                                        <div class="col-md-4"
+                                            style="padding: 0; width: 88%; border: 1px solid #000c4f; border-radius: 0px 0 4px 4px;">
+
+                                            <hr style="background: #000c4f;">
+											<a href="#" onclick="doGTranslate('es|en');return false;" title="English" class="gflag nturl"
+                            style="background-position:-0px -0px;">
+							<img src="//gtranslate.net/flags/blank.png"
+                                height="16" width="16" alt="English" />
+                                            <h5
+                                                style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;">
+                                              Ingles</h5></a>
+                                            <hr style="background: #000c4f;">
+											<a href="#"
                             onclick="doGTranslate('es|fr');return false;" title="French" class="gflag nturl"
-                            style="background-position:-200px -100px;"><img src="//gtranslate.net/flags/blank.png"
-                                height="16" width="16" alt="French" /></a><a href="#"
+                            style="background-position:-200px -100px;">
+							<img src="//gtranslate.net/flags/blank.png"
+                                height="16" width="16" alt="French" />
+                                            <h5
+                                                style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;">
+                                                Frances</h5></a>
+                                            <hr style="background: #000c4f;">
+											<a href="#"
                             onclick="doGTranslate('es|de');return false;" title="German" class="gflag nturl"
-                            style="background-position:-300px -100px;"><img src="//gtranslate.net/flags/blank.png"
-                                height="16" width="16" alt="German" /></a><a href="#"
+                            style="background-position:-300px -100px;">
+							<img src="//gtranslate.net/flags/blank.png"
+                                height="16" width="16" alt="German" />
+                                            <h5
+                                                style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;">
+                                               </i>Aleman</h5></a>
+                                            <hr style="background: #000c4f;">
+											<a href="#"
                             onclick="doGTranslate('es|it');return false;" title="Italian" class="gflag nturl"
-                            style="background-position:-600px -100px;"><img src="//gtranslate.net/flags/blank.png"
-                                height="16" width="16" alt="Italian" /></a><a href="#"
+                            style="background-position:-600px -100px;">
+							<img src="//gtranslate.net/flags/blank.png"
+                                height="16" width="16" alt="Italian" />
+                                            <h5
+                                                style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;">
+                                              Italiano</h5></a>
+                                            <hr style="background: #000c4f;">
+											<a href="#"
                             onclick="doGTranslate('es|pt');return false;" title="Portuguese" class="gflag nturl"
-                            style="background-position:-300px -200px;"><img src="//gtranslate.net/flags/blank.png"
-                                height="16" width="16" alt="Portuguese" /></a><a href="#"
-                            onclick="doGTranslate('es|ru');return false;" title="Russian" class="gflag nturl"
-                            style="background-position:-500px -200px;"><img src="//gtranslate.net/flags/blank.png"
-                                height="16" width="16" alt="Russian" /></a><a href="#"
+                            style="background-position:-300px -200px;">
+							<img src="//gtranslate.net/flags/blank.png"
+                                height="16" width="16" alt="Portuguese" />
+                                            <h5
+                                                style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;">
+                                               Portugues</h5></a>
+                                            <hr style="background: #000c4f;">
+											<a href="#"
                             onclick="doGTranslate('es|es');return false;" title="Spanish" class="gflag nturl"
-                            style="background-position:-600px -200px;"><img src="//gtranslate.net/flags/blank.png"
-                                height="16" width="16" alt="Spanish" /></a>
+                            style="background-position:-600px -200px;">
+							<img src="//gtranslate.net/flags/blank.png"
+                                height="16" width="16" alt="Spanish" />
+                                            <h5
+                                                style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;">
+                                               Español</h5></a>
+                                            <hr style="background: #000c4f;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- End: Mega Menu Dropdown 100% Editable - Ambrodu -->
 
                         <style type="text/css">
                             <!--
@@ -251,8 +301,8 @@
                                 360</span></center>
                     </div>
                 </div>
-                <div id="content" style="border-style: none;height: 15%;">
-                    <div class="container container-topbar"><button class="btn btn-primary open-sidebar" type="button"
+                <div id="content" style="border-style: none;height: 15%;height:80px;">
+                    <div class="container container-topbar" style="height:50px;"><button class="btn btn-primary open-sidebar" type="button"
                             style="margin: 0px;padding-left: 1%;padding-right: 1%;"><i class="fa fa-bars hamburger-btn"
                                 style="font-size: 24px;text-align: left;"></i></button><img style="width: 6%;"
                             src="https://drive.google.com/uc?id=1qTTNaHsQRNqZeiv-F6rhwWS_yLvtO4N7" />
@@ -266,7 +316,7 @@
                         </a>
                     </div>
                     <div class="container"
-                        style="padding-left: 0;padding-right: 0;width: 100%;border-style: none;color: transparent;">
+                        style="padding-left: 0;padding-right: 0;width: 100%; height:30px;border-style: none;color: transparent;">
                         <div class="row"
                             style="width: 100%;margin-right: 0;margin-left: 0;border-style: none;background: #f2f2f2;">
                             <div class="col-md-6"
@@ -276,27 +326,28 @@
                                     style="font-size: 13px;padding-left: 7%;width: 40%;color: #000c4f;font-family: 'Montserrat Regular';">Estás
                                     en {{ $municipio->nombre }}</span>
                             </div>
-
+                            <div class="col-md-6"
+                                        style="width: 55%;padding-right: 0px;padding-left: 0px;background: #f2f2f2;border-style: none;">
                             {!! Form::open(['route' => 'busquedas']) !!}
                                     @csrf
-                                    <div class="col-md-6"
-                                        style="width: 55%;padding-right: 0px;padding-left: 0px;background: #f2f2f2;border-style: none;">
+                                  
+                                        <i class="fa fa-microphone"
+                                    style="font-size: 16px;padding-left: 3%;color: #000c4f;" onclick="procesar()" id="procesar"></i>
                                         <input type="search" name="busqueda" id="texto" class="form-control-sm"
-                                        style="width: 75%;height: 20px;border-radius: 7px;padding-left: 3%;margin-left: 2%;color: #000c4f;font-family: 'Montserrat Regular';font-size: 14px;text-align: left;margin-top: 0px;margin-bottom: 2%;border: 1px solid #000c4f ;border-bottom-width: 1px;"
+                                        style="width: 70%;height: 20px;border-radius: 7px;padding-left: 3%;margin-left: 2%;color: #000c4f;font-family: 'Montserrat Regular';font-size: 14px;text-align: left;margin-top: 0px;margin-bottom: 2%;border: 1px solid #000c4f ;border-bottom-width: 1px;"
                                         placeholder="Qué Buscas?"/>
                                         <input type="hidden" name="municipio" value={{ $municipio->id }} >
                                         <button><i class="fa fa-search"
                                             style="font-size: 13px;padding-left: 3%;color: #000c4f;border-style: none;"></i>
                                         </button>
-
+                                        {!! Form::close() !!}
                                     </div>
-                            {!! Form::close() !!}
+                           
 
 
-                            <button onclick="procesar()" id="procesar">Escuchar</button>
-                            <!-- <i class="fa fa-microphone"
-                                    style="font-size: 16px;padding-left: 3%;color: #000c4f;"></i>
-                                -->
+                            <!--<button onkeypress="procesar()" id="procesar">Escuchar</button>-->
+                            
+                               
 
 
                         </div>
@@ -319,9 +370,21 @@
         <script
             src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js">
         </script>
-        <script src="/assets/js/script.min.js?h=618b97a50c192fc65f74b6a8b801de57"></script>
-        <script src="/assets/js/script2.min.js"></script>
 
+        <script src="/assets/js/script2.min.js"></script>
+        <script src="/assets/js/owl.carousel.js"></script>
+        <script src="/assets/js/owl.autoplay.js"></script>
+        <script>
+        var owl = $('.owl-carousel');
+owl.owlCarousel({
+    items:4,
+    loop:true,
+    autoplay:true,
+    autoplayTimeout:4000,
+    autoplayHoverPause:true
+});
+        </script>
+      
 
         <script>
             function goBack() {
@@ -357,7 +420,7 @@
                 recognition.onerror = function(event) {}
                 recognition.onend = function() {
                     recognizing = false;
-                    document.getElementById("procesar").innerHTML = "Escuchar";
+               
                     console.log("terminó de eschucar, llegó a su fin");
 
                 }
@@ -369,11 +432,11 @@
                 if (recognizing == false) {
                     recognition.start();
                     recognizing = true;
-                    document.getElementById("procesar").innerHTML = "Detener";
+             
                 } else {
                     recognition.stop();
                     recognizing = false;
-                    document.getElementById("procesar").innerHTML = "Escuchar";
+              
                 }
             }
 

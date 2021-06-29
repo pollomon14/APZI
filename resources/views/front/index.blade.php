@@ -71,7 +71,7 @@
     </div><!-- End: Auto Modal Popup -->
     <!-- Start: 1 Row 3 Columns -->
     <div
-        style="width: 80%;margin-left: 10%;margin-right: 0%;margin-top: 10%;margin-bottom: 10%;border-style: none;border-left-style: none;box-shadow: 0px 0px 12px 0px;border-radius: 4px;">
+        style="width: 80%;margin-left: 10%;margin-right: 0%;margin-top: 10%;margin-bottom: 20%;border-style: none;border-left-style: none;box-shadow: 0px 0px 12px 0px;border-radius: 4px;">
         <div class="container"
             style="width: 100%;text-align: center;padding-right: 0;padding-left: 0;border-radius: 0;border-width: 1px;border-style: none;border-top-style: none;border-right-style: none;border-bottom-width: 2px;border-bottom-style: none;border-left-style: none;">
             <div class="row"

@@ -1,5 +1,5 @@
  <!-- Start: Footer Basic -->
- <div class="footer-basic" style="padding-bottom: 0;padding-top: 0;">
+ <div class="footer-basic" style="padding-bottom: 0;padding-top: 2%; position:fixed; bottom:0;z-index:100;">
         <footer style="width: 100%;">
             <!-- Start: Social Icons -->
             <div class="social" style="width: 100%;padding-bottom: 0;">
