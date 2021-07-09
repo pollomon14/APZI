@@ -2,7 +2,6 @@
 
 @section('content')
 
-
     <!-- Start: 1 Row 2 Columns -->
     <div style="width: 100%;border-style: none;margin-top: 0%;  top: 80px;position: fixed;z-index: 90;">
         <div class="container" style="padding-left: 0;padding-right: 0;width: 100%;border-style: none;">
@@ -97,14 +96,29 @@
     <!--*-*-*-*-*-*-*-*-*-*- END BOOTSTRAP CAROUSEL *-*-*-*-*-*-*-*-*-*-->
 
     <!-- End: 4 Col Small Slider -->
+    @php
+ $letra="0";
+@endphp
 
+    @foreach ($directorio as $dir)
+    @php
+ 
+                                                $varsubcat= $subcategorias->find($dir->id_subcategoria);
+                                                $varsub="x";
+                                                if (!is_null($varsubcat)){
+                                                    $varsub=($varsubcat->nombre);
+                                                }
+                                                If ($varsub=="Óptica"){$varsub="Optica"; }
+                                            @endphp
 
+     @if ($letra!==$varsub[0])
+        @php
+ $letra=$varsub[0];
+@endphp                                     
     <h1
         style="width: 94%;margin-left: 3%;color: #000c4f;font-size: 30px;font-family: 'ITC Avant Garde Gothic Std Medium';border-bottom: 2px solid #000c4f;line-height: 27px;">
-        A</h1>
-        <!-- Start: divider-text-middle -->
-    <div style="text-align:center;"></div><!-- End: divider-text-middle -->
-    @foreach ($directorio as $dir)
+        {{$letra}}</h1>
+     @endif
 
                 <!-- Start: 1 Row 2 Columns -->
                 @if ($dir->tipo_de_plan === 4)
@@ -129,8 +143,9 @@
                                                     $var4=($var3->nombre);
                                                 }
                                             @endphp
+                                            <a href="{{route('local',[$dir->id,$municipio->id])}}">
                                             <div class="col"><img loading="lazy" style="width: 100px;border-radius: 10px;"
-                                                    src="https://drive.google.com/uc?id={{ $var2 }}"></div>
+                                                    src="https://drive.google.com/uc?id={{ $var2 }}"></div></a>
 
 
 
@@ -151,8 +166,9 @@
                                                     $var4=($var3->nombre);
                                                 }
                                             @endphp
+                                            <a href="{{route('local',[$dir->id,$municipio->id])}}">
                                             <div class="col"><img loading="lazy" style="width: 100px;border-radius: 10px;"
-                                                    src="https://drive.google.com/uc?id={{ $var2 }}"></div>
+                                                    src="https://drive.google.com/uc?id={{ $var2 }}"></div></a>
 
 
 
@@ -171,8 +187,9 @@
                                                     $var4=($var3->nombre);
                                                 }
                                             @endphp
+                                            <a href="{{route('local',[$dir->id,$municipio->id])}}">
                                             <div class="col"><img loading="lazy" style="width: 100px;border-radius: 10px;"
-                                                    src="https://drive.google.com/uc?id={{ $var2 }}"></div>
+                                                    src="https://drive.google.com/uc?id={{ $var2 }}"></div></a>
 
 
 
@@ -245,7 +262,7 @@
                                                 $var= $dir->telefono;
                                                 $var2= explode("|" ,$var);
                                             @endphp
-                    <button class="btn-submit"  onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','tel');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
+                    <button class="btn-submit" style="border-color:transparent" onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','tel');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
                     style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
                     style="margin-left: 5%;color: #000c4f;"></i>
                 <h1
@@ -258,7 +275,7 @@
                                                 $var= $dir->whatsapp;
                                                 $var2= explode("|" ,$var);
                                             @endphp
-                       <button class="btn-submit"  onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','wp');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-whatsapp"
+                       <button class="btn-submit" style="border-color:transparent" onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','wp');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-whatsapp"
                         style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
                         style="margin-left: 5%;color: #000c4f;"></i>
                     <h1
@@ -278,7 +295,7 @@
 
 
 
-                     <button class="btn-submit"  onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','tel');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
+                     <button class="btn-submit" style="border-color:transparent" onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','tel');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
                             style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
                             style="margin-left: 5%;color: #000c4f;"></i>
                         <h1
@@ -296,7 +313,7 @@
                                                 $var= $dir->whatsapp;
                                                 $var2= explode("|" ,$var);
                                             @endphp
-               <button class="btn-submit"  onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','wp');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-whatsapp"
+               <button class="btn-submit" style="border-color:transparent" onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','wp');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-whatsapp"
                 style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
                 style="margin-left: 5%;color: #000c4f;"></i>
             <h1
@@ -341,8 +358,9 @@
                                                     $var4=($var3->nombre);
                                                 }
                                             @endphp
+                                            <a href="{{route('local',[$dir->id,$municipio->id])}}">
                                             <div class="col"><img loading="lazy" style="width: 100px;border-radius: 10px;"
-                                                    src="https://drive.google.com/uc?id={{ $var2 }}"></div>
+                                                    src="https://drive.google.com/uc?id={{ $var2 }}"></div></a>
 
 
 
@@ -411,7 +429,7 @@
                                                 $var= $dir->telefono;
                                                 $var2= explode("|" ,$var);
                                             @endphp
-                               <button class="btn-submit"  onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','tel');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
+                               <button class="btn-submit" style="border-color:transparent" onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','tel');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
                                 style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
                                 style="margin-left: 5%;color: #000c4f;"></i>
                             <h1
@@ -424,7 +442,7 @@
                                                 $var= $dir->whatsapp;
                                                 $var2= explode("|" ,$var);
                                             @endphp
-               <button class="btn-submit"  onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','wp');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-whatsapp"
+               <button class="btn-submit" style="border-color:transparent" onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','wp');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-whatsapp"
                 style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
                 style="margin-left: 5%;color: #000c4f;"></i>
             <h1
@@ -468,9 +486,10 @@
                                                     $var4=($var3->nombre);
                                                 }
                                             @endphp
+                                            <a href="{{route('local',[$dir->id,$municipio->id])}}">
                         <div class="col-md-6 d-flex align-items-center"
                             style="width: 30%;padding-right: 0;padding-left: 0;"><img loading="lazy" style="width: 100%;"
-                                src="https://drive.google.com/uc?id={{ $var2 }}"></div>
+                                src="https://drive.google.com/uc?id={{ $var2 }}"></div></a>
                         <div class="col-md-6" style="width: 70%;">
                             <div class="row">
                                 <div class="col" style="border-bottom: 1px solid #000c4f ;border-left: 1px solid #000c4f ;">
@@ -506,7 +525,7 @@
                                                 $var= $dir->telefono;
                                                 $var2= explode("|" ,$var);
                                             @endphp
-                                          <button class="btn-submit"  onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','tel');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
+                                          <button class="btn-submit" style="border-color:transparent" onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','tel');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
                                             style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
                                             style="margin-left: 5%;color: #000c4f;"></i>
                                         <h1
@@ -590,7 +609,7 @@
                                 style="background: #f2f2f2;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;">
                                 <div class="col"
                                     style="width: 50%;padding-left: 0;padding-right: 0;border-top: 1px none #000c4f ;border-right: 1px none #000c4f ;border-left: 1px none #000c4f ;">
-                                    <button class="btn-submit"  onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','tel');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
+                                    <button class="btn-submit" style="border-color:transparent" onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','tel');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
                                         style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
                                         style="margin-left: 5%;color: #000c4f;"></i>
                                     <h1
@@ -606,8 +625,18 @@
             </div><!-- End: 1 Row 2 Columns -->
 
         @endif
-
-
     @endforeach
-
+    <script src="/assets/js/owl.carousel.js"></script>
+        <script src="/assets/js/owl.autoplay.js"></script>
+        <script>
+        var owl = $('.owl-carousel2');
+owl.owlCarousel({
+    items:4,
+    loop:true,
+    autoplay:true,
+    autoplayTimeout:4000,
+    autoplayHoverPause:true
+});
+        </script>
+ <br><br><br>
 @endsection

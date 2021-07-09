@@ -16,8 +16,18 @@
     </figure>
 </a> 
 </div>
+<?php
+$tiposerv=$emergencias[0]->tipo_servicio;
+if ($tiposerv==1){
+?>
 <h1 style="width: 94%;margin-left: 3%;color: #000c4f;font-size: 30px;font-family: 'ITC Avant Garde Gothic Std Medium';border-bottom: 2px solid #000c4f;line-height: 27px;margin-top: 5%;">Emergencias</h1><!-- Start: 1 Row 2 Columns -->
-<!-- aqui -->
+<?php
+}elseif ($tiposerv==2){
+?>
+<h1 style="width: 94%;margin-left: 3%;color: #000c4f;font-size: 30px;font-family: 'ITC Avant Garde Gothic Std Medium';border-bottom: 2px solid #000c4f;line-height: 27px;margin-top: 5%;">Servicios</h1><!-- Start: 1 Row 2 Columns -->
+<?php
+}
+?>
 
 
 
@@ -25,6 +35,21 @@
 
 
 @foreach($emergencias as $emergencia)
+<?php
+$tiposerv2=$emergencia->tipo_servicio;
+if($tiposerv!=$tiposerv2){
+if ($tiposerv2==1){
+?>
+<h1 style="width: 94%;margin-left: 3%;color: #000c4f;font-size: 30px;font-family: 'ITC Avant Garde Gothic Std Medium';border-bottom: 2px solid #000c4f;line-height: 27px;margin-top: 5%;">Emergencias</h1><!-- Start: 1 Row 2 Columns -->
+<?php
+$tiposerv=$tiposerv2;
+}elseif ($tiposerv2==2){
+?>
+<h1 style="width: 94%;margin-left: 3%;color: #000c4f;font-size: 30px;font-family: 'ITC Avant Garde Gothic Std Medium';border-bottom: 2px solid #000c4f;line-height: 27px;margin-top: 5%;">Servicios</h1><!-- Start: 1 Row 2 Columns -->
+<?php
+$tiposerv=$tiposerv2;
+}}
+?>
 <div style="text-align: center;margin-top: 5%;margin-bottom: 5%;">
     <div class="container">
         <div class="row" style="width: 98%;margin-left: 1%;margin-right: 0;border: 1px solid #000c4f;border-radius: 4px;">
@@ -170,5 +195,6 @@
     </div>
 </div><!-- End: 1 Row 2 Columns -->
 @endforeach
+<br><br><br>
 @include('front.menugeneral')
 @endsection

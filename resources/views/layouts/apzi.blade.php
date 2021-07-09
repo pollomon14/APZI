@@ -38,7 +38,7 @@
     <main>
         <div class="content-movil">
             <!-- Start: Collapsible sidebar left or right . Content overla -->
-            <div style="border-style: none;background: #000c4f;position:fixed;z-index:100;">
+            <div style="border-style: none;background: #000c4f;position:fixed;z-index:101;">
                 <div class="overlay"></div>
                 <div id="sidebar">
                     <div class="sidebar-header">
@@ -72,60 +72,60 @@
                                         <div class="col-md-4"
                                             style="padding: 0; width: 88%; border: 1px solid #000c4f; border-radius: 0px 0 4px 4px;">
 
-                                            <hr style="background: #000c4f;">
+                                            <hr style="background: #000c4f; margin-top:5%; margin-bottom:5%;">
 											<a href="#" onclick="doGTranslate('es|en');return false;" title="English" class="gflag nturl"
-                            style="background-position:-0px -0px;">
+                            style="background-position:-0px -0px; display:inline-flex;">
 							<img src="//gtranslate.net/flags/blank.png"
-                                height="16" width="16" alt="English" />
+                                height="16" width="16" alt="English" style="margin-right: 5px;" />
                                             <h5
-                                                style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;">
+                                                style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';">
                                               Ingles</h5></a>
-                                            <hr style="background: #000c4f;">
+                                              <hr style="background: #000c4f; margin-top:5%; margin-bottom:5%;">
 											<a href="#"
                             onclick="doGTranslate('es|fr');return false;" title="French" class="gflag nturl"
-                            style="background-position:-200px -100px;">
+                            style="background-position:-200px -100px; display:inline-flex;">
 							<img src="//gtranslate.net/flags/blank.png"
-                                height="16" width="16" alt="French" />
+                                height="16" width="16" alt="French" style="margin-right: 5px;"/>
                                             <h5
-                                                style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;">
+                                                style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';">
                                                 Frances</h5></a>
-                                            <hr style="background: #000c4f;">
+                                                <hr style="background: #000c4f; margin-top:5%; margin-bottom:5%;">
 											<a href="#"
                             onclick="doGTranslate('es|de');return false;" title="German" class="gflag nturl"
-                            style="background-position:-300px -100px;">
+                            style="background-position:-300px -100px; display:inline-flex;">
 							<img src="//gtranslate.net/flags/blank.png"
-                                height="16" width="16" alt="German" />
+                                height="16" width="16" alt="German" style="margin-right: 5px;" />
                                             <h5
-                                                style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;">
+                                                style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';">
                                                </i>Aleman</h5></a>
-                                            <hr style="background: #000c4f;">
+                                               <hr style="background: #000c4f; margin-top:5%; margin-bottom:5%;">
 											<a href="#"
                             onclick="doGTranslate('es|it');return false;" title="Italian" class="gflag nturl"
-                            style="background-position:-600px -100px;">
+                            style="background-position:-600px -100px; display:inline-flex;">
 							<img src="//gtranslate.net/flags/blank.png"
-                                height="16" width="16" alt="Italian" />
+                                height="16" width="16" alt="Italian" style="margin-right: 5px;"/>
                                             <h5
-                                                style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;">
+                                                style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';">
                                               Italiano</h5></a>
-                                            <hr style="background: #000c4f;">
+                                              <hr style="background: #000c4f; margin-top:5%; margin-bottom:5%;">
 											<a href="#"
                             onclick="doGTranslate('es|pt');return false;" title="Portuguese" class="gflag nturl"
-                            style="background-position:-300px -200px;">
+                            style="background-position:-300px -200px; display:inline-flex;">
 							<img src="//gtranslate.net/flags/blank.png"
-                                height="16" width="16" alt="Portuguese" />
+                                height="16" width="16" alt="Portuguese" style="margin-right: 5px;" />
                                             <h5
-                                                style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;">
+                                                style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';">
                                                Portugues</h5></a>
-                                            <hr style="background: #000c4f;">
+                                               <hr style="background: #000c4f; margin-top:5%; margin-bottom:5%;">
 											<a href="#"
                             onclick="doGTranslate('es|es');return false;" title="Spanish" class="gflag nturl"
-                            style="background-position:-600px -200px;">
+                            style="background-position:-600px -200px; display:inline-flex;">
 							<img src="//gtranslate.net/flags/blank.png"
-                                height="16" width="16" alt="Spanish" />
+                                height="16" width="16" alt="Spanish" style="margin-right: 5px;" />
                                             <h5
-                                                style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;">
+                                                style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium'; ">
                                                Español</h5></a>
-                                            <hr style="background: #000c4f;">
+                                               <hr style="background: #000c4f; margin-top:5%; margin-bottom:5%;">
                                         </div>
                                     </div>
                                 </div>
@@ -231,35 +231,42 @@
                                             style="padding: 0; width: 88%; border: 1px solid #000c4f; border-radius: 0px 0 4px 4px;">
 
                                             <hr style="background: #000c4f;">
+                                            <a href="{{ route('index',1) }}">
                                             <h5
                                                 style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;">
-                                                <i class="fas fa-flag-usa"
-                                                    style="margin-right: 5%;margin-left: 5%;"></i>Zipaquira</h5>
+                                                <i class="fas fa-map-marker-alt"
+                                                    style="margin-right: 5%;margin-left: 5%;"></i>Zipaquira</h5></a>
                                             <hr style="background: #000c4f;">
+                                            <a href="{{ route('index',2) }}">
                                             <h5
                                                 style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;">
-                                                <i class="fa fa-phone"
-                                                    style="margin-right: 5%;margin-left: 5%;"></i>Cajica</h5>
+                                                <i class="fas fa-map-marker-alt"
+                                                    style="margin-right: 5%;margin-left: 5%;"></i>Cajica</h5></a>
                                             <hr style="background: #000c4f;">
+                                            <a href="{{ route('index',3) }}">
                                             <h5
                                                 style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;">
-                                                <i class="fa fa-phone"
-                                                    style="margin-right: 5%;margin-left: 5%;"></i>Tocancipa</h5>
+                                                <i class="fas fa-map-marker-alt"
+                                                    style="margin-right: 5%;margin-left: 5%;"></i>Chia</h5></a>
                                             <hr style="background: #000c4f;">
+                                            <a href="{{ route('index',4) }}">
                                             <h5
                                                 style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;">
-                                                <i class="fa fa-phone"
-                                                    style="margin-right: 5%;margin-left: 5%;"></i>Chia</h5>
+                                                <i class="fas fa-map-marker-alt"
+                                                    style="margin-right: 5%;margin-left: 5%;"></i>Cogua</h5></a>
                                             <hr style="background: #000c4f;">
+                                            <a href="{{ route('index',5) }}">
                                             <h5
                                                 style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;">
-                                                <i class="fa fa-phone"
-                                                    style="margin-right: 5%;margin-left: 5%;"></i>Cogua</h5>
-                                            <hr style="background: #000c4f;">
+                                                <i class="fas fa-map-marker-alt"
+                                                    style="margin-right: 5%;margin-left: 5%;"></i>Sopo</h5></a>
+                                            <hr style="background: #000c4f;">        
+                                            <a href="{{ route('index',6) }}">        
                                             <h5
                                                 style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;">
-                                                <i class="fa fa-phone"
-                                                    style="margin-right: 5%;margin-left: 5%;"></i>Sopo</h5>
+                                                <i class="fas fa-map-marker-alt"
+                                                    style="margin-right: 5%;margin-left: 5%;"></i>Tocancipa</h5></a>
+                                            
                                             <hr style="background: #000c4f;">
                                         </div>
                                     </div>
@@ -267,23 +274,23 @@
                             </div>
                         </div><!-- End: Mega Menu Dropdown 100% Editable - Ambrodu -->
                         <hr style="background: #000c4f;">
-                        <a class="btn btn-primary w-100 sidebar-btn" role="button" href="/"
+                        <a class="btn btn-primary w-100 sidebar-btn" role="button" href="{{ route('index',$municipio->id) }}"
                             style="padding-top: 2%; padding-bottom: 2%; border-radius: 4px; background: #fff; color: #000c4f; font-size: 13px; border: 1px solid #000c4f; font-family: 'ITC Avant Garde Gothic Std Demi'; text-align: left;"><img
                                 src="/assets/img/casa.svg?h=7334c2a44666ed6638f133cd6da94fa7"
                                 style="width: 15%; margin-right:5%;" />Inicio</a>
-                        <a class="btn btn-primary w-100 sidebar-btn" role="button" href="#"
+                        <a class="btn btn-primary w-100 sidebar-btn" role="button" href="{{ route('turismo', $municipio->id) }}"
                             style="padding-top: 2%; padding-bottom: 2%; border-radius: 4px; background: #fff; color: #000c4f; font-size: 13px; border: 1px solid #000c4f; font-family: 'ITC Avant Garde Gothic Std Demi'; text-align: left;"><img
                                 src="/assets/img/btn_soy_turista.svg?h=e09bcde756e83b96e09615f2248cc955"
                                 style="width: 15%; margin-right:5%;" />Soy Turista</a>
-                        <a class="btn btn-primary w-100 sidebar-btn" role="button" href="#"
+                        <a class="btn btn-primary w-100 sidebar-btn" role="button" href="{{ route('directorio', $municipio->id) }}"
                             style="padding-top: 2%; padding-bottom: 2%; border-radius: 4px; background: #fff; color: #000c4f; font-size: 13px; border: 1px solid #000c4f; font-family: 'ITC Avant Garde Gothic Std Demi'; text-align: left;"><img
                                 src="/assets/img/btn_domicilios.svg?h=70ef7ca953911d3c38d1f9381ec09e36"
                                 style="width: 15%; margin-right:5%;" />Directorio</a>
-                        <a class="btn btn-primary w-100 sidebar-btn" role="button" href="#"
+                        <a class="btn btn-primary w-100 sidebar-btn" role="button" href="{{ route('taxis', $municipio->id) }}"
                             style="padding-top: 2%; padding-bottom: 2%; border-radius: 4px; background: #fff; color: #000c4f; font-size: 13px; border: 1px solid #000c4f; font-family: 'ITC Avant Garde Gothic Std Demi'; text-align: left;"><img
                                 src="/assets/img/btn_transporte.svg?h=c641b1c38fb0a679afac8483fb019b79"
                                 style="width: 15%; margin-right:5%;" />Transporte</a>
-                        <a class="btn btn-primary w-100 sidebar-btn" role="button" href="#"
+                        <a class="btn btn-primary w-100 sidebar-btn" role="button" href="{{ route('emergencias', $municipio->id) }}"
                             style="padding-top: 2%; padding-bottom: 2%; border-radius: 4px; background: #fff; color: #000c4f; font-size: 13px; border: 1px solid #000c4f; font-family: 'ITC Avant Garde Gothic Std Demi'; text-align: left;"><img
                                 src="/assets/img/btn_emergencias.svg?h=76fa7052ed4ac591ce833a0418a2c3b6"
                                 style="width: 15%; margin-right:5%;" />Emergencias</a>
@@ -372,19 +379,6 @@
         </script>
 
         <script src="/assets/js/script2.min.js"></script>
-        <script src="/assets/js/owl.carousel.js"></script>
-        <script src="/assets/js/owl.autoplay.js"></script>
-        <script>
-        var owl = $('.owl-carousel');
-owl.owlCarousel({
-    items:4,
-    loop:true,
-    autoplay:true,
-    autoplayTimeout:4000,
-    autoplayHoverPause:true
-});
-        </script>
-      
 
         <script>
             function goBack() {

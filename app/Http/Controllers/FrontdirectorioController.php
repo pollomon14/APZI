@@ -18,7 +18,7 @@ class FrontdirectorioController extends Controller
 {
     public function info($var)
     {
-        $directorio = directorio::where('id_municipio', $var)->get();
+        $directorio = directorio::where('id_municipio', $var)->orderBy('id_subcategoria', 'ASC')->get();
         $iconos = iconos::orderBy('id', 'ASC')->get();
         $categorias = categorias::orderBy('id', 'ASC')->get();
         $subcategorias = subcategorias::orderBy('id', 'ASC')->get();
@@ -32,13 +32,14 @@ class FrontdirectorioController extends Controller
     {
         $local = directorio::find($id);
         $municipio = municipios::find($var);
+        $eventos = eventos::where('id_municipio', $var)->get();
         $horarios = horarios::orderBy('id', 'ASC')->get();
-        return view('front.destacado', compact('local', 'municipio', 'horarios'));
+        return view('front.destacado', compact('local', 'municipio', 'horarios','eventos'));
     }
 
     public function turismo($var)
     {
-        $directorio = directorio::where([['id_municipio', $var], ['tipo_de_plan', '5']])->paginate(5);
+        $directorio = directorio::where([['id_municipio', $var], ['tipo_de_plan', '5']])->get();
         $iconos = iconos::orderBy('id', 'ASC')->get();
         $eventos = eventos::where('id_municipio', $var)->get();
         $municipio = municipios::find($var);

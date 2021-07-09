@@ -7,8 +7,7 @@
 
 <head>
 
-  <meta charset="UTF-8">
-  
+
 
 <style>
 
@@ -134,7 +133,6 @@
   <script>
   window.console = window.console || function(t) {};
 </script>
-
   
   
   <script>
@@ -197,6 +195,7 @@ $('.owl-carousel').owlCarousel({
   center: true,
   loop: true,
   nav: true,
+  autoplay: true,
   items: 5,
   navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
   responsive: {
@@ -252,6 +251,7 @@ $('#play-carousel').click(function (evt) {
 </body>
 </html>
 @else
+
 <div class="carousel slide" data-ride="carousel" id="carousel-1" style="border-style: none;padding-top: 25%;">
         <div class="carousel-inner">
             @if(!is_null($local->imagen2))   
@@ -350,16 +350,291 @@ $('#play-carousel').click(function (evt) {
 
     <h1 class="text-uppercase" style="font-family: 'ITC Avant Garde Gothic Std Medium';color: #000c4f;font-size: 16px;text-align: center;background: #ffff00;padding-top: 2%;padding-bottom: 2%;padding-right: 2%;padding-left: 2%;box-shadow: 0px 1px 5px #000c4f;">{{$local->nombre}}</h1>
     <p style="width: 90%;margin-left: 5%;text-align: center;font-family: 'Montserrat Regular';font-size: 14px;color: #000c4f;">{{$local->descripcion}}</p>
-    @if(!is_null($local->direccion)) 
-    <div class="dropdown"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-toggle="dropdown" type="button" style="width: 96%;margin-right: 0;margin-left: 2%;background: #000c4f;border-radius: 0px;font-family: 'ITC Avant Garde Gothic Std Medium';font-size: 14px;margin-bottom: 0;"><i class="fas fa-map-marker-alt float-left" style="color: #ffff00;text-align: left;margin-left: 2%;font-size: 20px;margin-right: 10%;"></i>{{$local->direccion}}&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</button>
-        <div class="dropdown-menu" style="width: 96%;margin-top: 0;border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;">
-        <div class="container" style="padding: 0;background-color: #f2f2f2; margin-left: 2%; margin-right: 2%; width: 96%;">
-        <iframe src="{{$local->ubicacion}}" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
-        </div>
-    </div>
+    
+    <div class="row" style="height: 25%;margin-right: 0;margin-left: 0;">
+                    @if(!is_null($local->id_horario))
+                                                @php
+                                                date_default_timezone_set("America/Bogota");
+                                                $hora= (new DateTime())->format('H:i');
+                                                $dia=date("l");
+                                                $hour=explode(":",$hora);
+                                                $var= $horarios->find($local->id_horario);
+                                                $var2="x";
+                                                if (!is_null($var)){
+                                                    $var2=($var->horario);
+                                                }
+                                                $count = substr_count($var2,";");
+                                                $var3= explode(";" ,$var2);
+                                            @endphp
+                                            @for ($i=0; $i<=$count; $i++)
+                                            @php
+                                                $var4= explode("|",$var3[$i]);
+                                                $var5=explode("-",$var4[1]);
+                                                $var6=explode(":",$var5[0]);
+                                                $var7=explode(":",$var5[1]);
+
+                                  
+                                            @endphp
+                                            
+                                            @if($var4[0]==='L-V' && ($dia==="Monday" || $dia==="Tuesday" || $dia==="Wednesday" || $dia==="Thursday" || $dia==="Friday"))
+    @if($hour[0] > $var6[0] && $hour[0] < $var7[0])
+        <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+    @break
+    @elseif($hour[0] == $var6[0] || $hour[0] == $var7[0]) 
+        @if($hour[0] == $var6[0] && $hour[1] >= $var6[1])
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+        @break
+        @elseif($hour[0] == $var7[0] && $hour[1] <= $var7[1])
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+        @break
+        @else         
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--red);"></i> CERRADO</h1></div> 
+        @break
+        @endif
+        @else
+    <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--red);"></i> CERRADO</h1></div>     
+@break 
+    @endif                        
+@elseif($var4[0]==="L-D" && ($dia==="Monday" || $dia==="Tuesday" || $dia==="Wednesday" || $dia==="Thursday" || $dia==="Friday" || $dia==="Saturday" || $dia==="Sunday"))
+    @if($hour[0] > $var6[0] && $hour[0] < $var7[0])
+        <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+    @break
+    @elseif($hour[0] == $var6[0] || $hour[0] == $var7[0]) 
+        @if($hour[0] == $var6[0] && $hour[1] >= $var6[1])
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+        @break
+        @elseif($hour[0] == $var7[0] && $hour[1] <= $var7[1])
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+        @break
+        @else         
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--red);"></i> CERRADO</h1></div> 
+        @break
+        @endif
+        @else
+    <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--red);"></i> CERRADO</h1></div>     
+@break 
+    @endif                        
+@elseif($var4[0]==="L" && $dia==="Monday")
+    @if($hour[0] > $var6[0] && $hour[0] < $var7[0])
+        <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+    @break
+    @elseif($hour[0] == $var6[0] || $hour[0] == $var7[0]) 
+        @if($hour[0] == $var6[0] && $hour[1] >= $var6[1])
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+        @break
+        @elseif($hour[0] == $var7[0] && $hour[1] <= $var7[1])
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+        @break
+        @else         
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--red);"></i> CERRADO</h1></div> 
+        @break
+        @endif
+        @else
+    <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--red);"></i> CERRADO</h1></div>     
+@break 
+    @endif                        
+@elseif($var4[0]==="M" && $dia==="Tuesday")
+    @if($hour[0] > $var6[0] && $hour[0] < $var7[0])
+        <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+    @break
+    @elseif($hour[0] == $var6[0] || $hour[0] == $var7[0]) 
+        @if($hour[0] == $var6[0] && $hour[1] >= $var6[1])
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+        @break
+        @elseif($hour[0] == $var7[0] && $hour[1] <= $var7[1])
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+        @break
+        @else         
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--red);"></i> CERRADO</h1></div> 
+        @break
+        @endif
+        @else
+    <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--red);"></i> CERRADO</h1></div>     
+@break 
+    @endif                        
+@elseif($var4[0]==="Mi" && $dia==="Wednesday")
+    @if($hour[0] > $var6[0] && $hour[0] < $var7[0])
+        <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+    @break
+    @elseif($hour[0] == $var6[0] || $hour[0] == $var7[0]) 
+        @if($hour[0] == $var6[0] && $hour[1] >= $var6[1])
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+        @break
+        @elseif($hour[0] == $var7[0] && $hour[1] <= $var7[1])
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+        @break
+        @else         
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--red);"></i> CERRADO</h1></div> 
+        @break
+        @endif
+        @else
+    <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--red);"></i> CERRADO</h1></div>     
+@break 
+    @endif                        
+@elseif($var4[0]==="J" && $dia==="Thursday")
+    @if($hour[0] > $var6[0] && $hour[0] < $var7[0])
+        <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+    @break
+    @elseif($hour[0] == $var6[0] || $hour[0] == $var7[0]) 
+        @if($hour[0] == $var6[0] && $hour[1] >= $var6[1])
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+        @break
+        @elseif($hour[0] == $var7[0] && $hour[1] <= $var7[1])
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+        @break
+        @else         
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--red);"></i> CERRADO</h1></div> 
+        @break
+        @endif
+        @else
+    <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--red);"></i> CERRADO</h1></div>     
+@break 
+    @endif                        
+@elseif($var4[0]==="V" && $dia==="Friday")
+    @if($hour[0] > $var6[0] && $hour[0] < $var7[0])
+        <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+    @break
+    @elseif($hour[0] == $var6[0] || $hour[0] == $var7[0]) 
+        @if($hour[0] == $var6[0] && $hour[1] >= $var6[1])
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+        @break
+        @elseif($hour[0] == $var7[0] && $hour[1] <= $var7[1])
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+        @break
+        @else         
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--red);"></i> CERRADO</h1></div> 
+        @break    
+        @endif
+        @else
+    <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--red);"></i> CERRADO</h1></div>     
+@break 
+    @endif                        
+@elseif($var4[0]==="S" && $dia==="Saturday")
+    @if($hour[0] > $var6[0] && $hour[0] < $var7[0])
+        <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+    @break
+    @elseif($hour[0] == $var6[0] || $hour[0] == $var7[0]) 
+        @if($hour[0] == $var6[0] && $hour[1] >= $var6[1])
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+        @break
+        @elseif($hour[0] == $var7[0] && $hour[1] <= $var7[1])
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+        @break
+        @else         
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--red);"></i> CERRADO</h1></div> 
+        @break
+        @endif
+        @else
+    <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--red);"></i> CERRADO</h1></div>     
+@break 
+    @endif                        
+@elseif($var4[0]==="D" && $dia==="Sunday")
+    @if($hour[0] > $var6[0] && $hour[0] < $var7[0])
+        <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+    @break
+    @elseif($hour[0] == $var6[0] || $hour[0] == $var7[0]) 
+        @if($hour[0] == $var6[0] && $hour[1] >= $var6[1])
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+        @break
+        @elseif($hour[0] == $var7[0] && $hour[1] <= $var7[1])
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+        @break
+        @else         
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--red);"></i> CERRADO</h1></div> 
+        @break
+        @endif
+        @else
+    <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--red);"></i> CERRADO</h1></div>     
+@break 
+    @endif                        
+@elseif($var4[0]==="L-J" && ($dia==="Monday" || $dia==="Tuesday" || $dia==="Wednesday" || $dia==="Thursday" ))
+    @if($hour[0] > $var6[0] && $hour[0] < $var7[0])
+        <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+    @break
+    @elseif($hour[0] == $var6[0] || $hour[0] == $var7[0]) 
+        @if($hour[0] == $var6[0] && $hour[1] >= $var6[1])
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+        @break
+        @elseif($hour[0] == $var7[0] && $hour[1] <= $var7[1])
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+        @break
+        @else         
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--red);"></i> CERRADO</h1></div> 
+        @break
+        @endif
+        @else
+    <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--red);"></i> CERRADO</h1></div>     
+@break 
+    @endif                        
+@elseif($var4[0]==="L-S" && ($dia==="Monday" || $dia==="Tuesday" || $dia==="Wednesday" || $dia==="Thursday" || $dia==="Friday" || $dia==="Saturday" ))
+    @if($hour[0] > $var6[0] && $hour[0] < $var7[0])
+        <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+    @break
+    @elseif($hour[0] == $var6[0] || $hour[0] == $var7[0]) 
+        @if($hour[0] == $var6[0] && $hour[1] >= $var6[1])
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+        @break
+        @elseif($hour[0] == $var7[0] && $hour[1] <= $var7[1])
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+        @break
+        @else         
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--red);"></i> CERRADO</h1></div> 
+        @break
+        @endif
+        @else
+    <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--red);"></i> CERRADO</h1></div>     
+@break 
+    @endif     
+@elseif($var4[0]==="S-D" && ($dia==="Saturday" || $dia==="Sunday"))
+    @if($hour[0] > $var6[0] && $hour[0] < $var7[0])
+        <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+    @break
+    @elseif($hour[0] == $var6[0] || $hour[0] == $var7[0]) 
+        @if($hour[0] == $var6[0] && $hour[1] >= $var6[1])
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+        @break
+        @elseif($hour[0] == $var7[0] && $hour[1] <= $var7[1])
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+        @break
+        @else         
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--red);"></i> CERRADO</h1></div>
+        @break     
+        @endif
+        @else
+    <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--red);"></i> CERRADO</h1></div>     
+@break 
+    @endif                        
+@elseif($var4[0]==="D-D")
+    @if($hour[0] > $var6[0] && $hour[0] < $var7[0])
+        <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+    @break
+    @elseif($hour[0] == $var6[0] || $hour[0] == $var7[0]) 
+        @if($hour[0] == $var6[0] && $hour[1] >= $var6[1])
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+        @break
+        @elseif($hour[0] == $var7[0] && $hour[1] <= $var7[1])
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--green);"></i> ABIERTO</h1></div>
+        @break
+        @else         
+            <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--red);"></i> CERRADO</h1></div>
+        @break      
+        @endif
+    @else
+        <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--red);"></i> CERRADO</h1></div>
+    @break   
     @endif
+@else
+    <div class="col" style="padding-left:7%"><h1 style="width: 78%;font-size: 14px;font-family: 'Montserrat Regular';color: #000c4f;"><i class="fa fa-circle " style="/* width: 20%; */color:var(--red);"></i> CERRADO</h1></div>     
+@break                          
+@endif 
+                         
+
+                    @endfor
+       
+    @endif
+                    </div>
     @if(!is_null($local->id_horario))
-    <div class="dropdown" style="margin-top: 2%;"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-toggle="dropdown" type="button" style="width: 96%;margin-right: 0;margin-left: 2%;background: #000c4f;border-radius: 0px;font-family: 'ITC Avant Garde Gothic Std Medium';font-size: 14px;margin-bottom: 0;">Horario de Atencion&nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i class="fa fa-clock-o float-left" style="color: #ffff00;margin-left: 2%;font-size: 20px;margin-right: 10%;"></i></button>
+    <div class="dropdown" style="margin-top: 2%;"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-toggle="dropdown" type="button" style=" text-overflow: Ellipsis; white-space: nowrap; overflow: hidden;width: 96%;margin-right: 0;margin-left: 2%;background: #000c4f;border-radius: 0px;font-family: 'ITC Avant Garde Gothic Std Medium';font-size: 14px;margin-bottom: 0;"><i class="fa fa-clock-o float-left" style="color: #ffff00;margin-left: 2%;font-size: 20px;margin-right: 10%;"></i>Horario de Atencion&nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</button>
         <div class="dropdown-menu" style="width: 96%;margin-top: 0;background: #f2f2f2;border-radius: 0px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;"><a class="dropdown-item" href="#" style="padding: 0;background: #f2f2f2;"></a><!-- Start: 1 Row 2 Columns -->
             <div class="container" style="padding: 0;background-color: #f2f2f2; margin-left: 2%; margin-right: 2%; width: 96%;">
                 <div class="row" style="margin-right: 0;margin-left: 0;">
@@ -376,8 +651,8 @@ $('#play-carousel').click(function (evt) {
                                             @php
                                                 $var4= explode("|",$var3[$i]);
                                             @endphp
-                    <div class="col-md-6" style="width: 50%;padding: 0;text-align: right;margin-right: 0%;background: #f2f2f2;border-right: 1px solid #000c4f ;">
-                        <p style="margin-right: 5%;font-family: 'ITC Avant Garde Gothic Std Demi';color: #000c4f;font-size: 14px;border-right-color: #000c4f;padding-top: 0;padding-bottom: 0;">
+                    <div class="col-md-6" style="width: 50%;padding: 0;text-align: right;margin-right: 0%;border-right: 1px solid #000c4f ;">
+                        <p style="margin-right: 5%; margin-top: 5%; margin-bottom: 0;font-family: 'ITC Avant Garde Gothic Std Demi';color: #000c4f;font-size: 14px;border-right-color: #000c4f;padding-top: 0;padding-bottom: 0;">
                             @if($var4[0]==='L-V')
                           {{"Lunes a Viernes"}}
                         @elseif($var4[0]==="L-D")
@@ -411,7 +686,7 @@ $('#play-carousel').click(function (evt) {
                     </div>
            
                     <div class="col-md-6" style="width: 50%;padding: 0;">
-                        <p style="margin-left: 5%;background: #f2f2f2;color: #000c4f;font-size: 14px;">{{$var4[1]}}</p>
+                        <p style="margin-left: 5%; margin-top: 5%; margin-bottom: 0;background: #f2f2f2;color: #000c4f;font-size: 14px;">{{$var4[1]}}</p>
                     </div>
                     @endfor
                 </div>
@@ -422,6 +697,16 @@ $('#play-carousel').click(function (evt) {
         </div>
     </div>
     @endif
+    @if(!is_null($local->direccion)) 
+    <div class="dropdown"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-toggle="dropdown" type="button" style="margin-top: 3%; width: 96%;margin-right: 0;margin-left: 2%;background: #000c4f;border-radius: 0px;font-family: 'ITC Avant Garde Gothic Std Medium';font-size: 14px;margin-bottom: 0;"><i class="fas fa-map-marker-alt float-left" style="color: #ffff00;text-align: left;margin-left: 2%;font-size: 20px;margin-right: 10%;"></i>Desplegar Mapa&nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</button>
+        <div class="dropdown-menu" style="width: 96%;margin-top: 0;border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;">
+        <div class="container" style="padding: 0;background-color: #f2f2f2; margin-left: 2%; margin-right: 2%; width: 96%;">
+        <p style="color:#000c4f; background-color:#ffff00; text-align:center;    margin-bottom: 0;padding-top: 1%; padding-bottom: 1%;">{{$local->direccion}}</p>
+        <iframe src="{{$local->ubicacion}}" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+        </div>
+    </div>
+    @endif
+    
     <div class="container" style="width: 100%;padding-right: 0px;padding-left: 0px;margin-top: 5%;text-align: center;">
     @if(is_null($local->catalogo) && is_null($local->video) && is_null($local->producto)&& !is_null($local->cant_visitas))    
     <figure class="figure" data-aos="flip-left" data-aos-duration="50" data-aos-once="true" style="width: 50%;  margin-bottom: 0;margin-left: 2%;border-radius: 4px;border: 1px solid #000c4f;">
@@ -434,24 +719,90 @@ $('#play-carousel').click(function (evt) {
             <figcaption class="figure-caption" style="width: 100%;margin-left: 0px;font-size: 11px;background: #ffff00;font-family: 'ITC Avant Garde Gothic Std Medium';font-weight: normal;border-radius: 0;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;color: #000c4f;border-style: none;">Visitas</figcaption>
         </figure>
         @endif   
-        @if(is_null($local->cant_visitas) && is_null($local->video) && is_null($local->producto)&& !is_null($local->catalogo))    
-        <figure class="figure" style="width: 50%;margin-left: 2%;border-radius: 4px;border: 1px solid #000c4f; margin-bottom: 0;"><img class="img-fluid figure-img" style="width: 30%;margin-bottom: 10%;" src="/assets/img/directorio%20(2).svg?h=c62e9ffb34c67c5bc58fcc7347e3ec3a">
-            <figcaption class="figure-caption" style="width: 100%;margin-left: 0px;font-size: 11px;background: #ffff00;font-family: 'ITC Avant Garde Gothic Std Medium';font-weight: normal;border-radius: 0;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;color: #000c4f;border-style: none;">Catalogo</figcaption>
-        </figure>
-     @elseif (!is_null($local->catalogo))
+        @if(is_null($local->cant_visitas) && is_null($local->video) && is_null($local->id_evento)&& !is_null($local->catalogo))    
+        <a  href="#" data-modal-id="bs4_sngl_cmrce1" data-toggle="modal" >
      <figure class="figure" style="width: 20%;margin-left: 2%;border-radius: 4px;border: 1px solid #000c4f;"><img class="img-fluid figure-img" style="width: 60%;margin-bottom: 40%;margin-top: 10%;" src="/assets/img/directorio%20(2).svg?h=c62e9ffb34c67c5bc58fcc7347e3ec3a">
             <figcaption class="figure-caption" style="width: 100%;margin-left: 0px;font-size: 11px;background: #ffff00;font-family: 'ITC Avant Garde Gothic Std Medium';font-weight: normal;border-radius: 0;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;color: #000c4f;border-style: none;">Catalogo</figcaption>
-        </figure>
+        </figure></a>
+        <div id="bs4_sngl_cmrce1" class="modal fade bs4_modal bs4_blue bs4_bg_white bs4_bd_black bs4_bd_semi_trnsp bs4_none_radius bs4_shadow_none bs4_center bs4_animate bs4FadeInDown bs4_duration_md bs4_easeOutQuint bs4_size_sngl_cmrce" role="dialog" data-modal-backdrop="true" data-show-on="click" data-modal-delay="false" data-modal-duration="false">
+                                <div class="modal-dialog" style="background-color:#fff">
+                                    <div class="modal-content"><a class="bs4_btn_x_out_shtr bs4_sngl_cmrce_close" href="#" data-dismiss="modal">X</a>
+                                        <div class="row" style="height: 100%; padding-top:7%">
+
+                                        <iframe src="https://drive.google.com/file/d/{{ $local->catalogo }}/preview" height="100%" width="100%"  ></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+     @elseif (!is_null($local->catalogo))
+     <a  href="#" data-modal-id="bs4_sngl_cmrce1" data-toggle="modal" >
+     <figure class="figure" style="width: 20%;margin-left: 2%;border-radius: 4px;border: 1px solid #000c4f;"><img class="img-fluid figure-img" style="width: 60%;margin-bottom: 40%;margin-top: 10%;" src="/assets/img/directorio%20(2).svg?h=c62e9ffb34c67c5bc58fcc7347e3ec3a">
+            <figcaption class="figure-caption" style="width: 100%;margin-left: 0px;font-size: 11px;background: #ffff00;font-family: 'ITC Avant Garde Gothic Std Medium';font-weight: normal;border-radius: 0;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;color: #000c4f;border-style: none;">Catalogo</figcaption>
+        </figure></a>
+        <div id="bs4_sngl_cmrce1" class="modal fade bs4_modal bs4_blue bs4_bg_white bs4_bd_black bs4_bd_semi_trnsp bs4_none_radius bs4_shadow_none bs4_center bs4_animate bs4FadeInDown bs4_duration_md bs4_easeOutQuint bs4_size_sngl_cmrce" role="dialog" data-modal-backdrop="true" data-show-on="click" data-modal-delay="false" data-modal-duration="false">
+                                <div class="modal-dialog" style="background-color:#fff">
+                                    <div class="modal-content"><a class="bs4_btn_x_out_shtr bs4_sngl_cmrce_close" href="#" data-dismiss="modal">X</a>
+                                        <div class="row" style="height: 100%; padding-top:7%">
+
+                                        <iframe src="https://drive.google.com/file/d/{{ $local->catalogo }}/preview" height="100%" width="100%"  ></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
         @endif  
         @if(!is_null($local->video))
+        <a  href="#" data-modal-id="bs4_sngl_cmrce2" data-toggle="modal" >
         <figure class="figure" style="width: 20%;margin-left: 2%;border-radius: 4px;border: 1px solid #000c4f;"><img class="img-fluid figure-img" style="width: 60%;margin-bottom: 40%;margin-top: 10%;" src="/assets/img/video.svg?h=24ffd557226f6ef6f0d303aebbde5371">
             <figcaption class="figure-caption" style="width: 100%;margin-left: 0px;font-size: 11px;background: #ffff00;font-family: 'ITC Avant Garde Gothic Std Medium';font-weight: normal;border-radius: 0;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;color: #000c4f;border-style: none;">Video</figcaption>
-        </figure>
+        </figure></a>
+        <div id="bs4_sngl_cmrce2" class="modal fade bs4_modal bs4_blue bs4_bg_white bs4_bd_black bs4_bd_semi_trnsp bs4_none_radius bs4_shadow_none bs4_center bs4_animate bs4FadeInDown bs4_duration_md bs4_easeOutQuint bs4_size_sngl_cmrce" role="dialog" data-modal-backdrop="true" data-show-on="click" data-modal-delay="false" data-modal-duration="false">
+                                <div class="modal-dialog" style="background-color:#fff">
+                                    <div class="modal-content"><a class="bs4_btn_x_out_shtr bs4_sngl_cmrce_close" href="#" data-dismiss="modal">X</a>
+                                        <div class="row" style="height: 100%; padding-top:7%">
+
+                                        <iframe src="{{ $local->video }}" height="100%" width="100%"title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        
         @endif
-        @if(!is_null($local->producto))
+        @if(!is_null($local->id_evento))
+        @php
+                                                $even= $eventos->find($local->id_evento);
+                                            @endphp
+        <a  href="#" data-modal-id="bs4_sngl_cmrce3" data-toggle="modal" >
         <figure class="figure" style="width: 20%;margin-left: 2%;border-radius: 4px;border: 1px solid #000c4f;"><img class="img-fluid figure-img" style="width: 60%;margin-bottom: 40%;margin-top: 10%;" src="/assets/img/producto_destacado.svg?h=967ab525715dda1d3a26c3da8c550142">
             <figcaption class="figure-caption" style="width: 100%;margin-left: 0px;font-size: 11px;background: #ffff00;font-family: 'ITC Avant Garde Gothic Std Medium';font-weight: normal;border-radius: 0;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;color: #000c4f;border-style: none;">Producto</figcaption>
-        </figure>
+        </figure></a>
+        <div id="bs4_sngl_cmrce3" class="modal fade bs4_modal bs4_blue bs4_bg_white bs4_bd_black bs4_bd_semi_trnsp bs4_none_radius bs4_shadow_none bs4_center bs4_animate bs4FadeInDown bs4_duration_md bs4_easeOutQuint bs4_size_sngl_cmrce" role="dialog" data-modal-backdrop="true" data-show-on="click" data-modal-delay="false" data-modal-duration="false" style="padding-top:20%">
+                            
+                           
+                                        <!-- Start: Auto Modal Popup -->
+    
+            <div class="modal-content" style="background-color:#fff">
+                <div class="modal-header"
+                    style="background: #ffff00;padding-top: 1%;padding-bottom: 1%;border-top: 1px solid #000c4f;border-right: 1px solid #000c4f;border-bottom: 1px solid #000c4f;border-left: 1px solid #000c4f;border-top-left-radius: 4px;border-top-right-radius: 4px;color: #000c4f;">
+                    <h4 class="modal-title text-uppercase"
+                        style="color: #000c4f;font-family: 'ITC Avant Garde Gothic Std Demi';">{{$even->titulo}}</h4><button
+                        type="button" class="close" data-dismiss="modal" onclick="location.reload();" aria-label="Close"><span
+                            aria-hidden="true">×</span></button>
+                </div>
+                <div class="modal-body"
+                    style="border-color: #ffff00;border-right: 1px solid #000c4f;border-bottom: 1px solid #000c4f;border-left: 1px solid #000c4f;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;">
+                    <div class="row">
+                        <div class="col-lg-6" style="width: 100%;"><img style="width: 100%;"
+                                src="https://drive.google.com/uc?id={{$even->imagen}}">
+                            <p
+                                style="margin-top: 4%;font-family: 'Montserrat Regular';font-size: 14px;color: #000c4f;text-align: center;">
+                                {{$even->descripcion}}</p><button class="btn btn-primary" onclick="location.href='{{$even->link}}'" type="button"
+                                style="background: #000c4f;color: #fff;font-family: 'Montserrat Regular';">{{$even->texto_boton}}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End: Auto Modal Popup -->
         @endif
     </div><!-- Start: 1 Row 3 Columns -->
     @if(!is_null($local->whatsapp))
@@ -539,6 +890,7 @@ $('#play-carousel').click(function (evt) {
     </div><!-- End: 1 Row 3 Columns -->
     <hr style="margin-top: 5%;margin-bottom: 2%;color: #000c4f;font-weight: normal;">
     @endif
+    <br><br><br>
     @if($local->tipo_de_plan===5)
     @include('front.menuturismo')
     @else

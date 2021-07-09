@@ -73,9 +73,10 @@
     <div
         style="width: 80%;margin-left: 10%;margin-right: 0%;margin-top: 10%;margin-bottom: 20%;border-style: none;border-left-style: none;box-shadow: 0px 0px 12px 0px;border-radius: 4px;">
         <div class="container"
-            style="width: 100%;text-align: center;padding-right: 0;padding-left: 0;border-radius: 0;border-width: 1px;border-style: none;border-top-style: none;border-right-style: none;border-bottom-width: 2px;border-bottom-style: none;border-left-style: none;">
+            style="width: 100%;text-align: center;padding-right: 0;padding-left: 0;border-radius: 0;border-width: 1px;border-style: none;border-top-style: none;border-right-style: none;border-bottom-width: 2px;border-bottom-style: none;border-left-style: none; border-bottom-color: #000c4f;">
+            <a href="{{ route('turismo', $municipio->id) }}">
             <div class="row"
-                style="width: 100%;padding-left: 0%;text-align: left;margin-left: 0;margin-top: 0;margin-right: 0;padding-right: 0%;margin-bottom: 0;border-bottom-width: 1px;border-bottom-style: solid;">
+                style=" border-bottom-color: #000c4f; width: 100%;padding-left: 0%;text-align: left;margin-left: 0;margin-top: 0;margin-right: 0;padding-right: 0%;margin-bottom: 0;border-bottom-width: 1px;border-bottom-style: solid;">
                 <div class="col-md-4" style="width: 18%;padding: 0px;text-align: center;"><img
                         style="width: 90%;font-size: 16px;text-align: center;line-height: 22px;filter: contrast(100%);margin-top: 15%;margin-right: 0px;margin-bottom: 0px;margin-left: 5%;"
                         src="/assets/img/btn_soy_turista.svg?h=e09bcde756e83b96e09615f2248cc955"></div>
@@ -85,22 +86,23 @@
                         <strong>Soy turista</strong>
                     </h1>
                     <p
-                        style="width: 90%;margin-bottom: 4%;font-size: 12px;line-height: 12px;margin-top: 5%;font-weight: normal;font-family: 'Montserrat Regular';margin-left: 4%;">
-                        Sitios turísticos y de interés</p>
+                        style=" color: #000c4f; width: 90%;margin-bottom: 4%;font-size: 12px;line-height: 12px;margin-top: 5%;font-weight: normal;font-family: 'Montserrat Regular';margin-left: 4%;">
+                        Sitios turísticos y de interés &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                 </div>
-                <a href="{{ route('turismo', $municipio->id) }}">
+               
                 <div class="col-1 col-md-4"
                     style="width: 12%;text-align: left;padding-left: 2%;padding-right: 0;padding-top: 7%;max-width: 12%;"><i
                         class="fa fa-arrow-circle-right"
                         style="color: #000C4F;margin-right: 0px;line-height: 0px;margin-left: 0;width: 100%;font-size: 20px;text-align: left;padding-top: 0;"></i>
                 </div>
-</a>
             </div>
+            </a>
         </div>
         <div class="container"
-            style="width: 100%;text-align: center;padding-right: 0;padding-left: 0;border-radius: 0;border-width: 1px;border-style: none;border-top-style: none;border-right-style: none;border-bottom-width: 2px;border-bottom-style: none;border-left-style: none;">
+            style="width: 100%;text-align: center;padding-right: 0;padding-left: 0;border-radius: 0;border-width: 1px;border-style: none;border-top-style: none;border-right-style: none;border-bottom-width: 2px;border-bottom-style: none;border-left-style: none;border-bottom-color: #000c4f;">
+            <a href="{{ route('directorio', $municipio->id) }}">
             <div class="row"
-                style="width: 100%;padding-left: 0%;text-align: left;margin-left: 0;margin-top: 0;margin-right: 0;padding-right: 0%;margin-bottom: 0;border-bottom-width: 1px;border-bottom-style: solid;">
+                style=" border-bottom-color: #000c4f; width: 100%;padding-left: 0%;text-align: left;margin-left: 0;margin-top: 0;margin-right: 0;padding-right: 0%;margin-bottom: 0;border-bottom-width: 1px;border-bottom-style: solid;">
                 <div class="col-md-4" style="width: 18%;padding: 0px;text-align: center;"><img
                         style="width: 90%;font-size: 16px;text-align: center;line-height: 22px;filter: contrast(100%);margin-top: 15%;margin-right: 0px;margin-bottom: 0px;margin-left: 5%;"
                         src="/assets/img/btn_domicilios.svg?h=70ef7ca953911d3c38d1f9381ec09e36"></div>
@@ -110,22 +112,23 @@
                         <strong>Directorio</strong>
                     </h1>
                     <p
-                        style="width: 90%;margin-bottom: 4%;font-size: 12px;line-height: 12px;margin-top: 5%;font-weight: normal;font-family: 'Montserrat Regular';margin-left: 4%;">
+                        style=" color: #000c4f; width: 90%;margin-bottom: 4%;font-size: 12px;line-height: 12px;margin-top: 5%;font-weight: normal;font-family: 'Montserrat Regular';margin-left: 4%;">
                         Productos y servicios a domicilio</p>
                 </div>
-                <a href="{{ route('directorio', $municipio->id) }}">
+                
                     <div class="col-1 col-md-4"
                         style="width: 12%;text-align: left;padding-left: 2%;padding-right: 0;padding-top: 7%;max-width: 12%;"><i
                             class="fa fa-arrow-circle-right"
                             style="color: #000C4F;margin-right: 0px;line-height: 0px;margin-left: 0;width: 100%;font-size: 20px;text-align: left;padding-top: 0;"></i>
                     </div>
-                </a>
-            </div>
+                
+            </div></a>
         </div>
         <div class="container"
-            style="width: 100%;text-align: center;padding-right: 0;padding-left: 0;border-radius: 0;border-width: 1px;border-style: none;border-top-style: none;border-right-style: none;border-bottom-width: 2px;border-bottom-style: none;border-left-style: none;">
+            style="width: 100%;text-align: center;padding-right: 0;padding-left: 0;border-radius: 0;border-width: 1px;border-style: none;border-top-style: none;border-right-style: none;border-bottom-width: 2px;border-bottom-style: none;border-left-style: none;border-bottom-color: #000c4f;">
+            <a href="{{ route('taxis', $municipio->id) }}">
             <div class="row"
-                style="width: 100%;padding-left: 0%;text-align: left;margin-left: 0;margin-top: 0;margin-right: 0;padding-right: 0%;margin-bottom: 0;border-bottom-width: 1px;border-bottom-style: solid;">
+                style=" border-bottom-color: #000c4f; width: 100%;padding-left: 0%;text-align: left;margin-left: 0;margin-top: 0;margin-right: 0;padding-right: 0%;margin-bottom: 0;border-bottom-width: 1px;border-bottom-style: solid;">
                 <div class="col-md-4" style="width: 18%;padding: 0px;text-align: center;"><img
                         style="width: 90%;font-size: 16px;text-align: center;line-height: 22px;filter: contrast(100%);margin-top: 15%;margin-right: 0px;margin-bottom: 0px;margin-left: 5%;"
                         src="/assets/img/btn_transporte.svg?h=c641b1c38fb0a679afac8483fb019b79"></div>
@@ -135,23 +138,23 @@
                         <strong>Transporte</strong>
                     </h1>
                     <p
-                        style="width: 90%;margin-bottom: 4%;font-size: 12px;line-height: 12px;margin-top: 5%;font-weight: normal;font-family: 'Montserrat Regular';margin-left: 4%;">
+                        style=" color: #000c4f; width: 90%;margin-bottom: 4%;font-size: 12px;line-height: 12px;margin-top: 5%;font-weight: normal;font-family: 'Montserrat Regular';margin-left: 4%;">
                         Servicio de Taxis, Mensajería y más</p>
                 </div>
-                <a href="{{ route('taxis', $municipio->id) }}">
+                
                 <div class="col-1 col-md-4"
                     style="width: 12%;text-align: left;padding-left: 2%;padding-right: 0;padding-top: 7%;max-width: 12%;"><i
                         class="fa fa-arrow-circle-right"
                         style="color: #000C4F;margin-right: 0px;line-height: 0px;margin-left: 0;width: 100%;font-size: 20px;text-align: left;padding-top: 0;"></i>
                 </div>
-                </a>
-            </div>
+                
+            </div></a>
         </div>
         <div class="container"
-            style="width: 100%;text-align: center;padding-right: 0;padding-left: 0;border-radius: 0;border-bottom-left-radius: 4px;border-bottom-right-radius: 4px;border-width: 1px;border-style: none;border-top-style: none;border-right-style: none;border-bottom-width: 1px;border-bottom-style: none;border-left-style: none;">
-
+            style="width: 100%;text-align: center;padding-right: 0;padding-left: 0;border-radius: 0;border-bottom-left-radius: 4px;border-bottom-right-radius: 4px;border-width: 1px;border-style: none;border-top-style: none;border-right-style: none;border-bottom-width: 1px;border-bottom-style: none;border-left-style: none; border-bottom-color: #000c4f;">
+            <a href="{{ route('emergencias', $municipio->id) }}">
             <div class="row"
-                style="width: 100%;padding-left: 0%;text-align: left;margin-left: 0;margin-top: 0;margin-right: 0;padding-right: 0%;margin-bottom: 0;border-bottom-width: 1px;border-bottom-style: none;">
+                style=" border-bottom-color: #000c4f; width: 100%;padding-left: 0%;text-align: left;margin-left: 0;margin-top: 0;margin-right: 0;padding-right: 0%;margin-bottom: 0;border-bottom-width: 1px;border-bottom-style: none;">
                 <div class="col-md-4" style="width: 18%;padding: 0px;text-align: center;"><img
                         style="width: 90%;font-size: 16px;text-align: center;line-height: 22px;filter: contrast(100%);margin-top: 15%;margin-right: 0px;margin-bottom: 0px;margin-left: 5%;"
                         src="/assets/img/btn_emergencias.svg?h=76fa7052ed4ac591ce833a0418a2c3b6"></div>
@@ -162,21 +165,21 @@
                             <strong>Emergencias</strong>
                         </h1>
                         <p
-                            style="width: 90%;margin-bottom: 4%;font-size: 12px;line-height: 12px;margin-top: 5%;font-weight: normal;font-family: 'Montserrat Regular';margin-left: 4%;">
+                            style=" color: #000c4f; width: 90%;margin-bottom: 4%;font-size: 12px;line-height: 12px;margin-top: 5%;font-weight: normal;font-family: 'Montserrat Regular';margin-left: 4%;">
                             Atención de emergencias y servicios públicos</p>
                     </div>
 
 
                     <div class="col-1 col-md-4"
                         style="width: 12%;text-align: left;padding-left: 2%;padding-right: 0;padding-top: 7%;max-width: 12%;">
-                        <a href="{{ route('emergencias', $municipio->id) }}">
+                        
                             <i class="fa fa-arrow-circle-right"
                                 style="color: #000C4F;margin-right: 0px;line-height: 0px;margin-left: 0;width: 100%;font-size: 20px;text-align: left;padding-top: 0;"></i>
-                        </a>
+                        
                     </div>
+                    
 
-
-            </div>
+            </div></a>
 
         </div>
     </div><!-- End: 1 Row 3 Columns -->
