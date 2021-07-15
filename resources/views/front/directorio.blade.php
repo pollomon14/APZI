@@ -1,4 +1,4 @@
-@extends('layouts.apzi')
+@extends('layouts.apzi_directorio')
 
 @section('content')
 
@@ -626,17 +626,6 @@
 
         @endif
     @endforeach
-    <script src="/assets/js/owl.carousel.js"></script>
-        <script src="/assets/js/owl.autoplay.js"></script>
-        <script>
-        var owl = $('.owl-carousel2');
-owl.owlCarousel({
-    items:4,
-    loop:true,
-    autoplay:true,
-    autoplayTimeout:4000,
-    autoplayHoverPause:true
-});
-        </script>
+
  <br><br><br>
 @endsection

@@ -318,8 +318,7 @@
                                 LO QUE NECESITAS</a><a class="navbar-brand" href="#"
                                 style="width: 100%;margin-right: 0;color: #fffF00;font-size: 22px;line-height: 10px;font-family: 'ITC Avant Garde Gothic Std Bold';">EN
                                 UN SOLO SITIO</a></div>
-                            
-                                <a href="{{redirect()->back()->getTargetUrl()}}">
+                        <a href="{{redirect()->back()->getTargetUrl()}}">
                             <i class="fa fa-mail-reply" style="width: 10%;font-size: 25px;color: #fff;"></i>
                         </a>
                     </div>
@@ -344,7 +343,7 @@
                                         <input type="search" name="busqueda" id="texto" class="form-control-sm"
                                         style="width: 70%;height: 20px;border-radius: 7px;padding-left: 3%;margin-left: 2%;color: #000c4f;font-family: 'Montserrat Regular';font-size: 14px;text-align: left;margin-top: 0px;margin-bottom: 2%;border: 1px solid #000c4f ;border-bottom-width: 1px;"
                                         placeholder="Qué Buscas?"/>
-                                        <input type="hidden" name="municipio" value={{ $municipio->id }} >
+                                        <input type="hidden" name="municipio" value={{ old($municipio->id) }} >
                                         <button><i class="fa fa-search"
                                             style="font-size: 13px;padding-left: 3%;color: #000c4f;border-style: none;"></i>
                                         </button>
@@ -380,7 +379,18 @@
         </script>
 
         <script src="/assets/js/script2.min.js"></script>
-
+        <script src="/assets/js/owl.carousel.js"></script>
+        <script src="/assets/js/owl.autoplay.js"></script>
+        <script>
+        var owl = $('.owl-carousel');
+owl.owlCarousel({
+    items:4,
+    loop:true,
+    autoplay:true,
+    autoplayTimeout:4000,
+    autoplayHoverPause:true
+});
+        </script>
         <script>
             function goBack() {
                 window.history.back();
@@ -506,6 +516,7 @@
 
 
         </script>
+
 </main>
 </div>
 </body>

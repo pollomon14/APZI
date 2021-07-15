@@ -1,7 +1,7 @@
 @extends('layouts.apzi')
 
 @section('content')
-
+    @isset($directorios)
     @foreach ($directorios as $dir)
 
 
@@ -508,6 +508,7 @@
 
 
     @endforeach
+    @endisset
 
     @include('front.menugeneral')
 @endsection

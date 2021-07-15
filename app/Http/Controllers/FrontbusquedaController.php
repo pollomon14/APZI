@@ -61,6 +61,7 @@ class FrontbusquedaController extends Controller
 
 
         //Buscador directorio
+
         $directorios=DB::table('directorios')->where('id_municipio',$ciudad)
         ->where('nombre','LIKE','%'.$var.'%')
         ->orwhere('descripcion','LIKE','%'.$var.'%')
