@@ -1,10 +1,12 @@
 @extends('layouts.apzi')
 
 @section('content')
-<div class="photo-gallery">
-<div class="container-fluid">
+  
+<div class="photo-gallery" style="padding-top:25%">
+      <h1 style="width: 94%;margin-left: 3%;color: #000c4f;font-size: 30px;font-family: 'ITC Avant Garde Gothic Std Medium';border-bottom: 2px solid #000c4f;line-height: 27px;margin-top: 5%; text-transform:uppercase">Ofertas</h1>
+ 
+<div class="container-fluid" style="padding-top:3%">
   <div class="px-lg-5">
-
     <div class="row">
 @foreach ($eventos as $even)
 
@@ -41,7 +43,7 @@
                     style="background: #ffff00;padding-top: 1%;padding-bottom: 1%;border-top: 1px solid #000c4f;border-right: 1px solid #000c4f;border-bottom: 1px solid #000c4f;border-left: 1px solid #000c4f;border-top-left-radius: 4px;border-top-right-radius: 4px;color: #000c4f;">
                     <h4 class="modal-title text-uppercase"
                         style="color: #000c4f;font-family: 'ITC Avant Garde Gothic Std Demi';">{{$even->titulo}}</h4><button
-                        type="button" class="close" data-dismiss="modal" onclick="location.reload();" aria-label="Close"><span
+                        type="button" class="close" data-dismiss="modal" onclick="location.reload();" aria-label="Close" style="color: #000c4f; opacity: 1; font-size: 2rem;"><span
                             aria-hidden="true">×</span></button>
                 </div>
                 <div class="modal-body"
@@ -68,5 +70,6 @@
       </div>
         </div>
       </div>
+      <br><br><br>
       @include('front.menugeneral')
 @endsection

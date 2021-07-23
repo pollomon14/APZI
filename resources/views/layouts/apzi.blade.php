@@ -79,7 +79,7 @@
                                 height="16" width="16" alt="English" style="margin-right: 5px;" />
                                             <h5
                                                 style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';">
-                                              Ingles</h5></a>
+                                              Inglés</h5></a>
                                               <hr style="background: #000c4f; margin-top:5%; margin-bottom:5%;">
 											<a href="#"
                             onclick="doGTranslate('es|fr');return false;" title="French" class="gflag nturl"
@@ -88,7 +88,7 @@
                                 height="16" width="16" alt="French" style="margin-right: 5px;"/>
                                             <h5
                                                 style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';">
-                                                Frances</h5></a>
+                                                Francés</h5></a>
                                                 <hr style="background: #000c4f; margin-top:5%; margin-bottom:5%;">
 											<a href="#"
                             onclick="doGTranslate('es|de');return false;" title="German" class="gflag nturl"
@@ -97,7 +97,7 @@
                                 height="16" width="16" alt="German" style="margin-right: 5px;" />
                                             <h5
                                                 style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';">
-                                               </i>Aleman</h5></a>
+                                               </i>Alemán</h5></a>
                                                <hr style="background: #000c4f; margin-top:5%; margin-bottom:5%;">
 											<a href="#"
                             onclick="doGTranslate('es|it');return false;" title="Italian" class="gflag nturl"
@@ -115,7 +115,7 @@
                                 height="16" width="16" alt="Portuguese" style="margin-right: 5px;" />
                                             <h5
                                                 style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';">
-                                               Portugues</h5></a>
+                                               Portugués</h5></a>
                                                <hr style="background: #000c4f; margin-top:5%; margin-bottom:5%;">
 											<a href="#"
                             onclick="doGTranslate('es|es');return false;" title="Spanish" class="gflag nturl"
@@ -138,6 +138,7 @@
                                 vertical-align: middle;
                                 font-size: 16px;
                                 padding: 1px 0;
+                                margin-left:px;
                                 background-repeat: no-repeat;
                                 background-image: url(//gtranslate.net/flags/16.png);
                             }
@@ -235,21 +236,21 @@
                                             <h5
                                                 style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;">
                                                 <i class="fas fa-map-marker-alt"
-                                                    style="margin-right: 5%;margin-left: 5%;"></i>Zipaquira</h5></a>
+                                                    style="margin-right: 5%;margin-left: 5%;"></i>Zipaquirá</h5></a>
                                             <hr style="background: #000c4f;">
                                             <a href="{{ route('index',2) }}">
                                             <h5
                                                 style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;">
                                                 <i class="fas fa-map-marker-alt"
-                                                    style="margin-right: 5%;margin-left: 5%;"></i>Cajica</h5></a>
+                                                    style="margin-right: 5%;margin-left: 5%;"></i>Cajicá</h5></a>
                                             <hr style="background: #000c4f;">
-                                            <a href="{{ route('index',3) }}">
+                                            <a href="{{ route('index',4) }}">
                                             <h5
                                                 style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;">
                                                 <i class="fas fa-map-marker-alt"
-                                                    style="margin-right: 5%;margin-left: 5%;"></i>Chia</h5></a>
+                                                    style="margin-right: 5%;margin-left: 5%;"></i>Chía</h5></a>
                                             <hr style="background: #000c4f;">
-                                            <a href="{{ route('index',4) }}">
+                                            <a href="{{ route('index',3) }}">
                                             <h5
                                                 style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;">
                                                 <i class="fas fa-map-marker-alt"
@@ -259,13 +260,13 @@
                                             <h5
                                                 style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;">
                                                 <i class="fas fa-map-marker-alt"
-                                                    style="margin-right: 5%;margin-left: 5%;"></i>Sopo</h5></a>
+                                                    style="margin-right: 5%;margin-left: 5%;"></i>Sopó</h5></a>
                                             <hr style="background: #000c4f;">        
                                             <a href="{{ route('index',6) }}">        
                                             <h5
                                                 style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;">
                                                 <i class="fas fa-map-marker-alt"
-                                                    style="margin-right: 5%;margin-left: 5%;"></i>Tocancipa</h5></a>
+                                                    style="margin-right: 5%;margin-left: 5%;"></i>Tocancipá</h5></a>
                                             
                                             <hr style="background: #000c4f;">
                                         </div>
@@ -478,6 +479,7 @@
                     //Log the text inside the list item to the console.
                     if (listItem.value==0){
                         document.getElementsByClassName('row caja')[i].style.display ='none';
+                   
                     }
 
                 }

@@ -24,7 +24,7 @@
                 style="width: 15%;height: none;margin-left: 1%;margin-right: 0;opacity: 1;line-height: 0px;border-top-left-radius: none;border-top-right-radius: 0;border-bottom-right-radius: 0;border-style: none;border-right: 2px solid #000C4F ;"><img
                     src="/assets/img/detalles.svg?h=3812eaf28eb6b9867564b2d84f093dab"
                     style="width: 80%;margin-bottom: 10%;"><span style="font-size: 9px;">DETALLES</span></a><a
-                href="#"
+                    href="{{route('eventos',$municipio->id)}}"
                 style="width: 15%;height: none;margin-left: 1%;margin-right: 0;opacity: 1;line-height: 0px;border-top-left-radius: none;border-top-right-radius: 0;border-bottom-right-radius: 0;border-style: none;border-right: 2px none var(--dark) ;"><img
                     src="/assets/img/ofertas.svg?h=cc025cde0161fb85b2af3ffa8813d3fc"
                     style="width: 80%;margin-bottom: 10%;"><span

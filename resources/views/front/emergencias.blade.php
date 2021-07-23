@@ -7,12 +7,12 @@
 <div class="container" style="width: 100%;padding-right: 0px;padding-left: 0px;text-align: center;padding-top:30%;">
 <a href="{{ route('emergencias', $municipio->id) }}">    
 <figure class="figure" style="width: 20%;border-radius: 4px;border: 1px solid #000c4f;"><img class="img-fluid figure-img" style="width: 60%;margin-bottom: 40%;margin-top: 10%;" src="/assets/img/btn_emergencias.svg?h=76fa7052ed4ac591ce833a0418a2c3b6">
-        <figcaption class="figure-caption" style="width: 100%;margin-left: 0px;font-size: 10px;background: #000c4f;font-family: 'ITC Avant Garde Gothic Std Medium';font-weight: normal;border-radius: 0;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;color: #fff;border-style: none;">Emergencias</figcaption>
+        <figcaption class="figure-caption" style="width: 100%;margin-left: 0px;font-size: 10px;background: #000c4f;font-family: 'ITC Avant Garde Gothic Std Medium';font-weight: normal;border-radius: 0;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;color: #fff;border-style: none;text-transform:uppercase">Emergencias</figcaption>
     </figure>
 </a>
 <a href="{{ route('servicios', $municipio->id) }}">    
     <figure class="figure" style="width: 20%;border-radius: 4px;border: 1px solid #000c4f;margin-left: 10%;"><img class="img-fluid figure-img" style="width: 60%;margin-bottom: 40%;margin-top: 10%;" src="/assets/img/servicios.svg?h=34a218e6ad61fda8d5a46ab79f024bef">
-        <figcaption class="figure-caption" style="width: 100%;margin-left: 0px;font-size: 11px;background: #000c4f;font-family: 'ITC Avant Garde Gothic Std Medium';font-weight: normal;border-radius: 0;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;color: #fff;border-style: none;">Servicios</figcaption>
+        <figcaption class="figure-caption" style="width: 100%;margin-left: 0px;font-size: 11px;background: #000c4f;font-family: 'ITC Avant Garde Gothic Std Medium';font-weight: normal;border-radius: 0;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;color: #fff;border-style: none;text-transform:uppercase">Servicios</figcaption>
     </figure>
 </a> 
 </div>
@@ -20,11 +20,11 @@
 $tiposerv=$emergencias[0]->tipo_servicio;
 if ($tiposerv==1){
 ?>
-<h1 style="width: 94%;margin-left: 3%;color: #000c4f;font-size: 30px;font-family: 'ITC Avant Garde Gothic Std Medium';border-bottom: 2px solid #000c4f;line-height: 27px;margin-top: 5%;">Emergencias</h1><!-- Start: 1 Row 2 Columns -->
+<h1 style="width: 94%;margin-left: 3%;color: #000c4f;font-size: 30px;font-family: 'ITC Avant Garde Gothic Std Medium';border-bottom: 2px solid #000c4f;line-height: 27px;margin-top: 5%; text-transform:uppercase">Emergencias</h1><!-- Start: 1 Row 2 Columns -->
 <?php
 }elseif ($tiposerv==2){
 ?>
-<h1 style="width: 94%;margin-left: 3%;color: #000c4f;font-size: 30px;font-family: 'ITC Avant Garde Gothic Std Medium';border-bottom: 2px solid #000c4f;line-height: 27px;margin-top: 5%;">Servicios</h1><!-- Start: 1 Row 2 Columns -->
+<h1 style="width: 94%;margin-left: 3%;color: #000c4f;font-size: 30px;font-family: 'ITC Avant Garde Gothic Std Medium';border-bottom: 2px solid #000c4f;line-height: 27px;margin-top: 5%; text-transform:uppercase">Servicios</h1><!-- Start: 1 Row 2 Columns -->
 <?php
 }
 ?>
@@ -40,12 +40,12 @@ $tiposerv2=$emergencia->tipo_servicio;
 if($tiposerv!=$tiposerv2){
 if ($tiposerv2==1){
 ?>
-<h1 style="width: 94%;margin-left: 3%;color: #000c4f;font-size: 30px;font-family: 'ITC Avant Garde Gothic Std Medium';border-bottom: 2px solid #000c4f;line-height: 27px;margin-top: 5%;">Emergencias</h1><!-- Start: 1 Row 2 Columns -->
+<h1 style="width: 94%;margin-left: 3%;color: #000c4f;font-size: 30px;font-family: 'ITC Avant Garde Gothic Std Medium';border-bottom: 2px solid #000c4f;line-height: 27px;margin-top: 5%;text-transform:uppercase">Emergencias</h1><!-- Start: 1 Row 2 Columns -->
 <?php
 $tiposerv=$tiposerv2;
 }elseif ($tiposerv2==2){
 ?>
-<h1 style="width: 94%;margin-left: 3%;color: #000c4f;font-size: 30px;font-family: 'ITC Avant Garde Gothic Std Medium';border-bottom: 2px solid #000c4f;line-height: 27px;margin-top: 5%;">Servicios</h1><!-- Start: 1 Row 2 Columns -->
+<h1 style="width: 94%;margin-left: 3%;color: #000c4f;font-size: 30px;font-family: 'ITC Avant Garde Gothic Std Medium';border-bottom: 2px solid #000c4f;line-height: 27px;margin-top: 5%;text-transform:uppercase">Servicios</h1><!-- Start: 1 Row 2 Columns -->
 <?php
 $tiposerv=$tiposerv2;
 }}
@@ -79,7 +79,7 @@ $tiposerv=$tiposerv2;
                 <div class="row" style="margin-right: 0;margin-left: 0;">
                     <div class="col" style="padding-right: 0;padding-left: 0;"><i class="fa fa-map-marker rubberBand animated infinite" style="width: 100%;color: #000c4f;"></i>
                         <a href="{{$emergencia->maps}}" target="_blank">
-                            <h1 style="width: 100%;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';color: #000c4f;margin-bottom: 0px;line-height: 6px;">Ubicación</h1>
+                            <h1 style="width: 100%;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';color: #000c4f;margin-bottom: 0px;line-height: 6px;">Ubicaci贸n</h1>
                         </a>
                     </div>
                 </div>
@@ -97,7 +97,7 @@ $tiposerv=$tiposerv2;
                 <div class="row" style="margin-right: 0;margin-left: 0;">
                     <div class="col" style="padding-right: 0;padding-left: 0;"><i class="fa fa-map-marker rubberBand animated infinite" style="width: 100%;color: #000c4f;"></i>
                         <a href="{{$emergencia->maps}}" target="_blank">
-                            <h1 style="width: 100%;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';color: #000c4f;margin-bottom: 0px;line-height: 6px;">Ubicación</h1>
+                            <h1 style="width: 100%;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';color: #000c4f;margin-bottom: 0px;line-height: 6px;">Ubicaci贸n</h1>
                         </a>
                     </div>
                 </div>
@@ -106,7 +106,7 @@ $tiposerv=$tiposerv2;
             <div class="col-md-6" style="width: 70%;">
                 <div class="row" style="border-bottom: 1px solid #000c4f;border-left: 1px solid #000c4f;background: #ffff00;border-top-right-radius: 4px;">
                     <div class="col" style="width: 90%;padding-right: 0;padding-left: 0;max-width: 90%;">
-                        <h1 style="width: 90%;font-size: 14px;color: #000c4f;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 16px;margin-bottom: 0;text-align: center;margin-left: 5%;"><br>{{ $emergencia->nombre }}<br><br></h1>
+                        <h1 style="width: 90%;font-size: 14px;color: #000c4f;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 16px;margin-bottom: 0;text-align: center;margin-left: 5%;text-transform:uppercase"><br>{{ $emergencia->nombre }}<br><br></h1>
                     </div>
                     @if (!is_null($emergencia->id_evento))
                     <div class="col" style="width: 10%;padding-right: 0;padding-left: 0;max-width: 10%;margin-top: -10px;">
@@ -114,7 +114,7 @@ $tiposerv=$tiposerv2;
                         <div class="text-center" style="border-style: none;"><a class="stretched-link bs4_modal_trigger" href="#" data-modal-id="bs4_sngl_cmrce" data-toggle="modal" style="border-style: none;margin-top: 0;margin-right: 0;margin-bottom: 0;margin-left: 0;padding: 0;border-radius: 0px;"><i class="fa fa-star" style="color: #FFF;background: #000C4F;padding-top: 10px;padding-right: 10px;padding-bottom: 10px;padding-left: 10px;border-radius: 25px;border: 2px solid #ffff00 ;"></i></a>
                             <div id="bs4_sngl_cmrce" class="modal fade bs4_modal bs4_blue bs4_bg_white bs4_bd_black bs4_bd_semi_trnsp bs4_none_radius bs4_shadow_none bs4_center bs4_animate bs4FadeInDown bs4_duration_md bs4_easeOutQuint bs4_size_sngl_cmrce" role="dialog" data-modal-backdrop="true" data-show-on="click" data-modal-delay="false" data-modal-duration="false">
                                 <div class="modal-dialog" style="background-color:#fff">
-                                    <div class="modal-content"><a class="bs4_btn_x_out_shtr bs4_sngl_cmrce_close" href="#" data-dismiss="modal">X</a>
+                                    <div class="modal-content"><a class="bs4_btn_x_out_shtr bs4_sngl_cmrce_close" href="#" data-dismiss="modal"style="padding-top: 1%;">X</a>
                                         <div class="row">
                                         @php
                                                 $var= $eventos->find($emergencia->id_evento);
@@ -163,7 +163,7 @@ $tiposerv=$tiposerv2;
                 <div class="row">
                     <div class="col" style="border-left: 1px solid #000c4f;background: #000c4f;font-size: 14px;color: #fff;padding-right: 0;padding-left: 0;border-bottom-right-radius: 10px;">
                         <!-- Start: Mega Menu Dropdown 100% Editable - Ambrodu -->
-                        <div class="dropdown megamenu" style="width: 100%;"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-toggle="dropdown" type="button" style="width: 100%;margin-right: 0;margin-bottom: 0;margin-left: 0;padding-right: 0;background: #000c4f;font-family: 'Montserrat Regular';border-bottom-style: none;border-bottom-color: #ffff00;border-radius: 0px;border-bottom-right-radius: 4px;">Ver Más Números&nbsp;</button>
+                        <div class="dropdown megamenu" style="width: 100%;"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-toggle="dropdown" type="button" style="width: 100%;margin-right: 0;margin-bottom: 0;margin-left: 0;padding-right: 0;background: #000c4f;font-family: 'Montserrat Regular';border-bottom-style: none;border-bottom-color: #ffff00;border-radius: 0px;border-bottom-right-radius: 4px;text-transform:uppercase; font-size:95%">Ver M谩s N煤meros&nbsp;</button>
                             <div class="dropdown-menu animate slideIn" style="background: #000c4f;">
                                 <div class="container" style="padding-bottom: 0;">
                                     <div class="row">

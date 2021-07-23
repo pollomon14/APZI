@@ -42,13 +42,13 @@
                     class="fa fa-map-marker float-left" style="padding-top: 2%;color: #000c4f; padding-right: 5%;"></i></a>
             <div class="dropdown-divider"
                 style="border-color: transparent;background: transparent;height: 4px;opacity: 1;margin-bottom: 0;margin-top: 0;">
-            </div><a class="dropdown-item" href="{{ route('index',3) }}"
+            </div><a class="dropdown-item" href="{{ route('index',4) }}"
                 style="background: #fff;color: #000c4f;font-family: 'Montserrat Regular';">&nbsp;Chía<i
                     class="fa fa-arrow-circle-right float-right" style="padding-top: 2%;color: #000c4f;"></i><i
                     class="fa fa-map-marker float-left" style="padding-top: 2%;color: #000c4f; padding-right: 5%;"></i></a>
             <div class="dropdown-divider"
                 style="border-color: transparent;background: transparent;height: 4px;opacity: 1;margin-bottom: 0;margin-top: 0;">
-            </div><a class="dropdown-item" href="{{ route('index',4) }}"
+            </div><a class="dropdown-item" href="{{ route('index',3) }}"
                 style="background: #fff;color: #000c4f;font-family: 'Montserrat Regular';">&nbsp;Cogua<i
                     class="fa fa-arrow-circle-right float-right" style="padding-top: 2%;color: #000c4f;"></i><i
                     class="fa fa-map-marker float-left" style="padding-top: 2%;color: #000c4f; padding-right: 5%;"></i></a>
@@ -61,7 +61,7 @@
             <div class="dropdown-divider"
                 style="border-color: transparent;background: transparent;height: 4px;opacity: 1;margin-bottom: 0;margin-top: 0;">
             </div><a class="dropdown-item" href="{{ route('index',6) }}"
-                style="background: #fff;color: #000c4f;font-family: 'Montserrat Regular';">&nbsp;Cajicá<i
+                style="background: #fff;color: #000c4f;font-family: 'Montserrat Regular';">&nbsp;Tocancipá<i
                     class="fa fa-arrow-circle-right float-right" style="padding-top: 2%;color: #000c4f;"></i><i
                     class="fa fa-map-marker float-left" style="padding-top: 2%;color: #000c4f; padding-right: 5%;"></i></a>
             <div class="dropdown-divider"

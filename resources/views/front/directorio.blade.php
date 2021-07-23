@@ -109,6 +109,7 @@
                                                     $varsub=($varsubcat->nombre);
                                                 }
                                                 If ($varsub=="Óptica"){$varsub="Optica"; }
+                                                If ($varsub=="Sitio Turístico"){$varsub="$letra"; }
                                             @endphp
 
      @if ($letra!==$varsub[0])
@@ -213,7 +214,7 @@
                             <div id="bs4_sngl_cmrce{{ $dir->id }}" class="modal fade bs4_modal bs4_blue bs4_bg_white bs4_bd_black bs4_bd_semi_trnsp bs4_none_radius bs4_shadow_none bs4_center bs4_animate bs4FadeInDown bs4_duration_md bs4_easeOutQuint bs4_size_sngl_cmrce" role="dialog" data-modal-backdrop="true" data-show-on="click" data-modal-delay="false" data-modal-duration="false">
                                 <div class="modal-dialog" style="background-color:#fff">
                                     <div class="modal-content"><a class="bs4_btn_x_out_shtr bs4_sngl_cmrce_close" href="#" data-dismiss="modal">X</a>
-                                        <div class="row" style="height: 100%; padding-top:7%">
+                                        <div class="row" style="height: 100%; padding-top:8%">
 
                                         <iframe src="https://drive.google.com/file/d/{{ $dir->catalogo }}/preview" height="100%" width="100%"  ></iframe>
                                         </div>
@@ -235,14 +236,27 @@
                         </div>
 
 
-            <div class="row" style="border-bottom: 1px solid #000c4f;border-left: 1px solid #000c4f;background: #ffff00;">
-                <div class="col" style="width: 100%;padding-right: 0;padding-left: 0;">
-                    <h1
-                        style="width: 90%;font-size: 14px;color: #000c4f;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 16px;margin-bottom: 0;text-align: center;margin-left: 5%;">
-                        <br>{{ $dir->nombre }}<br><br>
-                    </h1>
-                </div>
-            </div>
+                        @if ($dir->domicilio ===1)
+                            <div class="row"
+                                style="border-bottom: 1px solid #000c4f;border-left: 1px solid #000c4f;background: #000c4f;">
+                                <div class="col" style="width: 100%;padding-right: 0;padding-left: 0;">
+                                    <h1
+                                        style="text-transform:uppercase;width: 90%;font-size: 14px;color: #ffffff;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 16px;margin-bottom: 0;text-align: center;margin-left: 5%;">
+                                        <br>{{ $dir->nombre }}<br><br>
+                                    </h1>
+                                </div>
+                            </div>
+                            @else
+                            <div class="row"
+                                style="border-bottom: 1px solid #000c4f;border-left: 1px solid #000c4f;background: #ffff00;">
+                                <div class="col" style="width: 100%;padding-right: 0;padding-left: 0;">
+                                    <h1
+                                        style="text-transform:uppercase;width: 90%;font-size: 14px;color: #000c4f;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 16px;margin-bottom: 0;text-align: center;margin-left: 5%;">
+                                        <br>{{ $dir->nombre }}<br><br>
+                                    </h1>
+                                </div>
+                            </div>
+                            @endif
             @if (!is_null($dir->direccion))
             <div class="row">
                 <div class="col"
@@ -262,7 +276,7 @@
                                                 $var= $dir->telefono;
                                                 $var2= explode("|" ,$var);
                                             @endphp
-                    <button class="btn-submit" style="border-color:transparent" onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','tel');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
+                    <button class="btn-submit" style="border-color:transparent; background-color:#f2f2f2; " onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','tel');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
                     style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
                     style="margin-left: 5%;color: #000c4f;"></i>
                 <h1
@@ -275,7 +289,7 @@
                                                 $var= $dir->whatsapp;
                                                 $var2= explode("|" ,$var);
                                             @endphp
-                       <button class="btn-submit" style="border-color:transparent" onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','wp');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-whatsapp"
+                       <button class="btn-submit" style="border-color:transparent; background-color:#f2f2f2; " onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','wp');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-whatsapp"
                         style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
                         style="margin-left: 5%;color: #000c4f;"></i>
                     <h1
@@ -295,7 +309,7 @@
 
 
 
-                     <button class="btn-submit" style="border-color:transparent" onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','tel');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
+                     <button class="btn-submit" style="border-color:transparent; background-color:#f2f2f2; " onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','tel');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
                             style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
                             style="margin-left: 5%;color: #000c4f;"></i>
                         <h1
@@ -313,7 +327,7 @@
                                                 $var= $dir->whatsapp;
                                                 $var2= explode("|" ,$var);
                                             @endphp
-               <button class="btn-submit" style="border-color:transparent" onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','wp');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-whatsapp"
+               <button class="btn-submit" style="border-color:transparent; background-color:#f2f2f2; " onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','wp');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-whatsapp"
                 style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
                 style="margin-left: 5%;color: #000c4f;"></i>
             <h1
@@ -381,7 +395,7 @@
                             <div id="bs4_sngl_cmrce{{ $dir->id }}" class="modal fade bs4_modal bs4_blue bs4_bg_white bs4_bd_black bs4_bd_semi_trnsp bs4_none_radius bs4_shadow_none bs4_center bs4_animate bs4FadeInDown bs4_duration_md bs4_easeOutQuint bs4_size_sngl_cmrce" role="dialog" data-modal-backdrop="true" data-show-on="click" data-modal-delay="false" data-modal-duration="false">
                                 <div class="modal-dialog" style="background-color:#fff">
                                     <div class="modal-content"><a class="bs4_btn_x_out_shtr bs4_sngl_cmrce_close" href="#" data-dismiss="modal">X</a>
-                                        <div class="row" style="height: 100%; padding-top:7%" >
+                                        <div class="row" style="height: 100%; padding-top:8%" >
 
                                         <iframe src="https://drive.google.com/file/d/{{ $dir->catalogo }}/preview" height="100%" width="100%"  ></iframe>                                        </div>
                                     </div>
@@ -404,15 +418,27 @@
                             </div>
                         </div>
 
-
-            <div class="row" style="border-bottom: 1px solid #000c4f;border-left: 1px solid #000c4f;background: #ffff00;">
-                <div class="col" style="width: 100%;padding-right: 0;padding-left: 0;">
-                    <h1
-                        style="width: 90%;font-size: 14px;color: #000c4f;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 16px;margin-bottom: 0;text-align: center;margin-left: 5%;">
-                        <br>{{ $dir->nombre }}<br><br>
-                    </h1>
-                </div>
-            </div>
+                        @if ($dir->domicilio ===1)
+                            <div class="row"
+                                style="border-bottom: 1px solid #000c4f;border-left: 1px solid #000c4f;background: #000c4f;">
+                                <div class="col" style="width: 100%;padding-right: 0;padding-left: 0;">
+                                    <h1
+                                        style="text-transform:uppercase;width: 90%;font-size: 14px;color: #ffffff;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 16px;margin-bottom: 0;text-align: center;margin-left: 5%;">
+                                        <br>{{ $dir->nombre }}<br><br>
+                                    </h1>
+                                </div>
+                            </div>
+                            @else
+                            <div class="row"
+                                style="border-bottom: 1px solid #000c4f;border-left: 1px solid #000c4f;background: #ffff00;">
+                                <div class="col" style="width: 100%;padding-right: 0;padding-left: 0;">
+                                    <h1
+                                        style="text-transform:uppercase;width: 90%;font-size: 14px;color: #000c4f;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 16px;margin-bottom: 0;text-align: center;margin-left: 5%;">
+                                        <br>{{ $dir->nombre }}<br><br>
+                                    </h1>
+                                </div>
+                            </div>
+                            @endif
             <div class="row">
                 <div class="col"
                     style="border-bottom: 1px solid #000c4f;border-left: 1px solid #000c4f;padding-right: 0;padding-left: 0;">
@@ -429,7 +455,7 @@
                                                 $var= $dir->telefono;
                                                 $var2= explode("|" ,$var);
                                             @endphp
-                               <button class="btn-submit" style="border-color:transparent" onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','tel');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
+                               <button class="btn-submit" style="border-color:transparent; background-color:#f2f2f2; " onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','tel');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
                                 style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
                                 style="margin-left: 5%;color: #000c4f;"></i>
                             <h1
@@ -442,7 +468,7 @@
                                                 $var= $dir->whatsapp;
                                                 $var2= explode("|" ,$var);
                                             @endphp
-               <button class="btn-submit" style="border-color:transparent" onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','wp');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-whatsapp"
+               <button class="btn-submit" style="border-color:transparent; background-color:#f2f2f2; " onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','wp');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-whatsapp"
                 style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
                 style="margin-left: 5%;color: #000c4f;"></i>
             <h1
@@ -497,15 +523,27 @@
                                         style="font-family: 'Montserrat Regular';color: #000c4f;font-size: 14px;">{{ $var4 }}</span>
                                 </div>
                             </div>
+                            @if ($dir->domicilio ===1)
                             <div class="row"
-                                style="border-bottom: 1px solid #000c4f;border-left: 1px solid #000c4f;background: #ffff00;">
+                                style="border-bottom: 1px solid #000c4f;border-left: 1px solid #000c4f;background: #000c4f;">
                                 <div class="col" style="width: 100%;padding-right: 0;padding-left: 0;">
                                     <h1
-                                        style="width: 90%;font-size: 14px;color: #000c4f;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 16px;margin-bottom: 0;text-align: center;margin-left: 5%;">
+                                        style="text-transform:uppercase;width: 90%;font-size: 14px;color: #ffffff;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 16px;margin-bottom: 0;text-align: center;margin-left: 5%;">
                                         <br>{{ $dir->nombre }}<br><br>
                                     </h1>
                                 </div>
                             </div>
+                            @else
+                            <div class="row"
+                                style="border-bottom: 1px solid #000c4f;border-left: 1px solid #000c4f;background: #ffff00;">
+                                <div class="col" style="width: 100%;padding-right: 0;padding-left: 0;">
+                                    <h1
+                                        style="text-transform:uppercase;width: 90%;font-size: 14px;color: #000c4f;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 16px;margin-bottom: 0;text-align: center;margin-left: 5%;">
+                                        <br>{{ $dir->nombre }}<br><br>
+                                    </h1>
+                                </div>
+                            </div>
+                            @endif
                             @if (!is_null($dir->direccion))
                             <div class="row">
                                 <div class="col"
@@ -525,7 +563,7 @@
                                                 $var= $dir->telefono;
                                                 $var2= explode("|" ,$var);
                                             @endphp
-                                          <button class="btn-submit" style="border-color:transparent" onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','tel');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
+                                          <button class="btn-submit" style="border-color:transparent; background-color:#f2f2f2; " onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','tel');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
                                             style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
                                             style="margin-left: 5%;color: #000c4f;"></i>
                                         <h1
@@ -572,16 +610,27 @@
                                         style="font-family: 'Montserrat Regular';color: #000c4f;font-size: 14px;">{{$var4}}</span>
                                 </div>
                             </div>
+                            @if ($dir->domicilio ===1)
                             <div class="row"
-                                style="background: #ffff00;border-bottom: 1px solid #000c4f ;border-left: 1px none #000c4f ;">
-                                <div class="col"
-                                    style="width: 100%;padding-right: 0;padding-left: 0;border-left-style: none;">
+                                style="border-bottom: 1px solid #000c4f;background: #000c4f;">
+                                <div class="col" style="width: 100%;padding-right: 0;padding-left: 0;">
                                     <h1
-                                        style="width: 90%;font-size: 14px;color: #000c4f;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 16px;margin-bottom: 0;text-align: center;margin-left: 5%;">
+                                        style="text-transform:uppercase;width: 90%;font-size: 14px;color: #ffffff;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 16px;margin-bottom: 0;text-align: center;margin-left: 5%;">
                                         <br>{{ $dir->nombre }}<br><br>
                                     </h1>
                                 </div>
                             </div>
+                            @else
+                            <div class="row"
+                                style="border-bottom: 1px solid #000c4f;background: #ffff00;">
+                                <div class="col" style="width: 100%;padding-right: 0;padding-left: 0;">
+                                    <h1
+                                        style="text-transform:uppercase;width: 90%;font-size: 14px;color: #000c4f;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 16px;margin-bottom: 0;text-align: center;margin-left: 5%;">
+                                        <br>{{ $dir->nombre }}<br><br>
+                                    </h1>
+                                </div>
+                            </div>
+                            @endif
 
                             @if (!is_null($dir->direccion)&& is_null($dir->telefono))
                             <div class="row">
@@ -609,7 +658,7 @@
                                 style="background: #f2f2f2;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;">
                                 <div class="col"
                                     style="width: 50%;padding-left: 0;padding-right: 0;border-top: 1px none #000c4f ;border-right: 1px none #000c4f ;border-left: 1px none #000c4f ;">
-                                    <button class="btn-submit" style="border-color:transparent" onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','tel');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
+                                    <button class="btn-submit" style="border-color:transparent; background-color:#f2f2f2; " onclick="realizaProceso('{{ $dir->id}}', '{{ $dir->nombre}}','{{ $dir->telefono}}','tel');return false;" ><i class="fa fa-angle-double-right" style="margin-right: 5%;color: #000c4f;"></i><i class="fa fa-phone"
                                         style="color: #000c4f;"></i><i class="fa fa-angle-double-left"
                                         style="margin-left: 5%;color: #000c4f;"></i>
                                     <h1

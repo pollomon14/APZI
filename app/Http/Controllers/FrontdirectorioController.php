@@ -18,13 +18,13 @@ class FrontdirectorioController extends Controller
 {
     public function info($var)
     {
-        $directorio = directorio::where('id_municipio', $var)->orderBy('id_subcategoria', 'ASC')->get();
+        $directorio = directorio::where('id_municipio','like', '%' . $var . '%')->orderBy('id_subcategoria', 'ASC')->get();
         $iconos = iconos::orderBy('id', 'ASC')->get();
         $categorias = categorias::orderBy('id', 'ASC')->get();
         $subcategorias = subcategorias::orderBy('id', 'ASC')->get();
-        $eventos = eventos::where('id_municipio', $var)->get();
+        $eventos = eventos::where('id_municipio','like', '%' . $var . '%')->get();
         $municipio = municipios::find($var);
-        $destacados = directorio::where([['id_municipio', $var], ['tipo_de_plan', '4']])->orWhere([['id_municipio', $var], ['tipo_de_plan', '3']])->orWhere([['id_municipio', $var], ['tipo_de_plan', '2']])->inRandomOrder()->paginate(20);
+        $destacados = directorio::where([['id_municipio','like', '%' . $var . '%'], ['tipo_de_plan', '4']])->orWhere([['id_municipio','like', '%' . $var . '%'], ['tipo_de_plan', '3']])->orWhere([['id_municipio','like', '%' . $var . '%'], ['tipo_de_plan', '2']])->inRandomOrder()->paginate(20);
         return view('front.directorio', compact('directorio', 'iconos', 'eventos', 'municipio', 'subcategorias', 'destacados', 'categorias'));
     }
 
@@ -34,14 +34,15 @@ class FrontdirectorioController extends Controller
         $municipio = municipios::find($var);
         $eventos = eventos::where('id_municipio', $var)->get();
         $horarios = horarios::orderBy('id', 'ASC')->get();
+        $contador = directorio::select(['cant_visitas'])->get();
         return view('front.destacado', compact('local', 'municipio', 'horarios','eventos'));
     }
 
     public function turismo($var)
     {
-        $directorio = directorio::where([['id_municipio', $var], ['tipo_de_plan', '5']])->get();
+        $directorio = directorio::where([['id_municipio','like', '%' . $var . '%'], ['tipo_de_plan', '5']])->inRandomOrder()->get();
         $iconos = iconos::orderBy('id', 'ASC')->get();
-        $eventos = eventos::where('id_municipio', $var)->get();
+        $eventos = eventos::where('id_municipio','like', '%' . $var . '%')->get();
         $municipio = municipios::find($var);
         $horarios = horarios::orderBy('id', 'ASC')->get();
         return view('front.turismo', compact('directorio', 'iconos', 'eventos', 'municipio', 'horarios'));

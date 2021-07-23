@@ -252,10 +252,15 @@ $('#play-carousel').click(function (evt) {
 </html>
 @else
 
-<div class="carousel slide" data-ride="carousel" id="carousel-1" style="border-style: none;padding-top: 25%;">
+<div class="carousel slide" data-ride="carousel" id="carousel-1" style="border-style: none;padding-top: 80px;">
         <div class="carousel-inner">
-            @if(!is_null($local->imagen2))   
+            @if(!is_null($local->imagen1))   
             <div class="carousel-item active"><img class="w-100 d-block"
+                    src="https://drive.google.com/uc?id={{$local->imagen1}}" alt="Slide Image">
+            </div>
+              @endif
+            @if(!is_null($local->imagen2))   
+            <div class="carousel-item"><img class="w-100 d-block"
                     src="https://drive.google.com/uc?id={{$local->imagen2}}" alt="Slide Image">
             </div>
               @endif
@@ -634,7 +639,7 @@ $('#play-carousel').click(function (evt) {
     @endif
                     </div>
     @if(!is_null($local->id_horario))
-    <div class="dropdown" style="margin-top: 2%;"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-toggle="dropdown" type="button" style=" text-overflow: Ellipsis; white-space: nowrap; overflow: hidden;width: 96%;margin-right: 0;margin-left: 2%;background: #000c4f;border-radius: 0px;font-family: 'ITC Avant Garde Gothic Std Medium';font-size: 14px;margin-bottom: 0;"><i class="fa fa-clock-o float-left" style="color: #ffff00;margin-left: 2%;font-size: 20px;margin-right: 10%;"></i>Horario de Atencion&nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</button>
+    <div class="dropdown" style="margin-top: 2%;"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-toggle="dropdown" type="button" style=" text-overflow: Ellipsis; white-space: nowrap; overflow: hidden;width: 96%;margin-right: 0;margin-left: 2%;background: #000c4f;border-radius: 0px;font-family: 'ITC Avant Garde Gothic Std Medium';font-size: 14px;margin-bottom: 0; text-transform: uppercase;"><i class="fa fa-clock-o float-left" style="color: #ffff00;margin-left: 2%;font-size: 20px;margin-right: 10%; text-transform: uppercase;"></i>Horario de Atención&nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; </button>
         <div class="dropdown-menu" style="width: 96%;margin-top: 0;background: #f2f2f2;border-radius: 0px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;"><a class="dropdown-item" href="#" style="padding: 0;background: #f2f2f2;"></a><!-- Start: 1 Row 2 Columns -->
             <div class="container" style="padding: 0;background-color: #f2f2f2; margin-left: 2%; margin-right: 2%; width: 96%;">
                 <div class="row" style="margin-right: 0;margin-left: 0;">
@@ -662,21 +667,21 @@ $('#play-carousel').click(function (evt) {
                           @elseif($var4[0]==="M")
                           {{"Martes"}}
                           @elseif($var4[0]==="Mi")
-                          {{"Miercoles"}}
+                          {{"Miércoles"}}
                           @elseif($var4[0]==="J")
                           {{"Jueves"}}
                           @elseif($var4[0]==="V")
                           {{"Viernes"}}
                           @elseif($var4[0]==="S")
-                          {{"Sabado"}}
+                          {{"Sábado"}}
                         @elseif($var4[0]==="D")
                           {{"Domingo"}}
                           @elseif($var4[0]==="L-J")
                           {{"Lunes a Jueves"}}
                           @elseif($var4[0]==="L-S")
-                          {{"Lunes a Sabado"}}
+                          {{"Lunes a Sábado"}}
                           @elseif($var4[0]==="S-D")
-                          {{"Sabado y Domingo"}}
+                          {{"Sábado y Domingo"}}
                           @elseif($var4[0]==="D-D")
                           {{"Domingo a Domingo"}}
                          @endif 
@@ -698,7 +703,7 @@ $('#play-carousel').click(function (evt) {
     </div>
     @endif
     @if(!is_null($local->direccion)) 
-    <div class="dropdown"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-toggle="dropdown" type="button" style="margin-top: 3%; width: 96%;margin-right: 0;margin-left: 2%;background: #000c4f;border-radius: 0px;font-family: 'ITC Avant Garde Gothic Std Medium';font-size: 14px;margin-bottom: 0;"><i class="fas fa-map-marker-alt float-left" style="color: #ffff00;text-align: left;margin-left: 2%;font-size: 20px;margin-right: 10%;"></i>Desplegar Mapa&nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</button>
+    <div class="dropdown"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-toggle="dropdown" type="button" style="margin-top: 3%; width: 96%;margin-right: 0;margin-left: 2%;background: #000c4f;border-radius: 0px;font-family: 'ITC Avant Garde Gothic Std Medium';font-size: 14px;margin-bottom: 0; text-transform: uppercase;"><i class="fas fa-map-marker-alt float-left" style="color: #ffff00;text-align: left;margin-left: 2%;font-size: 20px;margin-right: 10%; text-transform: uppercase;"></i>Desplegar Mapa&nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</button>
         <div class="dropdown-menu" style="width: 96%;margin-top: 0;border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;">
         <div class="container" style="padding: 0;background-color: #f2f2f2; margin-left: 2%; margin-right: 2%; width: 96%;">
         <p style="color:#000c4f; background-color:#ffff00; text-align:center;    margin-bottom: 0;padding-top: 1%; padding-bottom: 1%;">{{$local->direccion}}</p>
@@ -711,23 +716,23 @@ $('#play-carousel').click(function (evt) {
     @if(is_null($local->catalogo) && is_null($local->video) && is_null($local->producto)&& !is_null($local->cant_visitas))    
     <figure class="figure" data-aos="flip-left" data-aos-duration="50" data-aos-once="true" style="width: 50%;  margin-bottom: 0;margin-left: 2%;border-radius: 4px;border: 1px solid #000c4f;">
             <h1 style="font-family: 'DS-Digital Italic';padding-bottom: 7%;  font-size: 1.5rem;">{{$local->cant_visitas}}</h1>
-            <figcaption class="figure-caption" style="width: 100%;margin-left: 0px;font-size: 11px;background: #ffff00;font-family: 'ITC Avant Garde Gothic Std Medium';font-weight: normal;border-radius: 0;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;color: #000c4f;border-style: none;">Visitas</figcaption>
+            <figcaption class="figure-caption" style="width: 100%;margin-left: 0px;font-size: 11px;background: #ffff00;font-family: 'ITC Avant Garde Gothic Std Medium';font-weight: normal;border-radius: 0;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;color: #000c4f;border-style: none;text-transform:uppercase">Visitas</figcaption>
         </figure>
      @elseif(!is_null($local->cant_visitas))
      <figure class="figure" data-aos="flip-left" data-aos-duration="50" data-aos-once="true" style="width: 20%;margin-left: 2%;border-radius: 4px;border: 1px solid #000c4f;">
             <h1 style="font-family: 'DS-Digital Italic';padding-top: 7%;padding-bottom: 22%;">{{$local->cant_visitas}}</h1>
-            <figcaption class="figure-caption" style="width: 100%;margin-left: 0px;font-size: 11px;background: #ffff00;font-family: 'ITC Avant Garde Gothic Std Medium';font-weight: normal;border-radius: 0;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;color: #000c4f;border-style: none;">Visitas</figcaption>
+            <figcaption class="figure-caption" style="width: 100%;margin-left: 0px;font-size: 11px;background: #ffff00;font-family: 'ITC Avant Garde Gothic Std Medium';font-weight: normal;border-radius: 0;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;color: #000c4f;border-style: none;text-transform:uppercase">Visitas</figcaption>
         </figure>
         @endif   
         @if(is_null($local->cant_visitas) && is_null($local->video) && is_null($local->id_evento)&& !is_null($local->catalogo))    
         <a  href="#" data-modal-id="bs4_sngl_cmrce1" data-toggle="modal" >
      <figure class="figure" style="width: 20%;margin-left: 2%;border-radius: 4px;border: 1px solid #000c4f;"><img class="img-fluid figure-img" style="width: 60%;margin-bottom: 40%;margin-top: 10%;" src="/assets/img/directorio%20(2).svg?h=c62e9ffb34c67c5bc58fcc7347e3ec3a">
-            <figcaption class="figure-caption" style="width: 100%;margin-left: 0px;font-size: 11px;background: #ffff00;font-family: 'ITC Avant Garde Gothic Std Medium';font-weight: normal;border-radius: 0;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;color: #000c4f;border-style: none;">Catalogo</figcaption>
+            <figcaption class="figure-caption" style="width: 100%;margin-left: 0px;font-size: 11px;background: #ffff00;font-family: 'ITC Avant Garde Gothic Std Medium';font-weight: normal;border-radius: 0;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;color: #000c4f;border-style: none;text-transform:uppercase">Catálogo</figcaption>
         </figure></a>
         <div id="bs4_sngl_cmrce1" class="modal fade bs4_modal bs4_blue bs4_bg_white bs4_bd_black bs4_bd_semi_trnsp bs4_none_radius bs4_shadow_none bs4_center bs4_animate bs4FadeInDown bs4_duration_md bs4_easeOutQuint bs4_size_sngl_cmrce" role="dialog" data-modal-backdrop="true" data-show-on="click" data-modal-delay="false" data-modal-duration="false">
                                 <div class="modal-dialog" style="background-color:#fff">
-                                    <div class="modal-content"><a class="bs4_btn_x_out_shtr bs4_sngl_cmrce_close" href="#" data-dismiss="modal">X</a>
-                                        <div class="row" style="height: 100%; padding-top:7%">
+                                    <div class="modal-content"><a class="bs4_btn_x_out_shtr bs4_sngl_cmrce_close" href="#" data-dismiss="modal"style="color: #000c4f; opacity: 1; font-size: 2rem;">X</a>
+                                        <div class="row" style="height: 100%; padding-top:8%">
 
                                         <iframe src="https://drive.google.com/file/d/{{ $local->catalogo }}/preview" height="100%" width="100%"  ></iframe>
                                         </div>
@@ -737,12 +742,12 @@ $('#play-carousel').click(function (evt) {
      @elseif (!is_null($local->catalogo))
      <a  href="#" data-modal-id="bs4_sngl_cmrce1" data-toggle="modal" >
      <figure class="figure" style="width: 20%;margin-left: 2%;border-radius: 4px;border: 1px solid #000c4f;"><img class="img-fluid figure-img" style="width: 60%;margin-bottom: 40%;margin-top: 10%;" src="/assets/img/directorio%20(2).svg?h=c62e9ffb34c67c5bc58fcc7347e3ec3a">
-            <figcaption class="figure-caption" style="width: 100%;margin-left: 0px;font-size: 11px;background: #ffff00;font-family: 'ITC Avant Garde Gothic Std Medium';font-weight: normal;border-radius: 0;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;color: #000c4f;border-style: none;">Catalogo</figcaption>
+            <figcaption class="figure-caption" style="width: 100%;margin-left: 0px;font-size: 11px;background: #ffff00;font-family: 'ITC Avant Garde Gothic Std Medium';font-weight: normal;border-radius: 0;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;color: #000c4f;border-style: none;text-transform:uppercase">Catálogo</figcaption>
         </figure></a>
         <div id="bs4_sngl_cmrce1" class="modal fade bs4_modal bs4_blue bs4_bg_white bs4_bd_black bs4_bd_semi_trnsp bs4_none_radius bs4_shadow_none bs4_center bs4_animate bs4FadeInDown bs4_duration_md bs4_easeOutQuint bs4_size_sngl_cmrce" role="dialog" data-modal-backdrop="true" data-show-on="click" data-modal-delay="false" data-modal-duration="false">
                                 <div class="modal-dialog" style="background-color:#fff">
-                                    <div class="modal-content"><a class="bs4_btn_x_out_shtr bs4_sngl_cmrce_close" href="#" data-dismiss="modal">X</a>
-                                        <div class="row" style="height: 100%; padding-top:7%">
+                                    <div class="modal-content"><a class="bs4_btn_x_out_shtr bs4_sngl_cmrce_close" href="#" data-dismiss="modal" style="color: #000c4f; opacity: 1; font-size: 2rem;">X</a>
+                                        <div class="row" style="height: 100%; padding-top:8%">
 
                                         <iframe src="https://drive.google.com/file/d/{{ $local->catalogo }}/preview" height="100%" width="100%"  ></iframe>
                                         </div>
@@ -753,12 +758,12 @@ $('#play-carousel').click(function (evt) {
         @if(!is_null($local->video))
         <a  href="#" data-modal-id="bs4_sngl_cmrce2" data-toggle="modal" >
         <figure class="figure" style="width: 20%;margin-left: 2%;border-radius: 4px;border: 1px solid #000c4f;"><img class="img-fluid figure-img" style="width: 60%;margin-bottom: 40%;margin-top: 10%;" src="/assets/img/video.svg?h=24ffd557226f6ef6f0d303aebbde5371">
-            <figcaption class="figure-caption" style="width: 100%;margin-left: 0px;font-size: 11px;background: #ffff00;font-family: 'ITC Avant Garde Gothic Std Medium';font-weight: normal;border-radius: 0;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;color: #000c4f;border-style: none;">Video</figcaption>
+            <figcaption class="figure-caption" style="width: 100%;margin-left: 0px;font-size: 11px;background: #ffff00;font-family: 'ITC Avant Garde Gothic Std Medium';font-weight: normal;border-radius: 0;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;color: #000c4f;border-style: none;text-transform:uppercase">Video</figcaption>
         </figure></a>
         <div id="bs4_sngl_cmrce2" class="modal fade bs4_modal bs4_blue bs4_bg_white bs4_bd_black bs4_bd_semi_trnsp bs4_none_radius bs4_shadow_none bs4_center bs4_animate bs4FadeInDown bs4_duration_md bs4_easeOutQuint bs4_size_sngl_cmrce" role="dialog" data-modal-backdrop="true" data-show-on="click" data-modal-delay="false" data-modal-duration="false">
                                 <div class="modal-dialog" style="background-color:#fff">
-                                    <div class="modal-content"><a class="bs4_btn_x_out_shtr bs4_sngl_cmrce_close" href="#" data-dismiss="modal">X</a>
-                                        <div class="row" style="height: 100%; padding-top:7%">
+                                    <div class="modal-content"><a class="bs4_btn_x_out_shtr bs4_sngl_cmrce_close" href="#" data-dismiss="modal"style="color: #000c4f; opacity: 1; font-size: 2rem;">X</a>
+                                        <div class="row" style="height: 100%; padding-top:8%">
 
                                         <iframe src="{{ $local->video }}" height="100%" width="100%"title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                         </div>
@@ -773,19 +778,19 @@ $('#play-carousel').click(function (evt) {
                                             @endphp
         <a  href="#" data-modal-id="bs4_sngl_cmrce3" data-toggle="modal" >
         <figure class="figure" style="width: 20%;margin-left: 2%;border-radius: 4px;border: 1px solid #000c4f;"><img class="img-fluid figure-img" style="width: 60%;margin-bottom: 40%;margin-top: 10%;" src="/assets/img/producto_destacado.svg?h=967ab525715dda1d3a26c3da8c550142">
-            <figcaption class="figure-caption" style="width: 100%;margin-left: 0px;font-size: 11px;background: #ffff00;font-family: 'ITC Avant Garde Gothic Std Medium';font-weight: normal;border-radius: 0;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;color: #000c4f;border-style: none;">Producto</figcaption>
+            <figcaption class="figure-caption" style="width: 100%;margin-left: 0px;font-size: 11px;background: #ffff00;font-family: 'ITC Avant Garde Gothic Std Medium';font-weight: normal;border-radius: 0;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;color: #000c4f;border-style: none;text-transform:uppercase">Producto</figcaption>
         </figure></a>
         <div id="bs4_sngl_cmrce3" class="modal fade bs4_modal bs4_blue bs4_bg_white bs4_bd_black bs4_bd_semi_trnsp bs4_none_radius bs4_shadow_none bs4_center bs4_animate bs4FadeInDown bs4_duration_md bs4_easeOutQuint bs4_size_sngl_cmrce" role="dialog" data-modal-backdrop="true" data-show-on="click" data-modal-delay="false" data-modal-duration="false" style="padding-top:20%">
                             
                            
-                                        <!-- Start: Auto Modal Popup -->
+                                                       <!-- Start: Auto Modal Popup -->
     
             <div class="modal-content" style="background-color:#fff">
                 <div class="modal-header"
                     style="background: #ffff00;padding-top: 1%;padding-bottom: 1%;border-top: 1px solid #000c4f;border-right: 1px solid #000c4f;border-bottom: 1px solid #000c4f;border-left: 1px solid #000c4f;border-top-left-radius: 4px;border-top-right-radius: 4px;color: #000c4f;">
                     <h4 class="modal-title text-uppercase"
                         style="color: #000c4f;font-family: 'ITC Avant Garde Gothic Std Demi';">{{$even->titulo}}</h4><button
-                        type="button" class="close" data-dismiss="modal" onclick="location.reload();" aria-label="Close"><span
+                        type="button" class="close" data-dismiss="modal" onclick="location.reload();" aria-label="Close" style="color: #000c4f; opacity: 1; font-size: 2rem;"><span
                             aria-hidden="true">×</span></button>
                 </div>
                 <div class="modal-body"
@@ -796,7 +801,7 @@ $('#play-carousel').click(function (evt) {
                             <p
                                 style="margin-top: 4%;font-family: 'Montserrat Regular';font-size: 14px;color: #000c4f;text-align: center;">
                                 {{$even->descripcion}}</p><button class="btn btn-primary" onclick="location.href='{{$even->link}}'" type="button"
-                                style="background: #000c4f;color: #fff;font-family: 'Montserrat Regular';">{{$even->texto_boton}}</button>
+                                style="background: #000c4f;color: #fff;font-family: 'Montserrat Regular';    margin-right: 50%;">{{$even->texto_boton}}</button>
                         </div>
                     </div>
                 </div>
@@ -882,7 +887,7 @@ $('#play-carousel').click(function (evt) {
     <div class="row" style="margin-right: 0;margin-left: 0;width: 100%;padding-top: 1%;padding-bottom: 1%;border-bottom: 1px none #000c4f ;">
             <div class="col-md-4" style="width: 20%;padding: 0;text-align: center;"><i class="far fa-envelope" style="text-align: center;font-size: 20px;color: #000c4f;font-weight: bold;"></i></div>
             <div class="col-md-4" style="width: 70%;padding: 0;">
-                <h1 style="color: #000c4f;font-size: 16px;font-family: 'ITC Avant Garde Gothic Std Medium';margin-bottom: 0;margin-right: 0px;margin-top: 1%;">Correo Electronico</h1>
+                <h1 style="color: #000c4f;font-size: 16px;font-family: 'ITC Avant Garde Gothic Std Medium';margin-bottom: 0;margin-right: 0px;margin-top: 1%;">Correo Electrónico</h1>
             </div>
             <div class="col-md-4" style="width: 10%;padding: 0;"><i class="fa fa-arrow-circle-right" style="text-align: center;font-size: 16px;color: #000c4f;"></i></div>
         </div>

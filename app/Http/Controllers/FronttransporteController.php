@@ -15,7 +15,7 @@ class FronttransporteController extends Controller
 {
     public function carga($var)
     {
-        $transporte = transporte_carga::where('id_municipio',$var)->get();
+        $transporte = transporte_carga::where('id_municipio',$var)->inRandomOrder()->get();
         $iconos = iconos::orderBy('id', 'ASC')->get();
         $eventos = eventos::orderBy('id', 'ASC')->get();
         $municipio = municipios::find($var);
@@ -25,7 +25,7 @@ class FronttransporteController extends Controller
     }
     public function expresos($var)
     {
-        $transporte = transporte_expresos::where('id_municipio',$var)->get();
+        $transporte = transporte_expresos::where('id_municipio',$var)->inRandomOrder()->get();
         $iconos = iconos::orderBy('id', 'ASC')->get();
         $eventos = eventos::orderBy('id', 'ASC')->get();
         $municipio = municipios::find($var);
@@ -35,7 +35,7 @@ class FronttransporteController extends Controller
     }
     public function domiciliarios($var)
     {
-        $transporte = transporte_domiciliarios::where('id_municipio',$var)->get();
+        $transporte = transporte_domiciliarios::where('id_municipio',$var)->inRandomOrder()->get();
         $iconos = iconos::orderBy('id', 'ASC')->get();
         $eventos = eventos::orderBy('id', 'ASC')->get();
         $municipio = municipios::find($var);
@@ -45,7 +45,7 @@ class FronttransporteController extends Controller
     }
     public function taxis($var)
     {
-        $transporte = transporte_taxis::where('id_municipio',$var)->get();
+        $transporte = transporte_taxis::where('id_municipio',$var)->inRandomOrder()->get();
         $iconos = iconos::orderBy('id', 'ASC')->get();
         $eventos = eventos::orderBy('id', 'ASC')->get();
         $municipio = municipios::find($var);

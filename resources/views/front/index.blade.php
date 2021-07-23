@@ -1,9 +1,57 @@
 @extends('layouts.apzi')
 
 @section('content')
+<div class="carousel slide" data-ride="carousel" id="carousel-1" style="border-style: none;padding-top: 80px;">
+        <div class="carousel-inner">
+        @php
+        $evencount=count($eventos);
+        @endphp
+        @for($i=0;$i<$evencount;$i++)
+        @php
+        $even=$eventos[$i];
+        @endphp
+        @if($even->tipo === 1)
+        @if($i==0)
+            <div class="carousel-item active">
+        @else
+        <div class="carousel-item ">
+        @endif
+            <img class="w-100 d-block"
+                    src="https://drive.google.com/uc?id={{$even->imagen}}" alt="Slide Image">
+                    <a href="{{$even->link}}"><h1
+                    style="width: 100%;color: #fff;background: #000c4f;text-align: center;font-size: 16px;font-family: 'ITC Avant Garde Gothic Std Demi';font-weight: normal;margin-bottom: 0;padding-top: 1%;padding-bottom: 1%;border: 1px solid #000c4f ;">
+                    <i class="fa fa-whatsapp" style="font-weight: bold;"></i>&nbsp;{{$even->texto_boton}}
+                </h1></a>               
+            </div>
+        @elseif($even->tipo === 5)
+        @if($i==0)
+            <div class="carousel-item active">
+        @else
+        <div class="carousel-item ">
+        @endif
+            <img class="w-100 d-block"
+                    src="https://drive.google.com/uc?id={{$even->imagen}}" alt="Slide Image">
+                    <a href="{{$even->link}}"><h1
+                    style="width: 100%;color: #fff;background: #000c4f;text-align: center;font-size: 16px;font-family: 'ITC Avant Garde Gothic Std Demi';font-weight: normal;margin-bottom: 0;padding-top: 1%;padding-bottom: 1%;border: 1px solid #000c4f ;">
+                    <i class="fa fa-whatsapp" style="font-weight: bold;"></i>&nbsp;{{$even->texto_boton}}
+                </h1></a>               
+            </div>
+        @else
+        {{$even->tipo}}
+            @endif
+                    @endfor 
+        </div>
+        
+        <div style="width: 100%;color: var(--dark);">
+            <!-- Start: Previous --><a class="carousel-control-prev" href="#carousel-1" role="button"
+                data-slide="prev" style="padding-top:25%;"><span class="carousel-control-prev-icon"></span><span class="sr-only">Previous</span></a>
+            <!-- End: Previous -->
+            <!-- Start: Next --><a class="carousel-control-next" style="padding-top:25%;" href="#carousel-1" role="button" data-slide="next"><span
+                    class="carousel-control-next-icon"></span><span class="sr-only">Next</span></a><!-- End: Next -->
+        </div>
+    </div>
 
-
-    <div class="carousel slide" data-ride="carousel" id="carousel-1" style="border-style: none;padding-top: 20%;">
+    <div class="carousel slide" data-ride="carousel" id="carousel-1" style="border-style: none;padding-top: 80px;">
         <div class="carousel-inner">
             <div class="carousel-item active"><img class="w-100 d-block"
                     src="/assets/img/IMAGEN3.png?h=5f06cb82cf49df28880ea16b787febc7" alt="Slide Image">
@@ -49,8 +97,8 @@
                     style="background: #ffff00;padding-top: 1%;padding-bottom: 1%;border-top: 1px solid #000c4f;border-right: 1px solid #000c4f;border-bottom: 1px solid #000c4f;border-left: 1px solid #000c4f;border-top-left-radius: 4px;border-top-right-radius: 4px;color: #000c4f;">
                     <h4 class="modal-title text-uppercase"
                         style="color: #000c4f;font-family: 'ITC Avant Garde Gothic Std Demi';">Evento</h4><button
-                        type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                            aria-hidden="true">×</span></button>
+                        type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: #000c4f;opacity: 1; font-size: 2rem;"><span
+                            aria-hidden="true" >×</span></button>
                 </div>
                 <div class="modal-body"
                     style="border-color: #ffff00;border-right: 1px solid #000c4f;border-bottom: 1px solid #000c4f;border-left: 1px solid #000c4f;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;">
@@ -70,6 +118,7 @@
         </div>
     </div><!-- End: Auto Modal Popup -->
     <!-- Start: 1 Row 3 Columns -->
+    
     <div
         style="width: 80%;margin-left: 10%;margin-right: 0%;margin-top: 10%;margin-bottom: 20%;border-style: none;border-left-style: none;box-shadow: 0px 0px 12px 0px;border-radius: 4px;">
         <div class="container"
