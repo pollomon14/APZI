@@ -3,15 +3,17 @@
 namespace App\Http\Controllers;
 use App\Models\eventos;
 use App\Models\municipios;
+use App\Models\iconos;
 use Illuminate\Http\Request;
 
 class FrontindexController extends Controller
 {
     public function info($var)
     {
-        $eventos = eventos::where('id_municipio',$var)->get();
+        $eventos = eventos::where([['id_municipio','like', '%' . $var . '%'], ['tipo', '5']])->orwhere([['id_municipio','like', '%' . $var . '%'], ['tipo', '1']])->get();
+        $iconos = iconos::orderBy('id', 'ASC')->get();
         $municipio = municipios::find($var);
-        return view('front.index',compact('eventos','municipio'));
+        return view('front.index',compact('eventos','municipio','iconos'));
 
     }
 

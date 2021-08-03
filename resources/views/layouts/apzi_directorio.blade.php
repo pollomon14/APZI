@@ -275,6 +275,7 @@
                             </div>
                         </div><!-- End: Mega Menu Dropdown 100% Editable - Ambrodu -->
                         <hr style="background: #000c4f;">
+                        @if($municipio->id ===1)
                         <a class="btn btn-primary w-100 sidebar-btn" role="button" href="{{ route('index',$municipio->id) }}"
                             style="padding-top: 2%; padding-bottom: 2%; border-radius: 4px; background: #fff; color: #000c4f; font-size: 13px; border: 1px solid #000c4f; font-family: 'ITC Avant Garde Gothic Std Demi'; text-align: left;"><img
                                 src="/assets/img/casa.svg?h=7334c2a44666ed6638f133cd6da94fa7"
@@ -307,6 +308,61 @@
                         <center style="margin-top:5%;"><span
                                 style="font-size: 13px;color: #505050;font-family: 'ITC Avant Garde Gothic Std Demi'; ">INGENIO
                                 360</span></center>
+                    @elseif(($municipio->id ===2)||($municipio->id ===4)) 
+                    <a class="btn btn-primary w-100 sidebar-btn" role="button" href="{{ route('index',$municipio->id) }}"
+                            style="padding-top: 2%; padding-bottom: 2%; border-radius: 4px; background: #fff; color: #000c4f; font-size: 13px; border: 1px solid #000c4f; font-family: 'ITC Avant Garde Gothic Std Demi'; text-align: left;"><img
+                                src="/assets/img/casa.svg?h=7334c2a44666ed6638f133cd6da94fa7"
+                                style="width: 15%; margin-right:5%;" />Inicio</a>
+                        <a class="btn btn-primary w-100 sidebar-btn" role="button" href="{{ route('directorio', $municipio->id) }}"
+                            style="padding-top: 2%; padding-bottom: 2%; border-radius: 4px; background: #fff; color: #000c4f; font-size: 13px; border: 1px solid #000c4f; font-family: 'ITC Avant Garde Gothic Std Demi'; text-align: left;"><img
+                                src="/assets/img/btn_domicilios.svg?h=70ef7ca953911d3c38d1f9381ec09e36"
+                                style="width: 15%; margin-right:5%;" />Directorio</a>
+                        <a class="btn btn-primary w-100 sidebar-btn" role="button" href="{{ route('taxis', $municipio->id) }}"
+                            style="padding-top: 2%; padding-bottom: 2%; border-radius: 4px; background: #fff; color: #000c4f; font-size: 13px; border: 1px solid #000c4f; font-family: 'ITC Avant Garde Gothic Std Demi'; text-align: left;"><img
+                                src="/assets/img/btn_transporte.svg?h=c641b1c38fb0a679afac8483fb019b79"
+                                style="width: 15%; margin-right:5%;" />Transporte</a>
+                        <a class="btn btn-primary w-100 sidebar-btn" role="button" href="{{ route('emergencias', $municipio->id) }}"
+                            style="padding-top: 2%; padding-bottom: 2%; border-radius: 4px; background: #fff; color: #000c4f; font-size: 13px; border: 1px solid #000c4f; font-family: 'ITC Avant Garde Gothic Std Demi'; text-align: left;"><img
+                                src="/assets/img/btn_emergencias.svg?h=76fa7052ed4ac591ce833a0418a2c3b6"
+                                style="width: 15%; margin-right:5%;" />Emergencias</a>
+                        <hr style="background: #000c4f;">
+                        <a class="btn btn-primary w-100 sidebar-btn" role="button" href="#"
+                            style="padding-top: 2%; padding-bottom: 2%; border-radius: 4px; background: #fff; color: #000c4f; font-size: 13px; border: 1px solid #000c4f; font-family: 'ITC Avant Garde Gothic Std Demi'; text-align: left;"><img
+                                src="/assets/img/condiciones.svg?h=c8118fe2f7132ef4e5d6fcd10b1c758c"
+                                style="width: 15%; margin-right:5%;" />Condiciones de Uso</a>
+                        <a class="btn btn-primary w-100 sidebar-btn" role="button" href="#"
+                            style="padding-top: 2%; padding-bottom: 2%; border-radius: 4px; background: #fff; color: #000c4f; font-size: 13px; border: 1px solid #000c4f; font-family: 'ITC Avant Garde Gothic Std Demi'; text-align: left;"><img
+                                src="/assets/img/servicios.svg?h=34a218e6ad61fda8d5a46ab79f024bef"
+                                style="width: 15%; margin-right:5%;" />Contáctenos</a>
+                        <center style="margin-top:5%;"><span
+                                style="font-size: 13px;color: #505050;font-family: 'ITC Avant Garde Gothic Std Demi'; ">INGENIO
+                                360</span></center>
+                    @else
+                    <a class="btn btn-primary w-100 sidebar-btn" role="button" href="{{ route('index',$municipio->id) }}"
+                            style="padding-top: 2%; padding-bottom: 2%; border-radius: 4px; background: #fff; color: #000c4f; font-size: 13px; border: 1px solid #000c4f; font-family: 'ITC Avant Garde Gothic Std Demi'; text-align: left;"><img
+                                src="/assets/img/casa.svg?h=7334c2a44666ed6638f133cd6da94fa7"
+                                style="width: 15%; margin-right:5%;" />Inicio</a>
+                        <a class="btn btn-primary w-100 sidebar-btn" role="button" href="{{ route('directorio', $municipio->id) }}"
+                            style="padding-top: 2%; padding-bottom: 2%; border-radius: 4px; background: #fff; color: #000c4f; font-size: 13px; border: 1px solid #000c4f; font-family: 'ITC Avant Garde Gothic Std Demi'; text-align: left;"><img
+                                src="/assets/img/btn_domicilios.svg?h=70ef7ca953911d3c38d1f9381ec09e36"
+                                style="width: 15%; margin-right:5%;" />Directorio</a>
+                        <a class="btn btn-primary w-100 sidebar-btn" role="button" href="{{ route('emergencias', $municipio->id) }}"
+                            style="padding-top: 2%; padding-bottom: 2%; border-radius: 4px; background: #fff; color: #000c4f; font-size: 13px; border: 1px solid #000c4f; font-family: 'ITC Avant Garde Gothic Std Demi'; text-align: left;"><img
+                                src="/assets/img/btn_emergencias.svg?h=76fa7052ed4ac591ce833a0418a2c3b6"
+                                style="width: 15%; margin-right:5%;" />Emergencias</a>
+                        <hr style="background: #000c4f;">
+                        <a class="btn btn-primary w-100 sidebar-btn" role="button" href="#"
+                            style="padding-top: 2%; padding-bottom: 2%; border-radius: 4px; background: #fff; color: #000c4f; font-size: 13px; border: 1px solid #000c4f; font-family: 'ITC Avant Garde Gothic Std Demi'; text-align: left;"><img
+                                src="/assets/img/condiciones.svg?h=c8118fe2f7132ef4e5d6fcd10b1c758c"
+                                style="width: 15%; margin-right:5%;" />Condiciones de Uso</a>
+                        <a class="btn btn-primary w-100 sidebar-btn" role="button" href="#"
+                            style="padding-top: 2%; padding-bottom: 2%; border-radius: 4px; background: #fff; color: #000c4f; font-size: 13px; border: 1px solid #000c4f; font-family: 'ITC Avant Garde Gothic Std Demi'; text-align: left;"><img
+                                src="/assets/img/servicios.svg?h=34a218e6ad61fda8d5a46ab79f024bef"
+                                style="width: 15%; margin-right:5%;" />Contáctenos</a>
+                        <center style="margin-top:5%;"><span
+                                style="font-size: 13px;color: #505050;font-family: 'ITC Avant Garde Gothic Std Demi'; ">INGENIO
+                                360</span></center>
+                    @endif
                     </div>
                 </div>
                 <div id="content" style="border-style: none;height: 15%;height:80px;">

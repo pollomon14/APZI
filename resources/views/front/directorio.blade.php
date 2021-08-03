@@ -55,14 +55,96 @@
     <!-- Start: 4 Col Small Slider -->
     <!--*-*-*-*-*-*-*-*-*-*- BOOTSTRAP CAROUSEL *-*-*-*-*-*-*-*-*-*-->
 
+    @php
+        $count=count($destacados);
+        @endphp
+@if ($count ===1)
+<center><div style="width:90%; padding-top:35%; padding-bottom:5%; margin-left:5%; margin-right:5%; display:flex;    justify-content: space-evenly;">
+        @php
+                                                $var= $iconos->find($destacados[0]->logo);
+                                                $var2="x";
+                                                if (!is_null($var)){
+                                                    $var2=($var->link);
+                                                }
 
+                                            @endphp
 
+                                            <div class="item" style="width: 75px;">
+
+                                            <a href="{{route('local',[$destacados[0]->id,$municipio->id])}}">
+                                            <img loading="lazy" style="border-radius: 10px; position:auto; z-index:900"
+                                                    src="https://drive.google.com/uc?id={{ $var2 }}"></a>
+                                                    </div>
+                                                    </div></center>
+@elseif ($count ===2)
+  <center><div style="width:90%; padding-top:35%; padding-bottom:5%; margin-left:5%; margin-right:5%;display:flex;    justify-content: space-evenly;">
+        @php
+                                                $var= $iconos->find($destacados[0]->logo);
+                                                $var2="x";
+                                                if (!is_null($var)){
+                                                    $var2=($var->link);
+                                                }
+                                                $var3= $iconos->find($destacados[1]->logo);
+                                                $var4="x";
+                                                if (!is_null($var3)){
+                                                    $var4=($var3->link);
+                                                }
+
+                                            @endphp
+
+                                            <div class="item" style="width: 75px;">
+                                            <a href="{{route('local',[$destacados[0]->id,$municipio->id])}}">
+                                            <img loading="lazy" style="border-radius: 10px; position:auto; z-index:900"
+                                                    src="https://drive.google.com/uc?id={{ $var2 }}"></a>
+                                                    </div>
+<div class="item" style="width: 75px;">
+<a href="{{route('local',[$destacados[1]->id,$municipio->id])}}">
+<img loading="lazy" style="border-radius: 10px; position:auto; z-index:900"
+        src="https://drive.google.com/uc?id={{ $var4 }}"></a>
+        </div>
+  </div></center>
+@elseif ($count ===3)
+  <center><div style="width:90%; padding-top:35%; padding-bottom:5%; margin-left:5%; margin-right:5%;display:flex;    justify-content: space-evenly;">
+        @php
+                                                $var= $iconos->find($destacados[0]->logo);
+                                                $var2="x";
+                                                if (!is_null($var)){
+                                                    $var2=($var->link);
+                                                }
+                                                $var3= $iconos->find($destacados[1]->logo);
+                                                $var4="x";
+                                                if (!is_null($var3)){
+                                                    $var4=($var3->link);
+                                                }
+                                                $var5= $iconos->find($destacados[2]->logo);
+                                                $var6="x";
+                                                if (!is_null($var5)){
+                                                    $var6=($var5->link);
+                                                }
+
+                                            @endphp
+
+                                            <div class="item" style="width: 75px;">
+                                            <a href="{{route('local',[$destacados[0]->id,$municipio->id])}}">
+                                            <img loading="lazy" style="border-radius: 10px; position:auto; z-index:900"
+                                                    src="https://drive.google.com/uc?id={{ $var2 }}"></a>
+                                                    </div>
+<div class="item" style="width: 75px;">
+<a href="{{route('local',[$destacados[1]->id,$municipio->id])}}">
+<img loading="lazy" style="border-radius: 10px; position:auto; z-index:900"
+        src="https://drive.google.com/uc?id={{ $var4 }}"></a>
+        </div>
+        <div class="item" style="width: 75px;">
+<a href="{{route('local',[$destacados[2]->id,$municipio->id])}}">
+<img loading="lazy" style="border-radius: 10px; position:auto; z-index:900"
+        src="https://drive.google.com/uc?id={{ $var6 }}"></a>
+        </div>
+</div></center>
+    @else
 <div style="width:90%; padding-top:35%; padding-bottom:5%; margin-left:5%; margin-right:5%">
         <!--========= Wrapper for slides =========-->
         <div class="owl-carousel owl-theme" style="width:100%;">
-         @php
-        $count=count($destacados);
-        @endphp
+       
 
             @for($j=0;$j<$count;$j+=4)
             @php
@@ -94,7 +176,7 @@
 
     </div></div>
     <!--*-*-*-*-*-*-*-*-*-*- END BOOTSTRAP CAROUSEL *-*-*-*-*-*-*-*-*-*-->
-
+@endif
     <!-- End: 4 Col Small Slider -->
     @php
  $letra="0";

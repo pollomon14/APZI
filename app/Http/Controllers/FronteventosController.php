@@ -10,7 +10,7 @@ class FronteventosController extends Controller
 {
     public function index($var)
     {
-        $eventos = eventos::where([['id_municipio',$var],['tipo',4]])->orwhere([['id_municipio',$var],['tipo',5]])->get();
+        $eventos = eventos::where([['id_municipio','like', '%' . $var . '%'],['tipo',4]])->orwhere([['id_municipio','like', '%' . $var . '%'],['tipo',5]])->get();
         $iconos = iconos::orderBy('id', 'ASC')->get();
         $municipio = municipios::find($var);
         return view('front.ofertas',compact('eventos','iconos','municipio'));
