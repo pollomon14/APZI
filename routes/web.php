@@ -29,6 +29,22 @@ Route::get('/front/index/{id}', 'App\Http\Controllers\FrontindexController@info'
 
 Route::get('/front/directorio/{id}', 'App\Http\Controllers\FrontdirectorioController@info')->name('directorio');;
 
+Route::get('/front/comida/{id}', 'App\Http\Controllers\FrontdirectorioController@comida')->name('comida');;
+
+Route::get('/front/bebida/{id}', 'App\Http\Controllers\FrontdirectorioController@bebida')->name('bebida');;
+
+Route::get('/front/detalle/{id}', 'App\Http\Controllers\FrontdirectorioController@detalle')->name('detalle');;
+
+Route::get('/front/mascota/{id}', 'App\Http\Controllers\FrontdirectorioController@mascota')->name('mascota');;
+
+Route::get('/front/hospedaje/{id}', 'App\Http\Controllers\FrontdirectorioController@hospedaje')->name('hospedaje');;
+
+Route::get('/front/banco/{id}', 'App\Http\Controllers\FrontdirectorioController@banco')->name('banco');;
+
+Route::get('/front/ocio/{id}', 'App\Http\Controllers\FrontdirectorioController@ocio')->name('ocio');;
+
+Route::get('/front/artesania/{id}', 'App\Http\Controllers\FrontdirectorioController@artesania')->name('artesania');;
+
 Route::get('/front/destacado/{id}{var}', 'App\Http\Controllers\FrontdirectorioController@local')->name('local');
 
 Route::get('/front/carga/{id}', 'App\Http\Controllers\FronttransporteController@carga')->name('carga');

@@ -10,7 +10,7 @@
         @php
         $even=$eventos[$i];
         @endphp
-       
+       @if(($even->tipo===1)||($even->tipo===5))
         @if($i==0)
             <div class="carousel-item active">
         @else
@@ -47,7 +47,7 @@
                 </h1></a>
                 @endif              
             </div>
-
+@endif
                     @endfor 
         </div>
         
@@ -59,7 +59,8 @@
                     class="carousel-control-next-icon"></span><span class="sr-only">Next</span></a><!-- End: Next -->
         </div>
     </div>
-
+    @foreach ($eventos as $ev)
+@if($ev->tipo===2)
     <!-- Start: Auto Modal Popup -->
     <div class="modal fade" role="dialog" tabindex="-1" id="contactModal"
         style="border: 1px solid #000c4f;border-radius: 4px;border-top-left-radius: 4;opacity: 1;background: rgba(0,0,0,0.7);">
@@ -68,7 +69,7 @@
                 <div class="modal-header"
                     style="background: #ffff00;padding-top: 1%;padding-bottom: 1%;border-top: 1px solid #000c4f;border-right: 1px solid #000c4f;border-bottom: 1px solid #000c4f;border-left: 1px solid #000c4f;border-top-left-radius: 4px;border-top-right-radius: 4px;color: #000c4f;">
                     <h4 class="modal-title text-uppercase"
-                        style="color: #000c4f;font-family: 'ITC Avant Garde Gothic Std Demi';">Evento</h4><button
+                        style="color: #000c4f;font-family: 'ITC Avant Garde Gothic Std Demi';">{{$ev->titulo}}</h4><button
                         type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: #000c4f;opacity: 1; font-size: 2rem;"><span
                             aria-hidden="true" >×</span></button>
                 </div>
@@ -76,19 +77,21 @@
                     style="border-color: #ffff00;border-right: 1px solid #000c4f;border-bottom: 1px solid #000c4f;border-left: 1px solid #000c4f;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;">
                     <div class="row">
                         <div class="col-lg-6" style="width: 100%;"><img style="width: 100%;"
-                                src="/assets/img/slider_4.jpg?h=83d93f3d6f7b42c8d8ccb5c616c384f4">
+                                src="{{$ev->imagen}}">
                             <p
                                 style="margin-top: 4%;font-family: 'Montserrat Regular';font-size: 14px;color: #000c4f;text-align: center;">
-                                Paragraph ojitos lindos lasndfab dsoio sbskbs ubsibdsibd sbdsiuba saoibsao sabiasbosaosab
-                                oanoiasas</p><button class="btn btn-primary" type="button"
-                                style="background: #000c4f;color: #fff;font-family: 'Montserrat Regular';">Ir al
-                                destacado</button>
+                                {{$ev->descripcion}}</p><button class="btn btn-primary" type="button" onclick="location.href='{{$ev->link}}'"
+                                style="background: #000c4f;color: #fff;font-family: 'Montserrat Regular';">{{$ev->texto_boton}}</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div><!-- End: Auto Modal Popup -->
+    @endif
+
+@endforeach
+
     <!-- Start: 1 Row 3 Columns -->
     @if($municipio->id ===1)
     <div
