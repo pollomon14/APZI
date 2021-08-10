@@ -1,5 +1,13 @@
 
 <!-- Start: Footer Basic -->
+<?php
+    $municipio =
+    (object) [
+        'id' =>session()->get('municipio_id'),
+        'nombre' => session()->get('municipio_nombre')
+];
+
+?>
 <div class="footer-basic" style="padding-bottom: 0;padding-top: 2%; position:fixed; bottom:0;z-index:100;">
     <footer style="width: 100%;">
         <!-- Start: Social Icons -->
@@ -12,7 +20,7 @@
                 style="width: 15%;height: none;margin-left: 1%;margin-right: 0;opacity: 1;line-height: 0px;border-top-left-radius: none;border-top-right-radius: 0;border-bottom-right-radius: 0;border-style: none;border-right: 2px solid #000C4F ;"><img
                     src="/assets/img/comidas.svg?h=b6938b632794e078d60944a42e08cf2e"
                     style="width: 80%;margin-bottom: 10%;"><span style="font-size: 9px;">COMIDAS</span></a><a
-                    href="{{route('bebida',$municipio->id)}}" 
+                    href="{{route('bebida',$municipio->id)}}"
                 style="width: 15%;height: none;margin-left: 1%;margin-right: 0;opacity: 1;line-height: 0px;border-top-left-radius: none;border-top-right-radius: 0;border-bottom-right-radius: 0;border-style: none;border-right: 2px solid #000C4F ;"><img
                     src="/assets/img/bebidas.svg?h=94ef59a228a68e24dfee16aaf4e36e33"
                     style="width: 80%;margin-bottom: 10%;"><span style="font-size: 9px;">BEBIDAS</span></a><a

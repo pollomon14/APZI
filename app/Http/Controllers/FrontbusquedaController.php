@@ -17,7 +17,7 @@ class FrontbusquedaController extends Controller
 
     public function categorias(Request $request){
         $var = $request->input('categorias');
-        $ciudad = $request->input('municipio');
+        $ciudad = session('municipio');
         if ($var=="Todos"){
             $directorio = directorio::where([['id_municipio',$ciudad]])->get();
             $var=null;
@@ -41,8 +41,7 @@ class FrontbusquedaController extends Controller
     {
 
         $var = $request->input('busqueda');
-        $ciudad = $request->input('municipio');
-
+        $ciudad = session('municipio_id');
         //insertar palabra
         $Busqueda=DB::table('palabra_mas_buscada')->where('palabra','LIKE','%'.$var.'%')->get();
         if($Busqueda->isEmpty()){

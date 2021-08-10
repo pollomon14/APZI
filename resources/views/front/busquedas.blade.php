@@ -1,7 +1,8 @@
 @extends('layouts.apzi')
 
 @section('content')
-    @isset($directorios)
+    @if (isset($directorios))
+
     @foreach ($directorios as $dir)
 
 
@@ -508,7 +509,12 @@
 
 
     @endforeach
-    @endisset
+
+    @else
+        <script>window.location = "/front/directorio/{{session()->get('municipio_id')}}";</script>
+    @endif
+
+
 
     @include('front.menugeneral')
 @endsection

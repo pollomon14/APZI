@@ -13,6 +13,8 @@ class FrontindexController extends Controller
         $eventos = eventos::where([['id_municipio','like', '%' . $var . '%'], ['tipo', '5']])->orwhere([['id_municipio','like', '%' . $var . '%'], ['tipo', '1']])->orwhere([['id_municipio','like', '%' . $var . '%'], ['tipo', '2']])->get();
         $iconos = iconos::orderBy('id', 'ASC')->get();
         $municipio = municipios::find($var);
+        session(['municipio_id' => $municipio->id]);
+        session(['municipio_nombre' => $municipio->nombre]);
         return view('front.index',compact('eventos','municipio','iconos'));
 
     }
