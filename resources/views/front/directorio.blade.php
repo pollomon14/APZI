@@ -12,7 +12,7 @@
                     <!-- Start: Filter -->
                     <div class="filter">
 
-                        
+
                         <?php $cate=1;
                             $sino=1;
 
@@ -35,7 +35,7 @@
                                         <option value="{{$cat->id}}">{{$cat->nombre}}</option>
                                 @endforeach
                             </select>
-                            <input type="hidden" name="municipio" id="municipio" value={{ $municipio->id }} >
+
 
                         {!! Form::close() !!}
 
@@ -144,7 +144,7 @@
 <div style="width:90%; padding-top:35%; padding-bottom:5%; margin-left:5%; margin-right:5%">
         <!--========= Wrapper for slides =========-->
         <div class="owl-carousel owl-theme" style="width:100%;">
-       
+
 
             @for($j=0;$j<$count;$j+=4)
             @php
@@ -184,7 +184,7 @@
 
     @foreach ($directorio as $dir)
     @php
- 
+
                                                 $varsubcat= $subcategorias->find($dir->id_subcategoria);
                                                 $varsub="x";
                                                 if (!is_null($varsubcat)){
@@ -197,7 +197,7 @@
      @if ($letra!==$varsub[0])
         @php
  $letra=$varsub[0];
-@endphp                                     
+@endphp
     <h1
         style="width: 94%;margin-left: 3%;color: #000c4f;font-size: 30px;font-family: 'ITC Avant Garde Gothic Std Medium';border-bottom: 2px solid #000c4f;line-height: 27px;">
         {{$letra}}</h1>

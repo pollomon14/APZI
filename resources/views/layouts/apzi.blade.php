@@ -404,7 +404,7 @@
                                     @csrf
 
                                         <i class="fa fa-microphone btn-hold"
-                                    style="font-size: 16px;padding-left: 3%;color: #4f1000;"  id="procesar"></i>
+                                    style="font-size: 16px;padding-left: 3%;color: #ff3300;"  id="procesar"></i>
                                         <input type="search" name="busqueda" id="texto" class="form-control-sm"
                                         style="width: 70%;height: 20px;border-radius: 7px;padding-left: 3%;margin-left: 2%;color: #000c4f;font-family: 'Montserrat Regular';font-size: 14px;text-align: left;margin-top: 0px;margin-bottom: 2%;border: 1px solid #000c4f ;border-bottom-width: 1px;"
                                         placeholder="Qué Buscas?"/>
@@ -486,32 +486,21 @@
 
             }
 
-            function procesar() {
 
-                if (recognizing == false) {
-                    recognition.start();
-                    recognizing = true;
-
-                } else {
-                    recognition.stop();
-                    recognizing = false;
-
-                }
-            }
-
-
-            $('btn-hold').click(function(event){event.preventDefault()});
                 $('.btn-hold').mousedown(function(event) {
                     recognition.start();
                     recognizing = true;
                     $("#procesar").css("color", "yellow");
-            });
+                });
 
-            $('.btn-hold').mouseup(function() {
-                recognition.stop();
-                recognizing = false;
-                $("#procesar").css("color", "#000c4f");
-            });
+                $('.btn-hold').mouseup(function() {
+                    document.getElementById('procesar').style.color = 'red'
+                    recognition.stop();
+                    recognizing = false;
+
+                });
+
+
 
 
         </script>

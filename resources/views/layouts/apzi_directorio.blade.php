@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html>
 
+    <?php
+    $municipio =
+    (object) [
+        'id' =>session()->get('municipio_id'),
+        'nombre' => session()->get('municipio_nombre')
+    ];
+
+?>
+
 <head>
     <meta charset="UTF-8">
     <title>APZI</title>
@@ -261,13 +270,13 @@
                                                 style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;">
                                                 <i class="fas fa-map-marker-alt"
                                                     style="margin-right: 5%;margin-left: 5%;"></i>Sopó</h5></a>
-                                            <hr style="background: #000c4f;">        
-                                            <a href="{{ route('index',6) }}">        
+                                            <hr style="background: #000c4f;">
+                                            <a href="{{ route('index',6) }}">
                                             <h5
                                                 style="color:#000c4f;font-size: 14px;font-family: 'ITC Avant Garde Gothic Std Medium';line-height: 6px;">
                                                 <i class="fas fa-map-marker-alt"
                                                     style="margin-right: 5%;margin-left: 5%;"></i>Tocancipá</h5></a>
-                                            
+
                                             <hr style="background: #000c4f;">
                                         </div>
                                     </div>
@@ -308,7 +317,7 @@
                         <center style="margin-top:5%;"><span
                                 style="font-size: 13px;color: #505050;font-family: 'ITC Avant Garde Gothic Std Demi'; ">INGENIO
                                 360</span></center>
-                    @elseif(($municipio->id ===2)||($municipio->id ===4)) 
+                    @elseif(($municipio->id ===2)||($municipio->id ===4))
                     <a class="btn btn-primary w-100 sidebar-btn" role="button" href="{{ route('index',$municipio->id) }}"
                             style="padding-top: 2%; padding-bottom: 2%; border-radius: 4px; background: #fff; color: #000c4f; font-size: 13px; border: 1px solid #000c4f; font-family: 'ITC Avant Garde Gothic Std Demi'; text-align: left;"><img
                                 src="/assets/img/casa.svg?h=7334c2a44666ed6638f133cd6da94fa7"
@@ -394,7 +403,7 @@
                                         style="width: 55%;padding-right: 0px;padding-left: 0px;background: #f2f2f2;border-style: none;">
                             {!! Form::open(['route' => 'busquedas']) !!}
                                     @csrf
-                                  
+
                                         <i class="fa fa-microphone"
                                     style="font-size: 16px;padding-left: 3%;color: #000c4f;" onclick="procesar()" id="procesar"></i>
                                         <input type="search" name="busqueda" id="texto" class="form-control-sm"
@@ -406,12 +415,12 @@
                                         </button>
                                         {!! Form::close() !!}
                                     </div>
-                           
+
 
 
                             <!--<button onkeypress="procesar()" id="procesar">Escuchar</button>-->
-                            
-                               
+
+
 
 
                         </div>
@@ -482,7 +491,7 @@ owl.owlCarousel({
                 recognition.onerror = function(event) {}
                 recognition.onend = function() {
                     recognizing = false;
-               
+
                     console.log("terminó de eschucar, llegó a su fin");
 
                 }
@@ -494,11 +503,11 @@ owl.owlCarousel({
                 if (recognizing == false) {
                     recognition.start();
                     recognizing = true;
-             
+
                 } else {
                     recognition.stop();
                     recognizing = false;
-              
+
                 }
             }
 

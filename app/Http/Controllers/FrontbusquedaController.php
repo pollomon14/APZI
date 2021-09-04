@@ -17,7 +17,7 @@ class FrontbusquedaController extends Controller
 
     public function categorias(Request $request){
         $var = $request->input('categorias');
-        $ciudad = session('municipio');
+        $ciudad = session('municipio_id');
         if ($var=="Todos"){
             $directorio = directorio::where([['id_municipio',$ciudad]])->get();
             $var=null;
